@@ -128,8 +128,24 @@ BENEFIT_KEYWORDS = {
 
 def check_skin_disease(text):
     text = str(text).lower()
+    found = []
     for kw in SKIN_DISEASE_KEYWORDS:
         if kw in text:
+            found.append(kw)
+    return found
+
+# 개선/호전 패턴
+IMPROVEMENT_PATTERNS = [
+    "들어가", "들어갔", "없어", "사라", "좋아졌", "나아", "진정됐", "진정됬",
+    "진정되", "가라앉", "줄었", "줄어", "완화", "개선", "호전", "깨끗",
+    "맑아", "좋아요", "좋아서", "추천", "잘맞", "잘 맞", "피부에 좋"
+]
+
+def is_skin_issue_improvement(text):
+    """피부질병이 개선되었다는 맥락인지 확인"""
+    text = str(text).lower()
+    for pattern in IMPROVEMENT_PATTERNS:
+        if pattern in text:
             return True
     return False
 
@@ -158,9 +174,13 @@ def analyze_sentiment_v2(df):
         text = str(row['REVIEW_CONTENT']).lower()
         rating = row['REVIEW_RATING']
 
-        # 피부질병/중단 체크
-        if check_skin_disease(text):
-            return "NEG"
+        # 피부질병 체크 (문맥 고려)
+        skin_issues = check_skin_disease(text)
+        if skin_issues:
+            if not is_skin_issue_improvement(text):
+                return "NEG"
+
+        # 중단/역접 체크
         if check_discontinue(text):
             return "NEG"
         if has_adversative_negative(text):
@@ -187,7 +207,9 @@ def analyze_sentiment_v2(df):
         return base
 
     df['sentiment'] = df.apply(get_sentiment, axis=1)
-    df['has_skin_issue'] = df['REVIEW_CONTENT'].apply(check_skin_disease)
+    df['has_skin_issue'] = df['REVIEW_CONTENT'].apply(
+        lambda x: len(check_skin_disease(str(x))) > 0 and not is_skin_issue_improvement(str(x))
+    )
 
     return df
 

@@ -6,7 +6,17 @@
       "Bash(chcp 65001)",
       "Bash(dir:*)",
       "Bash(chcp:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n올리브영 토너 리뷰 분석 프로젝트 v2.0\n\n- 7개 브랜드 27,745건 리뷰 분석\n- v2.0 감성 분석 로직 \\(피부질병/역접패턴/중단키워드 탐지\\)\n- Streamlit 대시보드 추가\n- 시각화 및 분석 보고서 \\(HTML, PPT\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git commit:*)",
+      "Bash(pip install:*)",
+      "Bash(timeout 10 streamlit run:*)",
+      "Bash(taskkill:*)",
+      "Bash(pkill:*)"
     ]
   }
 }

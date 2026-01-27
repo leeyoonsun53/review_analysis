@@ -53,6 +53,42 @@ def check_skin_disease(text):
     return found
 
 
+# 개선/호전 패턴 (피부질병이 나아졌음을 나타냄)
+IMPROVEMENT_PATTERNS = [
+    "들어가", "들어갔", "없어", "사라", "좋아졌", "나아", "진정됐", "진정됬",
+    "진정되", "가라앉", "줄었", "줄어", "완화", "개선", "호전", "깨끗",
+    "맑아", "좋아요", "좋아서", "추천", "잘맞", "잘 맞", "피부에 좋"
+]
+
+# 추천/타겟 패턴 (특정 피부타입 추천)
+RECOMMENDATION_PATTERNS = [
+    "피부에 좋", "피부에 사용", "피부에 추천", "추천합니다", "추천해요",
+    "좋아요", "잘 맞아", "딱이에요", "최고예요", "강추"
+]
+
+
+def is_skin_issue_improvement(text):
+    """
+    피부질병이 개선되었다는 맥락인지 확인
+
+    Returns:
+        bool: 개선/추천 맥락이면 True
+    """
+    text = str(text).lower()
+
+    # 개선 패턴 체크
+    for pattern in IMPROVEMENT_PATTERNS:
+        if pattern in text:
+            return True
+
+    # 추천 패턴 체크
+    for pattern in RECOMMENDATION_PATTERNS:
+        if pattern in text:
+            return True
+
+    return False
+
+
 def check_discontinue(text):
     """중단/사용중지 키워드 체크"""
     text = str(text).lower()
@@ -100,11 +136,15 @@ def analyze_sentiment(text, rating):
     # 역접 패턴이 있으면 뒤 문장을 주로 분석
     main_text = after_text if has_adversative and after_text else text
 
-    # 2. 피부질병 체크 (가장 강력한 부정 신호)
+    # 2. 피부질병 체크 (문맥 고려)
     skin_issues = check_skin_disease(text)
     if skin_issues:
-        # 피부질병 언급이 있으면 무조건 NEG
-        return "NEG"
+        # 피부질병이 개선되었거나 추천 맥락이면 NEG 아님
+        if is_skin_issue_improvement(text):
+            pass  # 개선/추천 맥락이면 계속 진행
+        else:
+            # 피부질병 언급 + 부정 맥락이면 NEG
+            return "NEG"
 
     # 3. 중단/사용중지 체크
     if check_discontinue(text):
