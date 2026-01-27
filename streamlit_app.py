@@ -611,6 +611,104 @@ def main():
                              color_continuous_scale='RdYlGn_r')
                 st.plotly_chart(fig, use_container_width=True)
 
+    # ===== 무신사 평가 데이터 분석 =====
+    if '무신사' in selected_platforms and 'EVAL_MOISTURE' in df_filtered.columns:
+        ms_data = df_filtered[df_filtered['PLATFORM'] == '무신사']
+        ms_with_eval = ms_data[ms_data['EVAL_MOISTURE'].notna()]
+
+        if len(ms_with_eval) > 0:
+            st.markdown('<p class="section-header">⚫ 무신사 평가 데이터 (보습력/흡수력/자극도)</p>', unsafe_allow_html=True)
+            st.caption(f"평가 데이터가 있는 리뷰: {len(ms_with_eval):,}건 / 무신사 전체 {len(ms_data):,}건")
+
+            col1, col2, col3 = st.columns(3)
+
+            rating_labels = {5: '매우좋음', 4: '좋음', 3: '보통', 2: '나쁨', 1: '매우나쁨'}
+
+            with col1:
+                moisture_dist = ms_with_eval['EVAL_MOISTURE'].value_counts().sort_index(ascending=False).reset_index()
+                moisture_dist.columns = ['평점', '건수']
+                moisture_dist['라벨'] = moisture_dist['평점'].map(rating_labels)
+
+                fig = px.bar(moisture_dist, x='라벨', y='건수',
+                             title='보습력 평가 분포',
+                             color='평점',
+                             color_continuous_scale='Blues')
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                absorption_dist = ms_with_eval['EVAL_ABSORPTION'].dropna().value_counts().sort_index(ascending=False).reset_index()
+                absorption_dist.columns = ['평점', '건수']
+                absorption_dist['라벨'] = absorption_dist['평점'].map(rating_labels)
+
+                fig = px.bar(absorption_dist, x='라벨', y='건수',
+                             title='흡수력 평가 분포',
+                             color='평점',
+                             color_continuous_scale='Greens')
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col3:
+                irritation_dist = ms_with_eval['EVAL_IRRITATION'].dropna().value_counts().sort_index(ascending=False).reset_index()
+                irritation_dist.columns = ['평점', '건수']
+                irritation_labels = {5: '전혀없음', 4: '거의없음', 3: '보통', 2: '조금있음', 1: '많음'}
+                irritation_dist['라벨'] = irritation_dist['평점'].map(irritation_labels)
+
+                fig = px.bar(irritation_dist, x='라벨', y='건수',
+                             title='자극도 평가 분포',
+                             color='평점',
+                             color_continuous_scale='RdYlGn')
+                st.plotly_chart(fig, use_container_width=True)
+
+            # 브랜드별 평가 평균
+            st.markdown("##### 브랜드별 평가 평균")
+
+            brand_eval = ms_with_eval.groupby('BRAND_NAME').agg({
+                'EVAL_MOISTURE': 'mean',
+                'EVAL_ABSORPTION': 'mean',
+                'EVAL_IRRITATION': 'mean',
+                'REVIEW_RATING': 'count'
+            }).round(2)
+            brand_eval.columns = ['보습력', '흡수력', '자극도(높을수록 순함)', '평가수']
+            brand_eval = brand_eval.sort_values('평가수', ascending=False)
+
+            st.dataframe(brand_eval, use_container_width=True)
+
+            # 레이더 차트로 브랜드별 비교
+            col1, col2 = st.columns(2)
+
+            with col1:
+                fig = go.Figure()
+
+                for brand in brand_eval.index:
+                    row = brand_eval.loc[brand]
+                    values = [row['보습력'], row['흡수력'], row['자극도(높을수록 순함)']]
+                    values.append(values[0])
+
+                    fig.add_trace(go.Scatterpolar(
+                        r=values,
+                        theta=['보습력', '흡수력', '자극도'] + ['보습력'],
+                        fill='toself',
+                        name=brand,
+                        opacity=0.6
+                    ))
+
+                fig.update_layout(
+                    polar=dict(radialaxis=dict(visible=True, range=[1, 5])),
+                    title='브랜드별 평가 비교 (무신사)',
+                    showlegend=True
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                # 평가 점수와 별점 상관관계
+                eval_rating_corr = ms_with_eval[['EVAL_MOISTURE', 'EVAL_ABSORPTION', 'EVAL_IRRITATION', 'REVIEW_RATING']].corr()
+
+                fig = px.imshow(eval_rating_corr,
+                                title='평가 항목 간 상관관계',
+                                color_continuous_scale='RdBu',
+                                aspect='auto',
+                                text_auto='.2f')
+                st.plotly_chart(fig, use_container_width=True)
+
     # ===== 샘플 리뷰 =====
     st.markdown('<p class="section-header">📝 샘플 리뷰</p>', unsafe_allow_html=True)
 
