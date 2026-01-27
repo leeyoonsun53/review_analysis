@@ -1,0 +1,362 @@
+{
+  "summary": {
+    "total_reviews_processed": 50,
+    "total_input_tokens": 18661,
+    "total_output_tokens": 2411,
+    "total_tokens": 21072,
+    "estimated_cost_usd": 0.0032,
+    "created_at": "2026-01-27T13:50:46.518807"
+  },
+  "details": [
+    {
+      "review_id": 642603419,
+      "input_tokens": 390,
+      "output_tokens": 50,
+      "total_tokens": 440,
+      "timestamp": "2026-01-27T13:49:10.604672"
+    },
+    {
+      "review_id": 529537253,
+      "input_tokens": 508,
+      "output_tokens": 72,
+      "total_tokens": 580,
+      "timestamp": "2026-01-27T13:49:13.933855"
+    },
+    {
+      "review_id": 1037915628,
+      "input_tokens": 374,
+      "output_tokens": 46,
+      "total_tokens": 420,
+      "timestamp": "2026-01-27T13:49:16.155784"
+    },
+    {
+      "review_id": 529540320,
+      "input_tokens": 365,
+      "output_tokens": 46,
+      "total_tokens": 411,
+      "timestamp": "2026-01-27T13:49:18.499089"
+    },
+    {
+      "review_id": 529548601,
+      "input_tokens": 365,
+      "output_tokens": 48,
+      "total_tokens": 413,
+      "timestamp": "2026-01-27T13:49:20.156206"
+    },
+    {
+      "review_id": 529557053,
+      "input_tokens": 367,
+      "output_tokens": 46,
+      "total_tokens": 413,
+      "timestamp": "2026-01-27T13:49:23.086735"
+    },
+    {
+      "review_id": 529561637,
+      "input_tokens": 369,
+      "output_tokens": 46,
+      "total_tokens": 415,
+      "timestamp": "2026-01-27T13:49:24.528578"
+    },
+    {
+      "review_id": 529551599,
+      "input_tokens": 353,
+      "output_tokens": 46,
+      "total_tokens": 399,
+      "timestamp": "2026-01-27T13:49:26.231837"
+    },
+    {
+      "review_id": 1035505955,
+      "input_tokens": 365,
+      "output_tokens": 46,
+      "total_tokens": 411,
+      "timestamp": "2026-01-27T13:49:28.361335"
+    },
+    {
+      "review_id": 529563151,
+      "input_tokens": 366,
+      "output_tokens": 45,
+      "total_tokens": 411,
+      "timestamp": "2026-01-27T13:49:29.830762"
+    },
+    {
+      "review_id": 529553123,
+      "input_tokens": 366,
+      "output_tokens": 46,
+      "total_tokens": 412,
+      "timestamp": "2026-01-27T13:49:31.193006"
+    },
+    {
+      "review_id": 529548864,
+      "input_tokens": 366,
+      "output_tokens": 46,
+      "total_tokens": 412,
+      "timestamp": "2026-01-27T13:49:32.931711"
+    },
+    {
+      "review_id": 529543645,
+      "input_tokens": 376,
+      "output_tokens": 50,
+      "total_tokens": 426,
+      "timestamp": "2026-01-27T13:49:34.429413"
+    },
+    {
+      "review_id": 529545146,
+      "input_tokens": 351,
+      "output_tokens": 48,
+      "total_tokens": 399,
+      "timestamp": "2026-01-27T13:49:35.971089"
+    },
+    {
+      "review_id": 529536476,
+      "input_tokens": 363,
+      "output_tokens": 46,
+      "total_tokens": 409,
+      "timestamp": "2026-01-27T13:49:38.376145"
+    },
+    {
+      "review_id": 529546092,
+      "input_tokens": 362,
+      "output_tokens": 47,
+      "total_tokens": 409,
+      "timestamp": "2026-01-27T13:49:40.081704"
+    },
+    {
+      "review_id": 529556221,
+      "input_tokens": 385,
+      "output_tokens": 45,
+      "total_tokens": 430,
+      "timestamp": "2026-01-27T13:49:41.883477"
+    },
+    {
+      "review_id": 529537232,
+      "input_tokens": 362,
+      "output_tokens": 57,
+      "total_tokens": 419,
+      "timestamp": "2026-01-27T13:49:43.969008"
+    },
+    {
+      "review_id": 1006065101,
+      "input_tokens": 361,
+      "output_tokens": 52,
+      "total_tokens": 413,
+      "timestamp": "2026-01-27T13:49:47.080965"
+    },
+    {
+      "review_id": 1008569546,
+      "input_tokens": 360,
+      "output_tokens": 50,
+      "total_tokens": 410,
+      "timestamp": "2026-01-27T13:49:50.463005"
+    },
+    {
+      "review_id": 529559222,
+      "input_tokens": 370,
+      "output_tokens": 46,
+      "total_tokens": 416,
+      "timestamp": "2026-01-27T13:49:52.184978"
+    },
+    {
+      "review_id": 529552331,
+      "input_tokens": 363,
+      "output_tokens": 47,
+      "total_tokens": 410,
+      "timestamp": "2026-01-27T13:49:54.264334"
+    },
+    {
+      "review_id": 529543944,
+      "input_tokens": 362,
+      "output_tokens": 47,
+      "total_tokens": 409,
+      "timestamp": "2026-01-27T13:49:55.815182"
+    },
+    {
+      "review_id": 557763150,
+      "input_tokens": 367,
+      "output_tokens": 46,
+      "total_tokens": 413,
+      "timestamp": "2026-01-27T13:49:57.066186"
+    },
+    {
+      "review_id": 1033687418,
+      "input_tokens": 362,
+      "output_tokens": 48,
+      "total_tokens": 410,
+      "timestamp": "2026-01-27T13:49:58.540167"
+    },
+    {
+      "review_id": 529561285,
+      "input_tokens": 365,
+      "output_tokens": 45,
+      "total_tokens": 410,
+      "timestamp": "2026-01-27T13:50:00.345555"
+    },
+    {
+      "review_id": 557809980,
+      "input_tokens": 382,
+      "output_tokens": 46,
+      "total_tokens": 428,
+      "timestamp": "2026-01-27T13:50:01.901275"
+    },
+    {
+      "review_id": 557908210,
+      "input_tokens": 366,
+      "output_tokens": 53,
+      "total_tokens": 419,
+      "timestamp": "2026-01-27T13:50:03.523557"
+    },
+    {
+      "review_id": 557810348,
+      "input_tokens": 358,
+      "output_tokens": 45,
+      "total_tokens": 403,
+      "timestamp": "2026-01-27T13:50:05.675099"
+    },
+    {
+      "review_id": 557908333,
+      "input_tokens": 374,
+      "output_tokens": 47,
+      "total_tokens": 421,
+      "timestamp": "2026-01-27T13:50:07.399758"
+    },
+    {
+      "review_id": 557879222,
+      "input_tokens": 361,
+      "output_tokens": 50,
+      "total_tokens": 411,
+      "timestamp": "2026-01-27T13:50:09.122870"
+    },
+    {
+      "review_id": 557879256,
+      "input_tokens": 449,
+      "output_tokens": 45,
+      "total_tokens": 494,
+      "timestamp": "2026-01-27T13:50:10.870163"
+    },
+    {
+      "review_id": 557879316,
+      "input_tokens": 367,
+      "output_tokens": 47,
+      "total_tokens": 414,
+      "timestamp": "2026-01-27T13:50:13.899724"
+    },
+    {
+      "review_id": 557879322,
+      "input_tokens": 372,
+      "output_tokens": 45,
+      "total_tokens": 417,
+      "timestamp": "2026-01-27T13:50:15.613116"
+    },
+    {
+      "review_id": 1003863000,
+      "input_tokens": 358,
+      "output_tokens": 45,
+      "total_tokens": 403,
+      "timestamp": "2026-01-27T13:50:17.095583"
+    },
+    {
+      "review_id": 1008466695,
+      "input_tokens": 372,
+      "output_tokens": 50,
+      "total_tokens": 422,
+      "timestamp": "2026-01-27T13:50:19.384910"
+    },
+    {
+      "review_id": 1003666025,
+      "input_tokens": 367,
+      "output_tokens": 49,
+      "total_tokens": 416,
+      "timestamp": "2026-01-27T13:50:21.191503"
+    },
+    {
+      "review_id": 557941502,
+      "input_tokens": 384,
+      "output_tokens": 46,
+      "total_tokens": 430,
+      "timestamp": "2026-01-27T13:50:22.910750"
+    },
+    {
+      "review_id": 557941615,
+      "input_tokens": 368,
+      "output_tokens": 48,
+      "total_tokens": 416,
+      "timestamp": "2026-01-27T13:50:24.637414"
+    },
+    {
+      "review_id": 557778416,
+      "input_tokens": 368,
+      "output_tokens": 46,
+      "total_tokens": 414,
+      "timestamp": "2026-01-27T13:50:26.234247"
+    },
+    {
+      "review_id": 529536377,
+      "input_tokens": 381,
+      "output_tokens": 53,
+      "total_tokens": 434,
+      "timestamp": "2026-01-27T13:50:27.848715"
+    },
+    {
+      "review_id": 529547394,
+      "input_tokens": 373,
+      "output_tokens": 50,
+      "total_tokens": 423,
+      "timestamp": "2026-01-27T13:50:29.595900"
+    },
+    {
+      "review_id": 529561652,
+      "input_tokens": 367,
+      "output_tokens": 47,
+      "total_tokens": 414,
+      "timestamp": "2026-01-27T13:50:31.587854"
+    },
+    {
+      "review_id": 529562351,
+      "input_tokens": 361,
+      "output_tokens": 47,
+      "total_tokens": 408,
+      "timestamp": "2026-01-27T13:50:33.620416"
+    },
+    {
+      "review_id": 529568688,
+      "input_tokens": 369,
+      "output_tokens": 56,
+      "total_tokens": 425,
+      "timestamp": "2026-01-27T13:50:35.215853"
+    },
+    {
+      "review_id": 529536746,
+      "input_tokens": 404,
+      "output_tokens": 50,
+      "total_tokens": 454,
+      "timestamp": "2026-01-27T13:50:36.774222"
+    },
+    {
+      "review_id": 529539558,
+      "input_tokens": 367,
+      "output_tokens": 45,
+      "total_tokens": 412,
+      "timestamp": "2026-01-27T13:50:38.622007"
+    },
+    {
+      "review_id": 529564184,
+      "input_tokens": 364,
+      "output_tokens": 53,
+      "total_tokens": 417,
+      "timestamp": "2026-01-27T13:50:41.071207"
+    },
+    {
+      "review_id": 529570125,
+      "input_tokens": 364,
+      "output_tokens": 45,
+      "total_tokens": 409,
+      "timestamp": "2026-01-27T13:50:42.476569"
+    },
+    {
+      "review_id": 529540861,
+      "input_tokens": 402,
+      "output_tokens": 46,
+      "total_tokens": 448,
+      "timestamp": "2026-01-27T13:50:46.214563"
+    }
+  ]
+}

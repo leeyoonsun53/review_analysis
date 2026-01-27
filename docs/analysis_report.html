@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>올리브영 토너 리뷰 분석 보고서</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        header .meta {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .executive-summary {
+            background: linear-gradient(to right, #eff6ff, #f0fdf4);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .executive-summary h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .metric-box .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .metric-box .label {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        section h2 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        section h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .chart-container .caption {
+            margin-top: 15px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-green { background: #d1fae5; color: #065f46; }
+        .badge-red { background: #fee2e2; color: #991b1b; }
+        .badge-yellow { background: #fef3c7; color: #92400e; }
+        .badge-purple { background: #ede9fe; color: #5b21b6; }
+
+        .insight-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .insight-box h4 {
+            color: var(--warning);
+            margin-bottom: 10px;
+        }
+
+        .recommendation-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .recommendation-box h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .warning-box h4 {
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+
+        .brand-card h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            color: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .conclusion h2 {
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--dark);
+            color: white;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .key-metrics { grid-template-columns: repeat(2, 1fr); }
+            .two-column { grid-template-columns: 1fr; }
+            header h1 { font-size: 2rem; }
+        }
+
+        @media print {
+            header { padding: 40px 20px; }
+            .chart-container { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>올리브영 토너 리뷰 분석 보고서</h1>
+        <p class="subtitle">7개 브랜드 27,745건 리뷰 데이터 심층 분석</p>
+        <p class="meta">분석 기간: 2024.12 ~ 2026.01 | 보고서 생성일: 2026-01-27</p>
+    </header>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <p>본 보고서는 올리브영에서 판매되는 7개 토너 브랜드(토리든, 브링그린, 독도토너, 아누아, 에스네이처, 토니모리, 아비브)의
+            리뷰 27,745건을 분석하여 브랜드별 포지셔닝, 고객 Pain Point, 재구매/이탈 요인, 키워드 트렌드를 도출한 PM 인사이트 리포트입니다.</p>
+
+            <div class="key-metrics">
+                <div class="metric-box">
+                    <div class="number">27,745</div>
+                    <div class="label">총 분석 리뷰 수</div>
+                </div>
+                <div class="metric-box">
+                    <div class="number">7</div>
+                    <div class="label">분석 브랜드 수</div>
+                </div>
+                <div class="metric-box">
+                    <div class="number">4.83</div>
+                    <div class="label">전체 평균 평점</div>
+                </div>
+                <div class="metric-box">
+                    <div class="number">0.83%</div>
+                    <div class="label">저평점(1-2점) 비율</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. 브랜드 개요 -->
+        <section>
+            <h2>1. 브랜드별 개요</h2>
+
+            <div class="chart-container">
+                <img src="../output/figures/dashboard_summary.png" alt="대시보드 요약">
+                <p class="caption">그림 1. 올리브영 토너 리뷰 분석 대시보드 종합</p>
+            </div>
+
+            <h3>1.1 브랜드별 리뷰 현황</h3>
+            <table>
+                <tr>
+                    <th>브랜드</th>
+                    <th>리뷰 수</th>
+                    <th>점유율</th>
+                    <th>평균 평점</th>
+                    <th>저평점 비율</th>
+                    <th>주요 포지션</th>
+                </tr>
+                <tr>
+                    <td><strong>토리든</strong></td>
+                    <td>8,065</td>
+                    <td>29.1%</td>
+                    <td>4.83</td>
+                    <td>0.8%</td>
+                    <td><span class="badge badge-blue">보습 케어</span></td>
+                </tr>
+                <tr>
+                    <td><strong>브링그린</strong></td>
+                    <td>6,312</td>
+                    <td>22.7%</td>
+                    <td>4.81</td>
+                    <td>1.2%</td>
+                    <td><span class="badge badge-green">진정 전문</span></td>
+                </tr>
+                <tr>
+                    <td><strong>독도토너</strong></td>
+                    <td>3,750</td>
+                    <td>13.5%</td>
+                    <td>4.86</td>
+                    <td>0.3%</td>
+                    <td><span class="badge badge-purple">범용 균형</span></td>
+                </tr>
+                <tr>
+                    <td><strong>아누아</strong></td>
+                    <td>3,544</td>
+                    <td>12.8%</td>
+                    <td>4.83</td>
+                    <td>1.0%</td>
+                    <td><span class="badge badge-green">진정 케어</span></td>
+                </tr>
+                <tr>
+                    <td><strong>에스네이처</strong></td>
+                    <td>2,232</td>
+                    <td>8.0%</td>
+                    <td>4.82</td>
+                    <td>0.9%</td>
+                    <td><span class="badge badge-blue">보습 케어</span></td>
+                </tr>
+                <tr>
+                    <td><strong>토니모리</strong></td>
+                    <td>2,195</td>
+                    <td>7.9%</td>
+                    <td>4.86</td>
+                    <td>0.4%</td>
+                    <td><span class="badge badge-yellow">건성 전용 보습</span></td>
+                </tr>
+                <tr>
+                    <td><strong>아비브</strong></td>
+                    <td>1,647</td>
+                    <td>5.9%</td>
+                    <td>4.81</td>
+                    <td>1.0%</td>
+                    <td><span class="badge badge-green">진정 전문</span></td>
+                </tr>
+            </table>
+
+            <div class="insight-box">
+                <h4>Key Insight</h4>
+                <ul>
+                    <li><strong>토리든</strong>이 전체 리뷰의 29%로 시장 리더 위치</li>
+                    <li><strong>독도토너</strong>가 가장 높은 평균 평점(4.86)과 가장 낮은 저평점 비율(0.3%)</li>
+                    <li>시장은 크게 <strong>보습 그룹</strong>(토리든, 에스네이처, 토니모리)과 <strong>진정 그룹</strong>(브링그린, 아누아, 아비브)으로 양분</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. 브랜드 포지셔닝 -->
+        <section>
+            <h2>2. 브랜드 포지셔닝 분석</h2>
+
+            <h3>2.1 피부 타입별 추천 분포</h3>
+            <div class="chart-container">
+                <img src="../output/figures/skin_type_distribution.png" alt="피부타입 분포">
+                <p class="caption">그림 2. 브랜드별 추천 피부타입 분포 (리뷰어가 "이 제품은 ~에 좋아요" 선택)</p>
+            </div>
+
+            <h3>2.2 종합 포지셔닝 레이더 차트</h3>
+            <div class="chart-container">
+                <img src="../output/figures/brand_positioning_radar.png" alt="포지셔닝 레이더">
+                <p class="caption">그림 3. 브랜드별 포지셔닝 종합 비교 (보습/진정/만족도/재구매/리뷰량)</p>
+            </div>
+
+            <h3>2.3 브랜드별 포지셔닝 요약</h3>
+            <div class="two-column">
+                <div class="brand-card">
+                    <h4>보습 그룹</h4>
+                    <table>
+                        <tr><td><strong>토니모리</strong></td><td>보습 80% | 건성 추천 50%</td></tr>
+                        <tr><td><strong>토리든</strong></td><td>보습 66% | 복합성 중심</td></tr>
+                        <tr><td><strong>에스네이처</strong></td><td>보습 64% | 건성/복합성</td></tr>
+                    </table>
+                    <p style="margin-top:15px; color:#6b7280;">특징: 수분 충전, 촉촉함, 건조 개선에 강점</p>
+                </div>
+                <div class="brand-card">
+                    <h4>진정 그룹</h4>
+                    <table>
+                        <tr><td><strong>브링그린</strong></td><td>진정 78% | 지성 31%</td></tr>
+                        <tr><td><strong>아비브</strong></td><td>진정 75% | 복합성 중심</td></tr>
+                        <tr><td><strong>아누아</strong></td><td>진정 63% | 복합성 중심</td></tr>
+                    </table>
+                    <p style="margin-top:15px; color:#6b7280;">특징: 트러블 케어, 어성초/시카 성분, 민감 피부 타겟</p>
+                </div>
+            </div>
+
+            <div class="recommendation-box">
+                <h4>PM 액션 포인트</h4>
+                <ul>
+                    <li><strong>토니모리</strong>: 건성 피부 전용 포지션 강화 → "겨울철 건성 피부 필수템" 마케팅</li>
+                    <li><strong>브링그린</strong>: 유일한 지성+트러블 케어 → 여름 시즌 지성 피부 공략</li>
+                    <li><strong>독도토너</strong>: 보습/진정 균형 → "첫 토너" 입문자 타겟 마케팅</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Pain Point 분석 -->
+        <section>
+            <h2>3. 저평점 리뷰 Pain Point 분석</h2>
+
+            <p>전체 27,745건 중 저평점(1-2점) 리뷰 230건(0.83%)을 분석하여 브랜드별 주요 불만 요인을 도출했습니다.</p>
+
+            <h3>3.1 브랜드별 Pain Point 히트맵</h3>
+            <div class="chart-container">
+                <img src="../output/figures/pain_point_heatmap.png" alt="Pain Point 히트맵">
+                <p class="caption">그림 4. 브랜드별 Pain Point 분포 (저평점 리뷰 중 비율 %)</p>
+            </div>
+
+            <h3>3.2 브랜드별 Pain Point 상세</h3>
+            <div class="chart-container">
+                <img src="../output/figures/pain_point_by_brand.png" alt="브랜드별 Pain Point">
+                <p class="caption">그림 5. 브랜드별 저평점 리뷰 Pain Point 비율</p>
+            </div>
+
+            <h3>3.3 Pain Point 핵심 발견</h3>
+            <table>
+                <tr>
+                    <th>브랜드</th>
+                    <th>1위 Pain Point</th>
+                    <th>2위 Pain Point</th>
+                    <th>저평점 비율</th>
+                    <th>핵심 이슈</th>
+                </tr>
+                <tr>
+                    <td>브링그린</td>
+                    <td><span class="badge badge-red">자극/트러블 41%</span></td>
+                    <td>효과없음 29%</td>
+                    <td>1.2%</td>
+                    <td>진정 제품인데 자극 발생</td>
+                </tr>
+                <tr>
+                    <td>아누아</td>
+                    <td><span class="badge badge-red">자극/트러블 50%</span></td>
+                    <td>효과없음 47%</td>
+                    <td>1.0%</td>
+                    <td>민감피부 자극 이슈</td>
+                </tr>
+                <tr>
+                    <td>아비브</td>
+                    <td><span class="badge badge-red">자극/트러블 38%</span></td>
+                    <td>효과없음 38%</td>
+                    <td>1.0%</td>
+                    <td>진정 효과 미체감</td>
+                </tr>
+                <tr>
+                    <td>토리든</td>
+                    <td><span class="badge badge-yellow">효과없음 34%</span></td>
+                    <td>자극/트러블 30%</td>
+                    <td>0.8%</td>
+                    <td>"물 같다" 효능 체감 부족</td>
+                </tr>
+                <tr>
+                    <td>독도토너</td>
+                    <td><span class="badge badge-yellow">효과없음 46%</span></td>
+                    <td>자극/트러블 31%</td>
+                    <td>0.3%</td>
+                    <td>"그냥 물" 인식</td>
+                </tr>
+                <tr>
+                    <td>토니모리</td>
+                    <td><span class="badge badge-purple">끈적/무거움 25%</span></td>
+                    <td>향/냄새 25%</td>
+                    <td>0.4%</td>
+                    <td>텍스처/향 불만</td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <h4>주의 필요 사항</h4>
+                <p><strong>진정 브랜드의 아이러니:</strong> 브링그린, 아누아, 아비브는 "진정" 포지션임에도 불구하고
+                <strong>자극/트러블이 1위 불만 요인</strong>입니다. 진정 성분(어성초, 시카 등)이 일부 민감 피부에
+                오히려 자극을 유발할 수 있음을 시사합니다.</p>
+                <p style="margin-top:10px;"><strong>실제 리뷰:</strong> "피부 민감하시거나 장벽손상에는 절대 쓰지 마세요" (브링그린)</p>
+            </div>
+        </section>
+
+        <!-- 4. 재구매/이탈 분석 -->
+        <section>
+            <h2>4. 재구매 vs 이탈 분석</h2>
+
+            <h3>4.1 재구매/충성/이탈 신호 비율</h3>
+            <div class="chart-container">
+                <img src="../output/figures/loyalty_comparison.png" alt="재구매/이탈 비교">
+                <p class="caption">그림 6. 브랜드별 재구매/충성/이탈 신호 비율</p>
+            </div>
+
+            <h3>4.2 순충성도 지표</h3>
+            <div class="chart-container">
+                <img src="../output/figures/net_loyalty.png" alt="순충성도">
+                <p class="caption">그림 7. 브랜드별 순충성도 = (충성 + 재구매 - 이탈) / 전체</p>
+            </div>
+
+            <h3>4.3 충성도 지표 상세</h3>
+            <table>
+                <tr>
+                    <th>브랜드</th>
+                    <th>충성(Loyal)</th>
+                    <th>재구매 언급</th>
+                    <th>이탈 신호</th>
+                    <th>순충성도</th>
+                    <th>해석</th>
+                </tr>
+                <tr>
+                    <td>브링그린</td>
+                    <td>1.7%</td>
+                    <td><strong>13.4%</strong></td>
+                    <td>0.8%</td>
+                    <td><span class="badge badge-green">+14.3%</span></td>
+                    <td>최고 충성도</td>
+                </tr>
+                <tr>
+                    <td>독도토너</td>
+                    <td>1.3%</td>
+                    <td>11.3%</td>
+                    <td>0.9%</td>
+                    <td><span class="badge badge-green">+11.7%</span></td>
+                    <td>안정적</td>
+                </tr>
+                <tr>
+                    <td>아누아</td>
+                    <td>1.4%</td>
+                    <td>12.4%</td>
+                    <td><strong>1.7%</strong></td>
+                    <td><span class="badge badge-blue">+12.1%</span></td>
+                    <td>이탈 주의</td>
+                </tr>
+                <tr>
+                    <td>토리든</td>
+                    <td>1.3%</td>
+                    <td>10.7%</td>
+                    <td>1.1%</td>
+                    <td><span class="badge badge-blue">+10.9%</span></td>
+                    <td>시장 리더 유지</td>
+                </tr>
+                <tr>
+                    <td>아비브</td>
+                    <td>1.0%</td>
+                    <td>10.5%</td>
+                    <td>1.0%</td>
+                    <td><span class="badge badge-blue">+10.5%</span></td>
+                    <td>균형</td>
+                </tr>
+                <tr>
+                    <td>에스네이처</td>
+                    <td>1.1%</td>
+                    <td>10.9%</td>
+                    <td>1.6%</td>
+                    <td><span class="badge badge-yellow">+10.4%</span></td>
+                    <td>이탈 관리 필요</td>
+                </tr>
+                <tr>
+                    <td>토니모리</td>
+                    <td>1.5%</td>
+                    <td>10.0%</td>
+                    <td>0.9%</td>
+                    <td><span class="badge badge-blue">+10.6%</span></td>
+                    <td>충성 고객 존재</td>
+                </tr>
+            </table>
+
+            <div class="insight-box">
+                <h4>충성 고객 vs 이탈 고객 특성</h4>
+                <div class="two-column" style="margin-top:15px;">
+                    <div>
+                        <strong>충성 고객 (Loyal) 특징:</strong>
+                        <ul>
+                            <li>평균 평점: 4.97점</li>
+                            <li>"인생템", "최애", "필수템" 표현 사용</li>
+                            <li>예: "몇년째 사용하는 제 최애 토너입니다"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>이탈 신호 (Churn) 특징:</strong>
+                        <ul>
+                            <li>평균 평점: 4.74점 (긍정적이어도 이탈 가능)</li>
+                            <li>"다른 거", "갈아타", "바꿀" 표현 사용</li>
+                            <li>예: "가격 생각하면 좋은데 이제 다른 거 사려고요"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 월별 트렌드 분석 -->
+        <section>
+            <h2>5. 월별 키워드 트렌드 분석</h2>
+
+            <h3>5.1 전체 키워드 트렌드</h3>
+            <div class="chart-container">
+                <img src="../output/figures/monthly_trend_all.png" alt="월별 트렌드">
+                <p class="caption">그림 8. 월별 주요 키워드 언급률 변화 (진정/보습/각질/산뜻/가성비)</p>
+            </div>
+
+            <h3>5.2 브랜드별 진정/보습 트렌드</h3>
+            <div class="chart-container">
+                <img src="../output/figures/monthly_trend_by_brand.png" alt="브랜드별 트렌드">
+                <p class="caption">그림 9. 브랜드별 진정/보습 키워드 월별 추이</p>
+            </div>
+
+            <h3>5.3 트렌드 분석 결과</h3>
+            <table>
+                <tr>
+                    <th>키워드</th>
+                    <th>2025-08</th>
+                    <th>2026-01</th>
+                    <th>변화</th>
+                    <th>해석</th>
+                </tr>
+                <tr>
+                    <td>보습</td>
+                    <td>35.6%</td>
+                    <td>38.0%</td>
+                    <td><span class="badge badge-green">+2.4%p</span></td>
+                    <td>겨울철 보습 니즈 증가</td>
+                </tr>
+                <tr>
+                    <td>진정</td>
+                    <td>16.6%</td>
+                    <td>13.7%</td>
+                    <td><span class="badge badge-red">-2.9%p</span></td>
+                    <td>계절적 트러블 감소</td>
+                </tr>
+                <tr>
+                    <td>산뜻</td>
+                    <td>12.0%</td>
+                    <td>11.6%</td>
+                    <td>-0.4%p</td>
+                    <td>안정적 유지</td>
+                </tr>
+                <tr>
+                    <td>가성비</td>
+                    <td>12.2%</td>
+                    <td>10.8%</td>
+                    <td><span class="badge badge-yellow">-1.4%p</span></td>
+                    <td>가격 민감도 소폭 감소</td>
+                </tr>
+            </table>
+
+            <div class="recommendation-box">
+                <h4>시즌별 마케팅 전략</h4>
+                <ul>
+                    <li><strong>겨울 (11-2월):</strong> 보습 키워드 상승 → 보습 그룹(토리든, 토니모리) 프로모션 강화</li>
+                    <li><strong>여름 (6-8월):</strong> 산뜻/진정 키워드 상승 예상 → 진정 그룹(브링그린) 시즌 타겟팅</li>
+                    <li><strong>환절기 (3-5월, 9-10월):</strong> 트러블 증가 시기 → 진정 제품 집중 마케팅</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. 브랜드별 종합 진단 -->
+        <section>
+            <h2>6. 브랜드별 종합 진단 및 권고</h2>
+
+            <div class="brand-card" style="border-top-color: #3b82f6;">
+                <h4>토리든 (시장 리더)</h4>
+                <div class="two-column">
+                    <div>
+                        <strong>강점:</strong>
+                        <ul>
+                            <li>시장 점유율 1위 (29.1%)</li>
+                            <li>보습 포지션 확고</li>
+                            <li>낮은 저평점 비율 (0.8%)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>약점/리스크:</strong>
+                        <ul>
+                            <li>"물 같다" 효능 체감 부족 (Pain Point 1위)</li>
+                            <li>차별화 포인트 모호</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:15px; background:#dbeafe; padding:10px; border-radius:8px;">
+                    <strong>권고:</strong> 보습 효능 체감 강화 → "수분 폭탄", "72시간 보습" 등 구체적 효능 소구
+                </p>
+            </div>
+
+            <div class="brand-card" style="border-top-color: #10b981;">
+                <h4>브링그린 (진정 리더)</h4>
+                <div class="two-column">
+                    <div>
+                        <strong>강점:</strong>
+                        <ul>
+                            <li>최고 순충성도 (+14.3%)</li>
+                            <li>재구매 언급 1위 (13.4%)</li>
+                            <li>지성+트러블 케어 유일 포지션</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>약점/리스크:</strong>
+                        <ul>
+                            <li>자극/트러블 Pain Point 41% (최고)</li>
+                            <li>민감피부 자극 이슈</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:15px; background:#d1fae5; padding:10px; border-radius:8px;">
+                    <strong>권고:</strong> "민감피부 주의" 사전 안내 + 지성 피부 타겟 집중 마케팅
+                </p>
+            </div>
+
+            <div class="brand-card" style="border-top-color: #8b5cf6;">
+                <h4>독도토너 (균형 우등생)</h4>
+                <div class="two-column">
+                    <div>
+                        <strong>강점:</strong>
+                        <ul>
+                            <li>최고 평균 평점 (4.86)</li>
+                            <li>최저 저평점 비율 (0.3%)</li>
+                            <li>보습/진정 균형</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>약점/리스크:</strong>
+                        <ul>
+                            <li>"효과없음" Pain Point 46%</li>
+                            <li>"그냥 물" 인식</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:15px; background:#ede9fe; padding:10px; border-radius:8px;">
+                    <strong>권고:</strong> "순함의 가치" 강조 → 입문자/데일리 토너 포지셔닝
+                </p>
+            </div>
+
+            <div class="brand-card" style="border-top-color: #f59e0b;">
+                <h4>토니모리 (건성 전문)</h4>
+                <div class="two-column">
+                    <div>
+                        <strong>강점:</strong>
+                        <ul>
+                            <li>건성 추천 1위 (50.2%)</li>
+                            <li>보습 언급 최고 (80%)</li>
+                            <li>충성 고객 존재 (1.5%)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>약점/리스크:</strong>
+                        <ul>
+                            <li>끈적/무거움, 향 불만</li>
+                            <li>텍스처 개선 필요</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:15px; background:#fef3c7; padding:10px; border-radius:8px;">
+                    <strong>권고:</strong> 건성 피부 전용 포지션 강화 + 텍스처/향 개선 R&D
+                </p>
+            </div>
+        </section>
+
+        <!-- 결론 -->
+        <div class="conclusion">
+            <h2 style="color: white;">7. 결론 및 핵심 액션 아이템</h2>
+
+            <h3 style="color: #fbbf24; margin-top:25px;">시장 구조</h3>
+            <p>올리브영 토너 시장은 <strong>보습 그룹</strong>(토리든, 토니모리, 에스네이처)과
+            <strong>진정 그룹</strong>(브링그린, 아누아, 아비브)으로 명확히 양분되어 있습니다.
+            독도토너는 그 중간에서 "입문자/데일리" 포지션을 차지합니다.</p>
+
+            <h3 style="color: #fbbf24; margin-top:25px;">핵심 발견</h3>
+            <ol style="margin-left:20px;">
+                <li><strong>진정 브랜드의 역설:</strong> 진정 포지션 브랜드들이 오히려 자극/트러블 Pain Point가 높음</li>
+                <li><strong>브링그린 강점:</strong> 최고 순충성도 + 지성피부 유일 포지션 → 성장 잠재력</li>
+                <li><strong>보습 니즈 증가:</strong> 겨울철 보습 키워드 상승 (35.6% → 38.0%)</li>
+                <li><strong>효과 체감 이슈:</strong> 보습 브랜드들의 "물 같다/효과없음" 불만 관리 필요</li>
+            </ol>
+
+            <h3 style="color: #fbbf24; margin-top:25px;">Top 3 액션 아이템</h3>
+            <table style="background: rgba(255,255,255,0.1); color: white;">
+                <tr style="background: rgba(255,255,255,0.2);">
+                    <th style="color: white;">우선순위</th>
+                    <th style="color: white;">액션</th>
+                    <th style="color: white;">대상 브랜드</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>자극/트러블 이슈 사전 관리 (민감피부 주의 안내)</td>
+                    <td>브링그린, 아누아, 아비브</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>효능 체감 강화 마케팅 ("72시간 보습" 등 구체적 소구)</td>
+                    <td>토리든, 독도토너</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>시즌별 타겟 마케팅 (겨울-보습, 여름-진정)</td>
+                    <td>전 브랜드</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 부록 -->
+        <section>
+            <h2>부록: 분석 방법론</h2>
+
+            <h3>데이터 소스</h3>
+            <ul>
+                <li>수집 기간: 2024.12 ~ 2026.01 (14개월)</li>
+                <li>총 리뷰 수: 27,745건</li>
+                <li>분석 브랜드: 7개 (토리든, 브링그린, 독도토너, 아누아, 에스네이처, 토니모리, 아비브)</li>
+            </ul>
+
+            <h3>분석 방법</h3>
+            <table>
+                <tr>
+                    <th>분석 항목</th>
+                    <th>방법</th>
+                </tr>
+                <tr>
+                    <td>감성 분석</td>
+                    <td>별점 기반 1차 판정 + 키워드 보정 (긍정/중립/부정)</td>
+                </tr>
+                <tr>
+                    <td>태그 추출</td>
+                    <td>키워드 딕셔너리 매칭 (효능/사용감/사용법/가치 4축)</td>
+                </tr>
+                <tr>
+                    <td>Pain Point</td>
+                    <td>저평점(1-2점) 리뷰에서 불만 키워드 추출</td>
+                </tr>
+                <tr>
+                    <td>재구매/이탈</td>
+                    <td>충성/재구매/이탈 키워드 탐지</td>
+                </tr>
+                <tr>
+                    <td>AI 보정</td>
+                    <td>GPT-4o-mini로 애매한 리뷰 재분석 (샘플링)</td>
+                </tr>
+            </table>
+
+            <h3>사용 도구</h3>
+            <ul>
+                <li>Python 3.12, Pandas, Matplotlib, Seaborn</li>
+                <li>OpenAI GPT-4o-mini API (감성 분석 보정)</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>올리브영 토너 리뷰 분석 보고서</strong></p>
+        <p>Generated by Review Analysis System | 2026-01-27</p>
+        <p style="margin-top:10px; opacity:0.7;">이 보고서는 리뷰 데이터 기반 분석 결과이며, 실제 비즈니스 의사결정 시 추가 검증이 필요합니다.</p>
+    </footer>
+</body>
+</html>

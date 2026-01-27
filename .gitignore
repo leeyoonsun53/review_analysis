@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+config/.env
+
+# Output files (optional - uncomment if you don't want to track)
+# output/
+# docs/*.pptx
+# docs/*.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Office temp files
+~$*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log

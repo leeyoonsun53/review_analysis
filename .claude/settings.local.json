@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command:*)",
+      "Bash(python:*)",
+      "Bash(chcp 65001)",
+      "Bash(dir:*)",
+      "Bash(chcp:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
