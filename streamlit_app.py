@@ -604,6 +604,7 @@ def main():
                 skin_neg = skin_data.groupby('SKIN_TYPE').apply(
                     lambda x: (x['sentiment'] == 'NEG').mean() * 100
                 ).reset_index(name='NEG비율')
+                skin_neg.columns = ['피부타입', 'NEG비율']
 
                 fig = px.bar(skin_neg, x='피부타입', y='NEG비율',
                              title='피부타입별 부정 비율 (%)',
