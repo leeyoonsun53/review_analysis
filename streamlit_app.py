@@ -158,6 +158,24 @@ def main():
     else:
         df_filtered = df
 
+    # 날짜 범위 필터
+    valid_dates = df_filtered['review_date'].dropna()
+    if len(valid_dates) > 0:
+        min_date = valid_dates.min().date()
+        max_date = valid_dates.max().date()
+
+        date_range = st.sidebar.date_input(
+            "리뷰 날짜 범위",
+            value=(min_date, max_date),
+            min_value=min_date,
+            max_value=max_date
+        )
+
+        if len(date_range) == 2:
+            start_date, end_date = date_range
+            mask = (df_filtered['review_date'].dt.date >= start_date) & (df_filtered['review_date'].dt.date <= end_date)
+            df_filtered = df_filtered[mask]
+
     # 브랜드 필터
     all_brands = sorted(df_filtered['BRAND_NAME'].unique())
     selected_brands = st.sidebar.multiselect(
