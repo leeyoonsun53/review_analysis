@@ -241,7 +241,12 @@ def main():
 
     with col2:
         brand_sentiment = df_filtered.groupby('BRAND_NAME')['sentiment'].value_counts(normalize=True).unstack() * 100
-        brand_sentiment = brand_sentiment.fillna(0).reset_index()
+        brand_sentiment = brand_sentiment.fillna(0)
+        # 누락된 감성 컬럼 추가
+        for col in ['POS', 'NEU', 'NEG']:
+            if col not in brand_sentiment.columns:
+                brand_sentiment[col] = 0
+        brand_sentiment = brand_sentiment.reset_index()
 
         fig = px.bar(brand_sentiment, x='BRAND_NAME', y=['POS', 'NEU', 'NEG'],
                      title='브랜드별 감성 비율 (%)',
@@ -589,6 +594,10 @@ def main():
         with col1:
             platform_sentiment = df_filtered.groupby('PLATFORM')['sentiment'].value_counts(normalize=True).unstack() * 100
             platform_sentiment = platform_sentiment.fillna(0)
+            # 누락된 감성 컬럼 추가
+            for col in ['POS', 'NEU', 'NEG']:
+                if col not in platform_sentiment.columns:
+                    platform_sentiment[col] = 0
 
             fig = px.bar(platform_sentiment.reset_index(),
                          x='PLATFORM', y=['POS', 'NEU', 'NEG'],
