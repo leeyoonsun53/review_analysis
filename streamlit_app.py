@@ -46,6 +46,46 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+
+# ===== 리뷰 표시 헬퍼 함수 =====
+def display_review_card(row):
+    """리뷰 카드 표시 (감성, 리뷰어 정보 포함)"""
+    platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
+    date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
+
+    # 감성 뱃지
+    sentiment = row.get('sentiment', 'NEU')
+    sentiment_badge = {'POS': '🟢긍정', 'NEU': '⚪중립', 'NEG': '🔴부정'}.get(sentiment, '⚪중립')
+
+    # 리뷰어 정보 구성
+    reviewer_info_parts = []
+    if pd.notna(row.get('SKIN_TYPE')) and row['SKIN_TYPE']:
+        reviewer_info_parts.append(f"피부타입: {row['SKIN_TYPE']}")
+    if pd.notna(row.get('SKIN_TONE')) and row['SKIN_TONE']:
+        reviewer_info_parts.append(f"피부톤: {row['SKIN_TONE']}")
+    if pd.notna(row.get('SKIN_CONCERNS')) and row['SKIN_CONCERNS']:
+        concerns = row['SKIN_CONCERNS']
+        if isinstance(concerns, str) and len(concerns) > 30:
+            concerns = concerns[:30] + "..."
+        reviewer_info_parts.append(f"고민: {concerns}")
+    if pd.notna(row.get('REVIEWER_INFO')) and row['REVIEWER_INFO']:
+        reviewer_info_parts.append(f"{row['REVIEWER_INFO']}")
+
+    reviewer_info_str = " | ".join(reviewer_info_parts) if reviewer_info_parts else ""
+
+    # 헤더 라인
+    st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str} | {sentiment_badge}")
+
+    # 리뷰어 정보
+    if reviewer_info_str:
+        st.caption(f"👤 {reviewer_info_str}")
+
+    # 리뷰 내용
+    content = str(row['REVIEW_CONTENT']) if pd.notna(row['REVIEW_CONTENT']) else ''
+    st.markdown(f"> {content[:300]}{'...' if len(content) > 300 else ''}")
+    st.markdown("---")
+
+
 # ===== 데이터 로드 =====
 @st.cache_data
 def load_data():
@@ -345,13 +385,8 @@ def main():
                                 lambda x: pain in x if isinstance(x, list) else False
                             )
                             matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
-
                             for _, row in matched_reviews.iterrows():
-                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
-                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
-                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
-                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
-                                st.markdown("---")
+                                display_review_card(row)
                 with col2:
                     for i, (pain, cnt) in enumerate(top_pains[10:20], 11):
                         with st.expander(f"**{i}.** {pain} ({cnt}건)"):
@@ -360,13 +395,8 @@ def main():
                                 lambda x: pain in x if isinstance(x, list) else False
                             )
                             matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
-
                             for _, row in matched_reviews.iterrows():
-                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
-                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
-                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
-                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
-                                st.markdown("---")
+                                display_review_card(row)
 
     # ===== Positive Points 분석 (GPT 카테고리) =====
     st.markdown('<p class="section-header">😊 Positive Points 분석</p>', unsafe_allow_html=True)
@@ -456,13 +486,8 @@ def main():
                                 lambda x: p in x if isinstance(x, list) else False
                             )
                             matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
-
                             for _, row in matched_reviews.iterrows():
-                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
-                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
-                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
-                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
-                                st.markdown("---")
+                                display_review_card(row)
                 with col2:
                     for i, (p, cnt) in enumerate(top_pos[10:20], 11):
                         with st.expander(f"**{i}.** {p} ({cnt}건)"):
@@ -471,13 +496,8 @@ def main():
                                 lambda x: p in x if isinstance(x, list) else False
                             )
                             matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
-
                             for _, row in matched_reviews.iterrows():
-                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
-                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
-                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
-                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
-                                st.markdown("---")
+                                display_review_card(row)
 
     # ===== 브랜드 포지셔닝 (태그 기반) =====
     st.markdown('<p class="section-header">🎯 브랜드 포지셔닝</p>', unsafe_allow_html=True)
