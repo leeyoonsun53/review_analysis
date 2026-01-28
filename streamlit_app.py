@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-토너 리뷰 분석 대시보드
-올리브영 + 무신사 통합 버전
+토너 리뷰 분석 대시보드 v3.0
+GPT 분석 기반 통합 버전
 """
 import streamlit as st
 import pandas as pd
 import json
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from collections import Counter
-from datetime import datetime, timedelta
-import sys
 from pathlib import Path
 
 # 페이지 설정
@@ -32,13 +29,6 @@ st.markdown("""
         text-align: center;
         margin-bottom: 1rem;
     }
-    .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1rem;
-        border-radius: 10px;
-        color: white;
-        text-align: center;
-    }
     .section-header {
         font-size: 1.5rem;
         font-weight: bold;
@@ -47,19 +37,11 @@ st.markdown("""
         padding-bottom: 0.5rem;
         margin: 1.5rem 0 1rem 0;
     }
-    .platform-oliveyoung {
-        background-color: #00a862;
-        color: white;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-    }
-    .platform-musinsa {
-        background-color: #000000;
-        color: white;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
+    .subsection-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #555;
+        margin: 1rem 0 0.5rem 0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -67,190 +49,71 @@ st.markdown("""
 # ===== 데이터 로드 =====
 @st.cache_data
 def load_data():
-    """통합 데이터 로드 및 전처리"""
-    # 전처리된 통합 데이터 로드
+    """통합 데이터 및 GPT 분석 결과 로드"""
+    # 기본 리뷰 데이터 로드
     data_path = Path("data/merged_reviews_processed.csv")
-
     if not data_path.exists():
-        # 기존 올리브영 데이터로 폴백
-        json_path = Path("data/올영리뷰데이터_utf8.json")
-        if json_path.exists():
-            with open(json_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            first_key = list(data.keys())[0]
-            df = pd.DataFrame(data[first_key])
-            df['PLATFORM'] = '올리브영'
-        else:
-            st.error("데이터 파일을 찾을 수 없습니다.")
-            return None
-    else:
-        df = pd.read_csv(data_path, encoding='utf-8-sig')
+        st.error("데이터 파일을 찾을 수 없습니다: data/merged_reviews_processed.csv")
+        return None, None
+
+    df = pd.read_csv(data_path, encoding='utf-8-sig')
+
+    # GPT 분석 결과 로드
+    gpt_path = Path("output/gpt_analysis_categorized.json")
+    if not gpt_path.exists():
+        st.warning("GPT 분석 파일을 찾을 수 없습니다. 기본 분석을 사용합니다.")
+        return df, None
+
+    with open(gpt_path, 'r', encoding='utf-8') as f:
+        gpt_data = json.load(f)
+
+    # GPT 분석 데이터를 DataFrame으로 변환
+    gpt_df = pd.DataFrame(gpt_data)
 
     # 날짜 파싱
     df['review_date'] = pd.to_datetime(df['REVIEW_DATE'], errors='coerce')
     df['year_month'] = df['review_date'].dt.to_period('M').astype(str)
 
-    # 감성 분석 (v2.0 로직)
-    df = analyze_sentiment_v2(df)
+    return df, gpt_df
 
-    # 태그 추출
-    df = extract_tags(df)
 
-    return df
+@st.cache_data
+def load_category_stats():
+    """카테고리 통계 로드"""
+    stats_path = Path("output/points_categorized.json")
+    if stats_path.exists():
+        with open(stats_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None
 
-# ===== v2.0 분석 로직 =====
-SKIN_DISEASE_KEYWORDS = [
-    "모낭염", "알러지", "알레르기", "두드러기", "습진", "아토피",
-    "뾰루지", "좁쌀", "여드름", "피부염", "발진", "각질염",
-    "따가움", "화끈거림", "쓰라림", "가려움", "붓기", "부어",
-    "홍조", "붉어짐", "껍질", "벗겨", "진물", "딱지"
-]
 
-ADVERSATIVE_PATTERNS = [
-    "했었으나", "였으나", "었으나", "지만", "는데", "했는데",
-    "였는데", "었는데", "했더니", "써봤는데", "썼는데", "썼더니",
-    "좋았는데", "샀는데", "했다가", "쓰다가", "쓰다보니"
-]
+def merge_gpt_data(df, gpt_df):
+    """GPT 분석 결과를 기본 데이터와 병합"""
+    if gpt_df is None:
+        return df
 
-DISCONTINUE_KEYWORDS = [
-    "중단", "안써", "안쓰", "못써", "못쓰", "버렸", "버림",
-    "폐기", "처분", "던져", "방치", "안바", "그만", "멈춤"
-]
+    # idx 기준으로 병합
+    gpt_cols = ['idx', 'sentiment', 'pain_points', 'positive_points',
+                'benefit_tags', 'texture_tags', 'usage_tags', 'value_tags',
+                'pain_categories', 'positive_categories']
 
-NEGATIVE_KEYWORDS = [
-    "별로", "실망", "안맞", "후회", "싫", "최악", "안좋", "못써", "버림",
-    "환불", "폐기", "실패", "트러블", "뾰루지", "돈아까", "중단", "안써",
-    "그만뒀", "올라왔", "올라와", "생겼", "났어", "났네", "심해졌"
-]
+    gpt_subset = gpt_df[gpt_cols].copy()
+    gpt_subset = gpt_subset.rename(columns={
+        'sentiment': 'gpt_sentiment',
+        'pain_points': 'gpt_pain_points',
+        'positive_points': 'gpt_positive_points',
+        'pain_categories': 'gpt_pain_categories',
+        'positive_categories': 'gpt_positive_categories'
+    })
 
-POSITIVE_KEYWORDS = [
-    "좋아", "최고", "만족", "추천", "대박", "미쳤", "사랑", "짱", "굿", "좋음",
-    "완전", "너무좋", "진짜좋", "최애", "강추", "존좋"
-]
+    # 인덱스로 병합
+    df = df.reset_index(drop=True)
+    df['idx'] = df.index
 
-PAIN_KEYWORDS = {
-    '자극/트러블': ['자극', '따가', '따끔', '트러블', '뾰루지', '올라', '붉', '화끈', '쓰라', '알러지', '예민'],
-    '보습부족': ['건조', '당김', '속건조', '갈라', '각질', '푸석'],
-    '끈적/무거움': ['끈적', '답답', '무거', '기름', '번들', '텁텁'],
-    '효과없음': ['효과없', '모르겠', '별로', '그냥', '평범', '밍밍', '애매'],
-    '향/냄새': ['향', '냄새', '냄시', '알코올'],
-    '가격': ['비싸', '가격', '비쌈'],
-}
+    merged = df.merge(gpt_subset, on='idx', how='left')
 
-BENEFIT_KEYWORDS = {
-    "진정": ["어성초", "트러블", "붉은기", "진정", "쿨링", "가라앉", "자극없", "순한", "민감"],
-    "보습": ["속건조", "수분", "당김", "보습", "촉촉", "건조", "수분감"],
-    "장벽": ["장벽", "시카", "회복", "재생", "마데카", "피부장벽"],
-    "결": ["각질", "피부결", "매끈", "결정돈", "부드러"],
-    "피지": ["지성", "번들", "기름", "유분", "피지", "산뜻"]
-}
+    return merged
 
-def check_skin_disease(text):
-    text = str(text).lower()
-    found = []
-    for kw in SKIN_DISEASE_KEYWORDS:
-        if kw in text:
-            found.append(kw)
-    return found
-
-IMPROVEMENT_PATTERNS = [
-    "들어가", "들어갔", "없어", "사라", "좋아졌", "나아", "진정됐", "진정됬",
-    "진정되", "가라앉", "줄었", "줄어", "완화", "개선", "호전", "깨끗",
-    "맑아", "좋아요", "좋아서", "추천", "잘맞", "잘 맞", "피부에 좋"
-]
-
-def is_skin_issue_improvement(text):
-    text = str(text).lower()
-    for pattern in IMPROVEMENT_PATTERNS:
-        if pattern in text:
-            return True
-    return False
-
-def check_discontinue(text):
-    text = str(text).lower()
-    for kw in DISCONTINUE_KEYWORDS:
-        if kw in text:
-            return True
-    return False
-
-def has_adversative_negative(text):
-    text = str(text).lower()
-    for pattern in ADVERSATIVE_PATTERNS:
-        if pattern in text:
-            parts = text.split(pattern, 1)
-            if len(parts) == 2:
-                after = parts[1]
-                for kw in DISCONTINUE_KEYWORDS + NEGATIVE_KEYWORDS:
-                    if kw in after:
-                        return True
-    return False
-
-def analyze_sentiment_v2(df):
-    """v2.0 감성 분석"""
-    def get_sentiment(row):
-        text = str(row['REVIEW_CONTENT']).lower()
-        rating = row['REVIEW_RATING']
-
-        skin_issues = check_skin_disease(text)
-        if skin_issues:
-            if not is_skin_issue_improvement(text):
-                return "NEG"
-
-        if check_discontinue(text):
-            return "NEG"
-        if has_adversative_negative(text):
-            return "NEG"
-
-        neg_count = sum(1 for w in NEGATIVE_KEYWORDS if w in text)
-        pos_count = sum(1 for w in POSITIVE_KEYWORDS if w in text)
-
-        if rating >= 4:
-            base = "POS"
-        elif rating <= 2:
-            base = "NEG"
-        else:
-            base = "NEU"
-
-        if neg_count >= 2 and base == "POS":
-            return "NEU"
-        if neg_count > pos_count and neg_count >= 2:
-            return "NEG"
-
-        return base
-
-    df['sentiment'] = df.apply(get_sentiment, axis=1)
-    df['has_skin_issue'] = df['REVIEW_CONTENT'].apply(
-        lambda x: len(check_skin_disease(str(x))) > 0 and not is_skin_issue_improvement(str(x))
-    )
-
-    return df
-
-def extract_tags(df):
-    """태그 추출"""
-    def get_pain_points(text):
-        text = str(text).lower()
-        found = []
-        for cat, keywords in PAIN_KEYWORDS.items():
-            for kw in keywords:
-                if kw in text:
-                    found.append(cat)
-                    break
-        return found
-
-    def get_benefits(text):
-        text = str(text).lower()
-        found = []
-        for cat, keywords in BENEFIT_KEYWORDS.items():
-            for kw in keywords:
-                if kw in text:
-                    found.append(cat)
-                    break
-        return found
-
-    df['pain_points'] = df['REVIEW_CONTENT'].apply(get_pain_points)
-    df['benefits'] = df['REVIEW_CONTENT'].apply(get_benefits)
-
-    return df
 
 # ===== 메인 앱 =====
 def main():
@@ -258,16 +121,27 @@ def main():
     st.markdown('<p class="main-header">🧴 토너 리뷰 분석 대시보드</p>', unsafe_allow_html=True)
 
     # 데이터 로드
-    df = load_data()
+    df, gpt_df = load_data()
+    category_stats = load_category_stats()
 
     if df is None:
         st.stop()
 
-    # 플랫폼 정보 표시
+    # GPT 데이터 병합
+    df = merge_gpt_data(df, gpt_df)
+
+    # GPT 감성이 있으면 사용, 없으면 기본 sentiment
+    if 'gpt_sentiment' in df.columns:
+        df['sentiment'] = df['gpt_sentiment'].fillna('NEU')
+        analysis_type = "GPT-4o-mini"
+    else:
+        analysis_type = "키워드 기반"
+
+    # 플랫폼 정보
     platforms = df['PLATFORM'].unique().tolist()
     total_reviews = len(df)
     platform_info = " | ".join([f"{p}: {len(df[df['PLATFORM']==p]):,}건" for p in platforms])
-    st.markdown(f'<p style="text-align: center; color: gray;">v2.0 | {platform_info} | 총 {total_reviews:,}건</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="text-align: center; color: gray;">v3.0 ({analysis_type} 분석) | {platform_info} | 총 {total_reviews:,}건</p>', unsafe_allow_html=True)
 
     # ===== 사이드바 필터 =====
     st.sidebar.header("🔍 필터")
@@ -284,24 +158,6 @@ def main():
     else:
         df_filtered = df
 
-    # 날짜 범위 필터
-    valid_dates = df_filtered['review_date'].dropna()
-    if len(valid_dates) > 0:
-        min_date = valid_dates.min().date()
-        max_date = valid_dates.max().date()
-
-        date_range = st.sidebar.date_input(
-            "리뷰 날짜 범위",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date
-        )
-
-        if len(date_range) == 2:
-            start_date, end_date = date_range
-            mask = (df_filtered['review_date'].dt.date >= start_date) & (df_filtered['review_date'].dt.date <= end_date)
-            df_filtered = df_filtered[mask]
-
     # 브랜드 필터
     all_brands = sorted(df_filtered['BRAND_NAME'].unique())
     selected_brands = st.sidebar.multiselect(
@@ -313,15 +169,17 @@ def main():
     if selected_brands:
         df_filtered = df_filtered[df_filtered['BRAND_NAME'].isin(selected_brands)]
 
+    # 감성 필터
+    sentiment_options = ['전체', 'POS (긍정)', 'NEU (중립)', 'NEG (부정)']
+    selected_sentiment = st.sidebar.selectbox("감성 필터", sentiment_options)
+
+    if selected_sentiment != '전체':
+        sentiment_code = selected_sentiment.split(' ')[0]
+        df_filtered = df_filtered[df_filtered['sentiment'] == sentiment_code]
+
     # 필터 결과 표시
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"**필터링된 리뷰: {len(df_filtered):,}건**")
-
-    # 플랫폼별 통계
-    if len(selected_platforms) > 1:
-        for p in selected_platforms:
-            cnt = len(df_filtered[df_filtered['PLATFORM'] == p])
-            st.sidebar.markdown(f"  - {p}: {cnt:,}건")
 
     # ===== 주요 지표 =====
     st.markdown('<p class="section-header">📊 주요 지표</p>', unsafe_allow_html=True)
@@ -344,55 +202,323 @@ def main():
         st.metric("부정 비율", f"{neg_rate:.1f}%")
 
     with col5:
-        skin_rate = df_filtered['has_skin_issue'].mean() * 100
-        st.metric("피부질병 언급", f"{skin_rate:.1f}%")
+        neu_rate = (df_filtered['sentiment'] == 'NEU').mean() * 100
+        st.metric("중립 비율", f"{neu_rate:.1f}%")
 
-    # ===== 플랫폼 비교 (2개 이상 선택 시) =====
-    if len(selected_platforms) >= 2:
-        st.markdown('<p class="section-header">🏪 플랫폼 비교</p>', unsafe_allow_html=True)
+    # ===== 감성 분석 (GPT 기반) =====
+    st.markdown('<p class="section-header">💭 감성 분석 (GPT 기반)</p>', unsafe_allow_html=True)
 
+    col1, col2 = st.columns(2)
+
+    with col1:
+        sentiment_counts = df_filtered['sentiment'].value_counts().reset_index()
+        sentiment_counts.columns = ['감성', '건수']
+
+        colors = {'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'}
+        fig = px.pie(sentiment_counts, values='건수', names='감성',
+                     title='감성 분포',
+                     color='감성',
+                     color_discrete_map=colors)
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col2:
+        brand_sentiment = df_filtered.groupby('BRAND_NAME')['sentiment'].value_counts(normalize=True).unstack() * 100
+        brand_sentiment = brand_sentiment.fillna(0).reset_index()
+
+        fig = px.bar(brand_sentiment, x='BRAND_NAME', y=['POS', 'NEU', 'NEG'],
+                     title='브랜드별 감성 비율 (%)',
+                     color_discrete_map=colors,
+                     barmode='stack')
+        fig.update_layout(xaxis_title='브랜드', yaxis_title='비율 (%)', legend_title='감성')
+        st.plotly_chart(fig, use_container_width=True)
+
+    # ===== Pain Points 분석 (GPT 카테고리) =====
+    st.markdown('<p class="section-header">😣 Pain Points 분석</p>', unsafe_allow_html=True)
+
+    if 'gpt_pain_categories' in df_filtered.columns:
+        # 전체 Pain 카테고리 분포
+        all_pain_cats = []
+        for cats in df_filtered['gpt_pain_categories'].dropna():
+            if isinstance(cats, list):
+                all_pain_cats.extend([c for c in cats if c != '기타'])
+
+        if all_pain_cats:
+            col1, col2 = st.columns(2)
+
+            with col1:
+                pain_counts = Counter(all_pain_cats)
+                pain_df = pd.DataFrame(pain_counts.items(), columns=['카테고리', '건수'])
+                pain_df = pain_df.sort_values('건수', ascending=True)
+
+                fig = px.bar(pain_df, x='건수', y='카테고리', orientation='h',
+                             title='Pain Point 카테고리 분포',
+                             color='건수',
+                             color_continuous_scale='Reds')
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                # 브랜드별 Pain 카테고리
+                brand_pain_data = []
+                for brand in selected_brands:
+                    brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+                    brand_pains = []
+                    for cats in brand_df['gpt_pain_categories'].dropna():
+                        if isinstance(cats, list):
+                            brand_pains.extend([c for c in cats if c != '기타'])
+
+                    if brand_pains:
+                        pain_counts = Counter(brand_pains)
+                        total = len(brand_df)
+                        for cat, cnt in pain_counts.items():
+                            brand_pain_data.append({
+                                '브랜드': brand,
+                                '카테고리': cat,
+                                '비율': cnt / total * 100
+                            })
+
+                if brand_pain_data:
+                    bp_df = pd.DataFrame(brand_pain_data)
+                    pivot = bp_df.pivot(index='브랜드', columns='카테고리', values='비율').fillna(0)
+
+                    fig = px.imshow(pivot,
+                                    title='브랜드별 Pain Point 히트맵 (%)',
+                                    color_continuous_scale='Reds',
+                                    aspect='auto')
+                    st.plotly_chart(fig, use_container_width=True)
+
+            # TOP Pain Points 리스트
+            st.markdown('<p class="subsection-header">TOP 20 Pain Points (원문)</p>', unsafe_allow_html=True)
+
+            all_pains = []
+            for pains in df_filtered['gpt_pain_points'].dropna():
+                if isinstance(pains, list):
+                    all_pains.extend(pains)
+
+            if all_pains:
+                pain_counter = Counter(all_pains)
+                top_pains = pain_counter.most_common(20)
+
+                col1, col2 = st.columns(2)
+                with col1:
+                    for i, (pain, cnt) in enumerate(top_pains[:10], 1):
+                        st.markdown(f"**{i}.** {pain} ({cnt}건)")
+                with col2:
+                    for i, (pain, cnt) in enumerate(top_pains[10:20], 11):
+                        st.markdown(f"**{i}.** {pain} ({cnt}건)")
+
+    # ===== Positive Points 분석 (GPT 카테고리) =====
+    st.markdown('<p class="section-header">😊 Positive Points 분석</p>', unsafe_allow_html=True)
+
+    if 'gpt_positive_categories' in df_filtered.columns:
+        # 전체 Positive 카테고리 분포
+        all_pos_cats = []
+        for cats in df_filtered['gpt_positive_categories'].dropna():
+            if isinstance(cats, list):
+                all_pos_cats.extend([c for c in cats if c != '기타'])
+
+        if all_pos_cats:
+            col1, col2 = st.columns(2)
+
+            with col1:
+                pos_counts = Counter(all_pos_cats)
+                pos_df = pd.DataFrame(pos_counts.items(), columns=['카테고리', '건수'])
+                pos_df = pos_df.sort_values('건수', ascending=False).head(15)
+
+                fig = px.bar(pos_df, x='카테고리', y='건수',
+                             title='Positive Point 카테고리 분포 (TOP 15)',
+                             color='건수',
+                             color_continuous_scale='Greens')
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                # 브랜드별 Positive 레이더 차트
+                brand_pos_data = []
+                top_cats = pos_df['카테고리'].tolist()[:8]  # 상위 8개 카테고리
+
+                for brand in selected_brands:
+                    brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+                    brand_pos = []
+                    for cats in brand_df['gpt_positive_categories'].dropna():
+                        if isinstance(cats, list):
+                            brand_pos.extend([c for c in cats if c != '기타'])
+
+                    if brand_pos:
+                        pos_counts = Counter(brand_pos)
+                        total = len(brand_df)
+                        row = {'브랜드': brand}
+                        for cat in top_cats:
+                            row[cat] = pos_counts.get(cat, 0) / total * 100
+                        brand_pos_data.append(row)
+
+                if brand_pos_data:
+                    bp_df = pd.DataFrame(brand_pos_data)
+
+                    fig = go.Figure()
+                    for _, row in bp_df.iterrows():
+                        values = [row[cat] for cat in top_cats]
+                        values.append(values[0])
+
+                        fig.add_trace(go.Scatterpolar(
+                            r=values,
+                            theta=top_cats + [top_cats[0]],
+                            fill='toself',
+                            name=row['브랜드'],
+                            opacity=0.6
+                        ))
+
+                    fig.update_layout(
+                        polar=dict(radialaxis=dict(visible=True)),
+                        title='브랜드별 강점 레이더 차트',
+                        showlegend=True
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+
+            # TOP Positive Points 리스트
+            st.markdown('<p class="subsection-header">TOP 20 Positive Points (원문)</p>', unsafe_allow_html=True)
+
+            all_pos = []
+            for pos in df_filtered['gpt_positive_points'].dropna():
+                if isinstance(pos, list):
+                    all_pos.extend(pos)
+
+            if all_pos:
+                pos_counter = Counter(all_pos)
+                top_pos = pos_counter.most_common(20)
+
+                col1, col2 = st.columns(2)
+                with col1:
+                    for i, (p, cnt) in enumerate(top_pos[:10], 1):
+                        st.markdown(f"**{i}.** {p} ({cnt}건)")
+                with col2:
+                    for i, (p, cnt) in enumerate(top_pos[10:20], 11):
+                        st.markdown(f"**{i}.** {p} ({cnt}건)")
+
+    # ===== 브랜드 포지셔닝 (태그 기반) =====
+    st.markdown('<p class="section-header">🎯 브랜드 포지셔닝</p>', unsafe_allow_html=True)
+
+    if 'benefit_tags' in df_filtered.columns:
         col1, col2 = st.columns(2)
 
         with col1:
-            # 플랫폼별 감성 비율
-            platform_sentiment = df_filtered.groupby('PLATFORM')['sentiment'].value_counts(normalize=True).unstack() * 100
-            platform_sentiment = platform_sentiment.fillna(0)
+            # 효능 태그 포지셔닝
+            st.markdown('<p class="subsection-header">효능 태그</p>', unsafe_allow_html=True)
 
-            fig = px.bar(platform_sentiment.reset_index(),
-                         x='PLATFORM', y=['POS', 'NEU', 'NEG'],
-                         title='플랫폼별 감성 분포 (%)',
-                         barmode='group',
-                         color_discrete_map={'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'})
-            fig.update_layout(xaxis_title='플랫폼', yaxis_title='비율 (%)', legend_title='감성')
-            st.plotly_chart(fig, use_container_width=True)
+            benefit_data = []
+            benefit_cats = ['진정', '보습', '장벽', '결', '피지']
+
+            for brand in selected_brands:
+                brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+                all_benefits = []
+                for tags in brand_df['benefit_tags'].dropna():
+                    if isinstance(tags, list):
+                        all_benefits.extend(tags)
+
+                if all_benefits:
+                    tag_counts = Counter(all_benefits)
+                    total = len(brand_df)
+                    row = {'브랜드': brand}
+                    for cat in benefit_cats:
+                        row[cat] = tag_counts.get(cat, 0) / total * 100
+                    benefit_data.append(row)
+
+            if benefit_data:
+                b_df = pd.DataFrame(benefit_data)
+
+                fig = go.Figure()
+                for _, row in b_df.iterrows():
+                    values = [row[cat] for cat in benefit_cats]
+                    values.append(values[0])
+
+                    fig.add_trace(go.Scatterpolar(
+                        r=values,
+                        theta=benefit_cats + [benefit_cats[0]],
+                        fill='toself',
+                        name=row['브랜드'],
+                        opacity=0.6
+                    ))
+
+                fig.update_layout(
+                    polar=dict(radialaxis=dict(visible=True)),
+                    title='효능 포지셔닝',
+                    showlegend=True
+                )
+                st.plotly_chart(fig, use_container_width=True)
 
         with col2:
-            # 플랫폼별 평균 평점
-            platform_rating = df_filtered.groupby('PLATFORM')['REVIEW_RATING'].mean().reset_index()
-            platform_rating.columns = ['플랫폼', '평균평점']
+            # 사용감 태그 포지셔닝
+            st.markdown('<p class="subsection-header">사용감 태그</p>', unsafe_allow_html=True)
 
-            fig = px.bar(platform_rating, x='플랫폼', y='평균평점',
-                         title='플랫폼별 평균 평점',
-                         color='평균평점',
-                         color_continuous_scale='Greens')
-            fig.update_layout(yaxis_range=[3.5, 5])
-            st.plotly_chart(fig, use_container_width=True)
+            texture_data = []
+            texture_cats = ['물같음', '쫀쫀', '끈적', '흡수']
 
-        # 공통 브랜드 비교
-        common_brands = df_filtered.groupby(['PLATFORM', 'BRAND_NAME']).size().unstack(fill_value=0)
-        common_brands = common_brands.loc[:, (common_brands > 0).all()].columns.tolist()
+            for brand in selected_brands:
+                brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+                all_textures = []
+                for tags in brand_df['texture_tags'].dropna():
+                    if isinstance(tags, list):
+                        all_textures.extend(tags)
 
-        if common_brands:
-            st.markdown("##### 공통 브랜드 플랫폼별 부정 비율 비교")
-            common_df = df_filtered[df_filtered['BRAND_NAME'].isin(common_brands)]
-            brand_platform_neg = common_df.groupby(['BRAND_NAME', 'PLATFORM']).apply(
-                lambda x: (x['sentiment'] == 'NEG').mean() * 100
-            ).reset_index(name='NEG비율')
+                if all_textures:
+                    tag_counts = Counter(all_textures)
+                    total = len(brand_df)
+                    row = {'브랜드': brand}
+                    for cat in texture_cats:
+                        row[cat] = tag_counts.get(cat, 0) / total * 100
+                    texture_data.append(row)
 
-            fig = px.bar(brand_platform_neg, x='BRAND_NAME', y='NEG비율', color='PLATFORM',
+            if texture_data:
+                t_df = pd.DataFrame(texture_data)
+
+                fig = go.Figure()
+                for _, row in t_df.iterrows():
+                    values = [row[cat] for cat in texture_cats]
+                    values.append(values[0])
+
+                    fig.add_trace(go.Scatterpolar(
+                        r=values,
+                        theta=texture_cats + [texture_cats[0]],
+                        fill='toself',
+                        name=row['브랜드'],
+                        opacity=0.6
+                    ))
+
+                fig.update_layout(
+                    polar=dict(radialaxis=dict(visible=True)),
+                    title='사용감 포지셔닝',
+                    showlegend=True
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+        # 가치 태그 분석
+        st.markdown('<p class="subsection-header">가치 태그 분포</p>', unsafe_allow_html=True)
+
+        value_data = []
+        value_cats = ['가성비', '무난', '인생템', '애매']
+
+        for brand in selected_brands:
+            brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+            all_values = []
+            for tags in brand_df['value_tags'].dropna():
+                if isinstance(tags, list):
+                    all_values.extend(tags)
+
+            if all_values:
+                tag_counts = Counter(all_values)
+                total = len(brand_df)
+                for cat in value_cats:
+                    value_data.append({
+                        '브랜드': brand,
+                        '태그': cat,
+                        '비율': tag_counts.get(cat, 0) / total * 100
+                    })
+
+        if value_data:
+            v_df = pd.DataFrame(value_data)
+
+            fig = px.bar(v_df, x='브랜드', y='비율', color='태그',
+                         title='브랜드별 가치 태그 비율 (%)',
                          barmode='group',
-                         title='공통 브랜드 플랫폼별 NEG 비율 (%)',
-                         color_discrete_sequence=['#00a862', '#000000'])
+                         color_discrete_sequence=['#10b981', '#6b7280', '#f59e0b', '#ef4444'])
             st.plotly_chart(fig, use_container_width=True)
 
     # ===== 브랜드별 분석 =====
@@ -429,89 +555,40 @@ def main():
     # 브랜드별 상세 테이블
     brand_stats = df_filtered.groupby(['BRAND_NAME', 'PLATFORM']).agg({
         'REVIEW_RATING': ['count', 'mean'],
-        'sentiment': lambda x: (x == 'NEG').mean() * 100,
-        'has_skin_issue': lambda x: x.mean() * 100
+        'sentiment': lambda x: (x == 'NEG').mean() * 100
     }).round(2)
-    brand_stats.columns = ['리뷰수', '평균평점', 'NEG비율(%)', '피부질병언급(%)']
+    brand_stats.columns = ['리뷰수', '평균평점', 'NEG비율(%)']
     brand_stats = brand_stats.sort_values('리뷰수', ascending=False)
 
     st.dataframe(brand_stats, use_container_width=True)
 
-    # ===== 감성 분석 =====
-    st.markdown('<p class="section-header">💭 감성 분석</p>', unsafe_allow_html=True)
+    # ===== 플랫폼 비교 =====
+    if len(selected_platforms) >= 2:
+        st.markdown('<p class="section-header">🏪 플랫폼 비교</p>', unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        sentiment_counts = df_filtered['sentiment'].value_counts().reset_index()
-        sentiment_counts.columns = ['감성', '건수']
-
-        colors = {'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'}
-        fig = px.pie(sentiment_counts, values='건수', names='감성',
-                     title='감성 분포',
-                     color='감성',
-                     color_discrete_map=colors)
-        st.plotly_chart(fig, use_container_width=True)
-
-    with col2:
-        brand_sentiment = df_filtered.groupby(['BRAND_NAME', 'sentiment']).size().reset_index(name='count')
-
-        fig = px.bar(brand_sentiment, x='BRAND_NAME', y='count', color='sentiment',
-                     title='브랜드별 감성 분포',
-                     color_discrete_map=colors,
-                     barmode='group')
-        fig.update_layout(xaxis_title='브랜드', yaxis_title='리뷰 수')
-        st.plotly_chart(fig, use_container_width=True)
-
-    # ===== Pain Point 분석 =====
-    st.markdown('<p class="section-header">😣 Pain Point 분석 (저평점 리뷰)</p>', unsafe_allow_html=True)
-
-    low_rating_df = df_filtered[df_filtered['REVIEW_RATING'] <= 2]
-
-    if len(low_rating_df) > 0:
         col1, col2 = st.columns(2)
 
         with col1:
-            all_pains = []
-            for pains in low_rating_df['pain_points']:
-                all_pains.extend(pains)
+            platform_sentiment = df_filtered.groupby('PLATFORM')['sentiment'].value_counts(normalize=True).unstack() * 100
+            platform_sentiment = platform_sentiment.fillna(0)
 
-            if all_pains:
-                pain_counts = Counter(all_pains)
-                pain_df = pd.DataFrame(pain_counts.items(), columns=['Pain Point', '건수'])
-                pain_df = pain_df.sort_values('건수', ascending=True)
-
-                fig = px.bar(pain_df, x='건수', y='Pain Point', orientation='h',
-                             title='Pain Point 빈도',
-                             color='건수',
-                             color_continuous_scale='Reds')
-                st.plotly_chart(fig, use_container_width=True)
+            fig = px.bar(platform_sentiment.reset_index(),
+                         x='PLATFORM', y=['POS', 'NEU', 'NEG'],
+                         title='플랫폼별 감성 분포 (%)',
+                         barmode='group',
+                         color_discrete_map={'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'})
+            st.plotly_chart(fig, use_container_width=True)
 
         with col2:
-            pain_matrix = []
-            for brand in selected_brands:
-                brand_low = low_rating_df[low_rating_df['BRAND_NAME'] == brand]
-                if len(brand_low) > 0:
-                    brand_pains = []
-                    for pains in brand_low['pain_points']:
-                        brand_pains.extend(pains)
-                    pain_counts = Counter(brand_pains)
-                    row = {'브랜드': brand}
-                    for pain in PAIN_KEYWORDS.keys():
-                        row[pain] = pain_counts.get(pain, 0)
-                    pain_matrix.append(row)
+            platform_rating = df_filtered.groupby('PLATFORM')['REVIEW_RATING'].mean().reset_index()
+            platform_rating.columns = ['플랫폼', '평균평점']
 
-            if pain_matrix:
-                pain_df = pd.DataFrame(pain_matrix)
-                pain_df = pain_df.set_index('브랜드')
-
-                fig = px.imshow(pain_df,
-                                title='브랜드별 Pain Point 히트맵',
-                                color_continuous_scale='Reds',
-                                aspect='auto')
-                st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.info("선택한 기간/브랜드에 저평점 리뷰가 없습니다.")
+            fig = px.bar(platform_rating, x='플랫폼', y='평균평점',
+                         title='플랫폼별 평균 평점',
+                         color='평균평점',
+                         color_continuous_scale='Greens')
+            fig.update_layout(yaxis_range=[3.5, 5])
+            st.plotly_chart(fig, use_container_width=True)
 
     # ===== 월별 트렌드 =====
     st.markdown('<p class="section-header">📈 월별 트렌드</p>', unsafe_allow_html=True)
@@ -525,7 +602,6 @@ def main():
                       title='월별 리뷰 수 추이',
                       markers=True,
                       color_discrete_sequence=['#00a862', '#000000'])
-        fig.update_layout(xaxis_title='월', yaxis_title='리뷰 수')
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
@@ -537,53 +613,9 @@ def main():
                       title='월별 부정 비율 추이 (%)',
                       markers=True,
                       color_discrete_sequence=['#00a862', '#000000'])
-        fig.update_layout(xaxis_title='월', yaxis_title='NEG 비율 (%)')
         st.plotly_chart(fig, use_container_width=True)
 
-    # ===== 효능 분석 =====
-    st.markdown('<p class="section-header">✨ 효능 키워드 분석</p>', unsafe_allow_html=True)
-
-    benefit_matrix = []
-    for brand in selected_brands:
-        brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
-        if len(brand_df) > 0:
-            all_benefits = []
-            for benefits in brand_df['benefits']:
-                all_benefits.extend(benefits)
-            benefit_counts = Counter(all_benefits)
-            total = len(brand_df)
-            row = {'브랜드': brand}
-            for benefit in BENEFIT_KEYWORDS.keys():
-                row[benefit] = benefit_counts.get(benefit, 0) / total * 100
-            benefit_matrix.append(row)
-
-    if benefit_matrix:
-        benefit_df = pd.DataFrame(benefit_matrix)
-
-        fig = go.Figure()
-
-        categories = list(BENEFIT_KEYWORDS.keys())
-
-        for i, row in benefit_df.iterrows():
-            values = [row[cat] for cat in categories]
-            values.append(values[0])
-
-            fig.add_trace(go.Scatterpolar(
-                r=values,
-                theta=categories + [categories[0]],
-                fill='toself',
-                name=row['브랜드'],
-                opacity=0.6
-            ))
-
-        fig.update_layout(
-            polar=dict(radialaxis=dict(visible=True, range=[0, max(benefit_df[categories].max())])),
-            title='브랜드별 효능 포지셔닝',
-            showlegend=True
-        )
-        st.plotly_chart(fig, use_container_width=True)
-
-    # ===== 피부타입별 분석 (통합 데이터) =====
+    # ===== 피부타입별 분석 =====
     if 'SKIN_TYPE' in df_filtered.columns:
         st.markdown('<p class="section-header">🧬 피부타입별 분석</p>', unsafe_allow_html=True)
 
@@ -612,73 +644,26 @@ def main():
                              color_continuous_scale='RdYlGn_r')
                 st.plotly_chart(fig, use_container_width=True)
 
-    # ===== 무신사 평가 데이터 분석 =====
+    # ===== 무신사 평가 데이터 =====
     if '무신사' in selected_platforms and 'EVAL_MOISTURE' in df_filtered.columns:
         ms_data = df_filtered[df_filtered['PLATFORM'] == '무신사']
         ms_with_eval = ms_data[ms_data['EVAL_MOISTURE'].notna()]
 
         if len(ms_with_eval) > 0:
-            st.markdown('<p class="section-header">⚫ 무신사 평가 데이터 (보습력/흡수력/자극도)</p>', unsafe_allow_html=True)
-            st.caption(f"평가 데이터가 있는 리뷰: {len(ms_with_eval):,}건 / 무신사 전체 {len(ms_data):,}건")
+            st.markdown('<p class="section-header">⚫ 무신사 평가 데이터</p>', unsafe_allow_html=True)
+            st.caption(f"평가 데이터가 있는 리뷰: {len(ms_with_eval):,}건")
 
-            col1, col2, col3 = st.columns(3)
-
-            rating_labels = {5: '매우좋음', 4: '좋음', 3: '보통', 2: '나쁨', 1: '매우나쁨'}
-
-            with col1:
-                moisture_dist = ms_with_eval['EVAL_MOISTURE'].value_counts().sort_index(ascending=False).reset_index()
-                moisture_dist.columns = ['평점', '건수']
-                moisture_dist['라벨'] = moisture_dist['평점'].map(rating_labels)
-
-                fig = px.bar(moisture_dist, x='라벨', y='건수',
-                             title='보습력 평가 분포',
-                             color='평점',
-                             color_continuous_scale='Blues')
-                st.plotly_chart(fig, use_container_width=True)
-
-            with col2:
-                absorption_dist = ms_with_eval['EVAL_ABSORPTION'].dropna().value_counts().sort_index(ascending=False).reset_index()
-                absorption_dist.columns = ['평점', '건수']
-                absorption_dist['라벨'] = absorption_dist['평점'].map(rating_labels)
-
-                fig = px.bar(absorption_dist, x='라벨', y='건수',
-                             title='흡수력 평가 분포',
-                             color='평점',
-                             color_continuous_scale='Greens')
-                st.plotly_chart(fig, use_container_width=True)
-
-            with col3:
-                irritation_dist = ms_with_eval['EVAL_IRRITATION'].dropna().value_counts().sort_index(ascending=False).reset_index()
-                irritation_dist.columns = ['평점', '건수']
-                irritation_labels = {5: '전혀없음', 4: '거의없음', 3: '보통', 2: '조금있음', 1: '많음'}
-                irritation_dist['라벨'] = irritation_dist['평점'].map(irritation_labels)
-
-                fig = px.bar(irritation_dist, x='라벨', y='건수',
-                             title='자극도 평가 분포',
-                             color='평점',
-                             color_continuous_scale='RdYlGn')
-                st.plotly_chart(fig, use_container_width=True)
-
-            # 브랜드별 평가 평균
-            st.markdown("##### 브랜드별 평가 평균")
-
-            brand_eval = ms_with_eval.groupby('BRAND_NAME').agg({
-                'EVAL_MOISTURE': 'mean',
-                'EVAL_ABSORPTION': 'mean',
-                'EVAL_IRRITATION': 'mean',
-                'REVIEW_RATING': 'count'
-            }).round(2)
-            brand_eval.columns = ['보습력', '흡수력', '자극도(높을수록 순함)', '평가수']
-            brand_eval = brand_eval.sort_values('평가수', ascending=False)
-
-            st.dataframe(brand_eval, use_container_width=True)
-
-            # 레이더 차트로 브랜드별 비교
             col1, col2 = st.columns(2)
 
             with col1:
-                fig = go.Figure()
+                brand_eval = ms_with_eval.groupby('BRAND_NAME').agg({
+                    'EVAL_MOISTURE': 'mean',
+                    'EVAL_ABSORPTION': 'mean',
+                    'EVAL_IRRITATION': 'mean'
+                }).round(2)
+                brand_eval.columns = ['보습력', '흡수력', '자극도(높을수록 순함)']
 
+                fig = go.Figure()
                 for brand in brand_eval.index:
                     row = brand_eval.loc[brand]
                     values = [row['보습력'], row['흡수력'], row['자극도(높을수록 순함)']]
@@ -694,48 +679,42 @@ def main():
 
                 fig.update_layout(
                     polar=dict(radialaxis=dict(visible=True, range=[1, 5])),
-                    title='브랜드별 평가 비교 (무신사)',
+                    title='브랜드별 평가 비교',
                     showlegend=True
                 )
                 st.plotly_chart(fig, use_container_width=True)
 
             with col2:
-                # 평가 점수와 별점 상관관계
-                eval_rating_corr = ms_with_eval[['EVAL_MOISTURE', 'EVAL_ABSORPTION', 'EVAL_IRRITATION', 'REVIEW_RATING']].corr()
-
-                fig = px.imshow(eval_rating_corr,
-                                title='평가 항목 간 상관관계',
-                                color_continuous_scale='RdBu',
-                                aspect='auto',
-                                text_auto='.2f')
-                st.plotly_chart(fig, use_container_width=True)
+                st.dataframe(brand_eval, use_container_width=True)
 
     # ===== 샘플 리뷰 =====
     st.markdown('<p class="section-header">📝 샘플 리뷰</p>', unsafe_allow_html=True)
 
-    review_type = st.radio("리뷰 유형", ["부정 리뷰 (NEG)", "긍정 리뷰 (POS)", "피부질병 언급"], horizontal=True)
+    review_type = st.radio("리뷰 유형", ["부정 리뷰 (NEG)", "긍정 리뷰 (POS)", "중립 리뷰 (NEU)"], horizontal=True)
 
-    if review_type == "부정 리뷰 (NEG)":
-        sample_df = df_filtered[df_filtered['sentiment'] == 'NEG'].head(10)
-    elif review_type == "긍정 리뷰 (POS)":
-        sample_df = df_filtered[df_filtered['sentiment'] == 'POS'].head(10)
-    else:
-        sample_df = df_filtered[df_filtered['has_skin_issue']].head(10)
+    sentiment_map = {"부정 리뷰 (NEG)": "NEG", "긍정 리뷰 (POS)": "POS", "중립 리뷰 (NEU)": "NEU"}
+    selected_sent = sentiment_map[review_type]
+    sample_df = df_filtered[df_filtered['sentiment'] == selected_sent].head(10)
 
     for _, row in sample_df.iterrows():
         platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
         with st.expander(f"{platform_badge} [{row['PLATFORM']}] {row['BRAND_NAME']} ⭐{row['REVIEW_RATING']} - {row['sentiment']}"):
             st.write(row['REVIEW_CONTENT'])
-            if pd.notna(row.get('review_date')):
-                st.caption(f"날짜: {row['review_date'].strftime('%Y-%m-%d')}")
+
+            # GPT 분석 결과 표시
+            if 'gpt_pain_points' in row and isinstance(row['gpt_pain_points'], list) and row['gpt_pain_points']:
+                st.markdown(f"**Pain Points:** {', '.join(row['gpt_pain_points'])}")
+            if 'gpt_positive_points' in row and isinstance(row['gpt_positive_points'], list) and row['gpt_positive_points']:
+                st.markdown(f"**Positive Points:** {', '.join(row['gpt_positive_points'])}")
 
     # ===== 푸터 =====
     st.markdown("---")
     st.markdown(
-        f'<p style="text-align: center; color: gray;">토너 리뷰 분석 대시보드 v2.0 | '
-        f'올리브영 + 무신사 통합 | 총 {len(df):,}건 리뷰</p>',
+        f'<p style="text-align: center; color: gray;">토너 리뷰 분석 대시보드 v3.0 (GPT-4o-mini 분석) | '
+        f'총 {len(df):,}건 리뷰</p>',
         unsafe_allow_html=True
     )
+
 
 if __name__ == "__main__":
     main()
