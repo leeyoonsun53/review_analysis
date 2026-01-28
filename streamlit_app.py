@@ -176,13 +176,28 @@ def main():
             mask = (df_filtered['review_date'].dt.date >= start_date) & (df_filtered['review_date'].dt.date <= end_date)
             df_filtered = df_filtered[mask]
 
-    # 브랜드 필터
+    # 브랜드 필터 (session_state로 선택 유지)
     all_brands = sorted(df_filtered['BRAND_NAME'].unique())
+
+    # 첫 로드시에만 전체 브랜드 선택, 이후에는 유효한 브랜드만 유지
+    if 'selected_brands' not in st.session_state:
+        st.session_state.selected_brands = all_brands
+    else:
+        # 현재 유효한 브랜드 중에서 이전 선택 유지
+        st.session_state.selected_brands = [b for b in st.session_state.selected_brands if b in all_brands]
+        # 선택된 브랜드가 없으면 전체 선택
+        if not st.session_state.selected_brands:
+            st.session_state.selected_brands = all_brands
+
     selected_brands = st.sidebar.multiselect(
         "브랜드 선택",
         options=all_brands,
-        default=all_brands
+        default=st.session_state.selected_brands,
+        key="brand_multiselect"
     )
+
+    # 선택 상태 저장
+    st.session_state.selected_brands = selected_brands
 
     if selected_brands:
         df_filtered = df_filtered[df_filtered['BRAND_NAME'].isin(selected_brands)]
@@ -309,8 +324,8 @@ def main():
                                     aspect='auto')
                     st.plotly_chart(fig, use_container_width=True)
 
-            # TOP Pain Points 리스트
-            st.markdown('<p class="subsection-header">TOP 20 Pain Points (원문)</p>', unsafe_allow_html=True)
+            # TOP Pain Points 리스트 (클릭하면 원문 리뷰 표시)
+            st.markdown('<p class="subsection-header">TOP 20 Pain Points (클릭하여 원문 보기)</p>', unsafe_allow_html=True)
 
             all_pains = []
             for pains in df_filtered['gpt_pain_points'].dropna():
@@ -324,10 +339,34 @@ def main():
                 col1, col2 = st.columns(2)
                 with col1:
                     for i, (pain, cnt) in enumerate(top_pains[:10], 1):
-                        st.markdown(f"**{i}.** {pain} ({cnt}건)")
+                        with st.expander(f"**{i}.** {pain} ({cnt}건)"):
+                            # 해당 키워드가 포함된 리뷰 찾기
+                            mask = df_filtered['gpt_pain_points'].apply(
+                                lambda x: pain in x if isinstance(x, list) else False
+                            )
+                            matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
+
+                            for _, row in matched_reviews.iterrows():
+                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
+                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
+                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
+                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
+                                st.markdown("---")
                 with col2:
                     for i, (pain, cnt) in enumerate(top_pains[10:20], 11):
-                        st.markdown(f"**{i}.** {pain} ({cnt}건)")
+                        with st.expander(f"**{i}.** {pain} ({cnt}건)"):
+                            # 해당 키워드가 포함된 리뷰 찾기
+                            mask = df_filtered['gpt_pain_points'].apply(
+                                lambda x: pain in x if isinstance(x, list) else False
+                            )
+                            matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
+
+                            for _, row in matched_reviews.iterrows():
+                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
+                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
+                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
+                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
+                                st.markdown("---")
 
     # ===== Positive Points 분석 (GPT 카테고리) =====
     st.markdown('<p class="section-header">😊 Positive Points 분석</p>', unsafe_allow_html=True)
@@ -396,8 +435,8 @@ def main():
                     )
                     st.plotly_chart(fig, use_container_width=True)
 
-            # TOP Positive Points 리스트
-            st.markdown('<p class="subsection-header">TOP 20 Positive Points (원문)</p>', unsafe_allow_html=True)
+            # TOP Positive Points 리스트 (클릭하면 원문 리뷰 표시)
+            st.markdown('<p class="subsection-header">TOP 20 Positive Points (클릭하여 원문 보기)</p>', unsafe_allow_html=True)
 
             all_pos = []
             for pos in df_filtered['gpt_positive_points'].dropna():
@@ -411,10 +450,34 @@ def main():
                 col1, col2 = st.columns(2)
                 with col1:
                     for i, (p, cnt) in enumerate(top_pos[:10], 1):
-                        st.markdown(f"**{i}.** {p} ({cnt}건)")
+                        with st.expander(f"**{i}.** {p} ({cnt}건)"):
+                            # 해당 키워드가 포함된 리뷰 찾기
+                            mask = df_filtered['gpt_positive_points'].apply(
+                                lambda x: p in x if isinstance(x, list) else False
+                            )
+                            matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
+
+                            for _, row in matched_reviews.iterrows():
+                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
+                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
+                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
+                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
+                                st.markdown("---")
                 with col2:
                     for i, (p, cnt) in enumerate(top_pos[10:20], 11):
-                        st.markdown(f"**{i}.** {p} ({cnt}건)")
+                        with st.expander(f"**{i}.** {p} ({cnt}건)"):
+                            # 해당 키워드가 포함된 리뷰 찾기
+                            mask = df_filtered['gpt_positive_points'].apply(
+                                lambda x: p in x if isinstance(x, list) else False
+                            )
+                            matched_reviews = df_filtered[mask].sort_values('review_date', ascending=False).head(20)
+
+                            for _, row in matched_reviews.iterrows():
+                                platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
+                                date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
+                                st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str}")
+                                st.markdown(f"> {row['REVIEW_CONTENT'][:300]}{'...' if len(str(row['REVIEW_CONTENT'])) > 300 else ''}")
+                                st.markdown("---")
 
     # ===== 브랜드 포지셔닝 (태그 기반) =====
     st.markdown('<p class="section-header">🎯 브랜드 포지셔닝</p>', unsafe_allow_html=True)
