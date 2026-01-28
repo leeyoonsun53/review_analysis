@@ -5,6 +5,7 @@ PAIN_POINTS, POSITIVE_POINTS 카테고리화 (패턴 확장 버전)
 import json
 import re
 import sys
+import os
 from collections import Counter, defaultdict
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -193,10 +194,19 @@ def categorize_point(point, categories):
 
 
 def main():
-    # GPT 분석 결과 로드
+    # GPT 분석 결과 로드 (통합 파일 우선)
     print("GPT 분석 결과 로드 중...")
-    with open('output/gpt_analysis_full.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    combined_path = 'output/gpt_analysis_combined.json'
+    full_path = 'output/gpt_analysis_full.json'
+
+    if os.path.exists(combined_path):
+        print(f"  통합 파일 사용: {combined_path}")
+        with open(combined_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    else:
+        print(f"  기존 파일 사용: {full_path}")
+        with open(full_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
     print(f"총 분석 건수: {len(data):,}건\n")
 
