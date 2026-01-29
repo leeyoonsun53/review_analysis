@@ -204,17 +204,41 @@ def main():
         min_date = valid_dates.min().date()
         max_date = valid_dates.max().date()
 
-        date_range = st.sidebar.date_input(
-            "리뷰 날짜 범위",
-            value=(min_date, max_date),
-            min_value=min_date,
-            max_value=max_date
+        # 날짜 선택 방식
+        date_filter_type = st.sidebar.radio(
+            "날짜 선택 방식",
+            ["월별", "일별"],
+            horizontal=True
         )
 
-        if len(date_range) == 2:
-            start_date, end_date = date_range
-            mask = (df_filtered['review_date'].dt.date >= start_date) & (df_filtered['review_date'].dt.date <= end_date)
-            df_filtered = df_filtered[mask]
+        if date_filter_type == "월별":
+            # 월별 선택
+            all_months = sorted(df_filtered['year_month'].dropna().unique())
+            if all_months:
+                # 시작/끝 월 선택
+                col1, col2 = st.sidebar.columns(2)
+                with col1:
+                    start_month = st.selectbox("시작월", options=all_months, index=0)
+                with col2:
+                    end_idx = len(all_months) - 1
+                    end_month = st.selectbox("종료월", options=all_months, index=end_idx)
+
+                # 월 범위 필터링
+                mask = (df_filtered['year_month'] >= start_month) & (df_filtered['year_month'] <= end_month)
+                df_filtered = df_filtered[mask]
+        else:
+            # 일별 선택
+            date_range = st.sidebar.date_input(
+                "리뷰 날짜 범위",
+                value=(min_date, max_date),
+                min_value=min_date,
+                max_value=max_date
+            )
+
+            if len(date_range) == 2:
+                start_date, end_date = date_range
+                mask = (df_filtered['review_date'].dt.date >= start_date) & (df_filtered['review_date'].dt.date <= end_date)
+                df_filtered = df_filtered[mask]
 
     # 브랜드 필터 (session_state로 선택 유지)
     all_brands = sorted(df_filtered['BRAND_NAME'].unique())
