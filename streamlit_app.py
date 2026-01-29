@@ -844,7 +844,7 @@ def main():
     # ===== 푸터 =====
     st.markdown("---")
     st.markdown(
-        f'<p style="text-align: center; color: gray;">토너 리뷰 분석 대시보드 v3.0 (GPT-4o-mini 분석) | '
+        f'<p style="text-align: center; color: gray;">토너 리뷰 분석 대시보드 (GPT-4o-mini 분석) | '
         f'총 {len(df):,}건 리뷰</p>',
         unsafe_allow_html=True
     )
