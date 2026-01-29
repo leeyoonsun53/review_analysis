@@ -310,8 +310,11 @@ def main():
     with col1:
         sentiment_counts = df_filtered['sentiment'].value_counts().reset_index()
         sentiment_counts.columns = ['감성', '건수']
+        # 라벨 한글화
+        sentiment_labels = {'POS': '긍정', 'NEU': '중립', 'NEG': '부정'}
+        sentiment_counts['감성'] = sentiment_counts['감성'].map(sentiment_labels)
 
-        colors = {'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'}
+        colors = {'긍정': '#10b981', '중립': '#6b7280', '부정': '#ef4444'}
         fig = px.pie(sentiment_counts, values='건수', names='감성',
                      title='감성 분포',
                      color='감성',
@@ -325,9 +328,11 @@ def main():
         for col in ['POS', 'NEU', 'NEG']:
             if col not in brand_sentiment.columns:
                 brand_sentiment[col] = 0
+        # 컬럼명 한글화
+        brand_sentiment = brand_sentiment.rename(columns={'POS': '긍정', 'NEU': '중립', 'NEG': '부정'})
         brand_sentiment = brand_sentiment.reset_index()
 
-        fig = px.bar(brand_sentiment, x='BRAND_NAME', y=['POS', 'NEU', 'NEG'],
+        fig = px.bar(brand_sentiment, x='BRAND_NAME', y=['긍정', '중립', '부정'],
                      title='브랜드별 감성 비율 (%)',
                      color_discrete_map=colors,
                      barmode='stack')
@@ -705,12 +710,14 @@ def main():
             for col in ['POS', 'NEU', 'NEG']:
                 if col not in platform_sentiment.columns:
                     platform_sentiment[col] = 0
+            # 컬럼명 한글화
+            platform_sentiment = platform_sentiment.rename(columns={'POS': '긍정', 'NEU': '중립', 'NEG': '부정'})
 
             fig = px.bar(platform_sentiment.reset_index(),
-                         x='PLATFORM', y=['POS', 'NEU', 'NEG'],
+                         x='PLATFORM', y=['긍정', '중립', '부정'],
                          title='플랫폼별 감성 분포 (%)',
                          barmode='group',
-                         color_discrete_map={'POS': '#10b981', 'NEU': '#6b7280', 'NEG': '#ef4444'})
+                         color_discrete_map={'긍정': '#10b981', '중립': '#6b7280', '부정': '#ef4444'})
             st.plotly_chart(fig, use_container_width=True)
 
         with col2:
