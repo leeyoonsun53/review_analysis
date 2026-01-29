@@ -19,6 +19,10 @@ def load_oliveyoung():
     first_key = list(data.keys())[0]
     df = pd.DataFrame(data[first_key])
     df['PLATFORM'] = '올리브영'
+    
+    # REVIEW_DATE 포맷 통일 (시간 정보 제거, 날짜만 유지)
+    if 'REVIEW_DATE' in df.columns:
+        df['REVIEW_DATE'] = pd.to_datetime(df['REVIEW_DATE'], errors='coerce').dt.date
 
     print(f"올리브영 리뷰: {len(df):,}건")
     print(f"  컬럼: {list(df.columns)}")
@@ -34,6 +38,10 @@ def load_musinsa():
 
     # 컬럼명 통일 (대문자로)
     df.columns = [col.upper() for col in df.columns]
+    
+    # REVIEW_DATE 포맷 통일 (날짜 형식으로 변환)
+    if 'REVIEW_DATE' in df.columns:
+        df['REVIEW_DATE'] = pd.to_datetime(df['REVIEW_DATE'], errors='coerce').dt.date
 
     print(f"\n무신사 리뷰: {len(df):,}건")
     print(f"  컬럼: {list(df.columns)}")
@@ -81,8 +89,8 @@ def merge_data(df_oy, df_ms):
     # 병합
     df_merged = pd.concat([df_oy_subset, df_ms_subset], ignore_index=True)
 
-    # REVIEW_DATE 정규화
-    df_merged['REVIEW_DATE'] = pd.to_datetime(df_merged['REVIEW_DATE'], errors='coerce')
+    # REVIEW_DATE는 이미 date 형식으로 통일되어 있음
+    # 저장 전에 문자열로 변환할 때 처리됨
 
     print(f"\n병합 완료: {len(df_merged):,}건")
     print(f"  컬럼: {list(df_merged.columns)}")
