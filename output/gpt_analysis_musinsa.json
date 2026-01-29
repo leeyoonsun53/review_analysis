@@ -124757,5 +124757,8701 @@
     "value_tags": [
       "인생템"
     ]
+  },
+  {
+    "idx": 32636,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 32637,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "넉넉한 용량",
+      "귀여운 미니사이즈 크림"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32638,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "촉촉하다",
+      "가성비 좋다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32639,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "매일매일 바르는 거라서 너무 좋아요",
+      "순합니다",
+      "굿"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32640,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "부담없이 바르기 좋음",
+      "청소년기 아이 피부에도 자극없이 잘 받아줌"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32641,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없는 편",
+      "마음 편하게 바를 수 있음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32642,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "발림 좋음",
+      "수분 유지",
+      "만족스러움",
+      "최고"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32643,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "예민한 피부에 잘 맞음",
+      "추천할 만함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32644,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 예민한 사람에게 적합",
+      "여러 번 바르기 좋은 제품",
+      "효과가 좋음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32645,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "데일리로 바르기 좋다",
+      "여름에 팩으로 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32646,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격이 저렴하다",
+      "토너 레이어링에 좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "쫀쫀"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32647,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 로션",
+      "좋은 가격"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32648,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "이전 제품보다 괜찮음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32649,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "겨울철 건조하지 않음",
+      "너무 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32650,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "끈적임 없음",
+      "무향에 가까움",
+      "올*에서 테스트 후 구입"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32651,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순해서 사용하기 좋아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32652,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "싸게 잘 샀다",
+      "피부가 쵹쵹해진다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32653,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격도 좋고 질도 좋아서 계속 사용합니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32654,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "순함",
+      "피부에 잘 맞음",
+      "추천"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32655,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 예민할땐 독도 라인 쓰기 좋아서",
+      "심플한 성분만큼 딱 기본에 충실해서 굿"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32656,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "항상 사용하는 제품",
+      "끈적임 없이 너무 좋아요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32657,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "워낙 유명해서 평소에 써보고 싶었음",
+      "첫 느낌은 굿굿"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32658,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "큰 사이즈로 구매할 의향"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32659,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "용량이 크다",
+      "가성비가 좋다",
+      "사은품으로 마스크팩 제공"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32660,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋다구 하네용"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32661,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "토너 양이 적당함",
+      "혼자 사용하기 적합함"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32662,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 사용할 수 있는 스킨, 로션",
+      "배송이 빠름",
+      "만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32663,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "촉촉함",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32664,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "수분 보충용 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32665,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "세안 후 피부 정리하기 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32666,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "할인으로 최저가 구매 가능"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32667,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "오래 쓸 것 같아서 대용량으로 구매",
+      "평소에 잘 쓰던 제품"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32668,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격이 저렴하다",
+      "무신사에서 구매하는 것이 좋다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32669,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "할인 혜택"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32670,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋은 가격",
+      "넉넉한 용량",
+      "피부 진정 효과",
+      "보습 효과"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32671,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "매일 쓰는 토너",
+      "쟁여놓고 싶어서 구매"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32672,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재주문",
+      "할인률"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32673,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "꾸준히 사용",
+      "세일",
+      "딸과 함께 사용"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32674,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분 좋음",
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32675,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "핏도 좋고 색상도 좋다",
+      "다 만족합니다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32676,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "안정성",
+      "피부 자극 없음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32677,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "제품들이 잘 맞음",
+      "쿠폰 적용으로 잘 샀음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32678,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "흡수가 빨라서 좋음",
+      "로션이 쫀쫀함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "묽음",
+      "쫀쫀"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32679,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍고 잘 발림",
+      "가성비 좋음",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32680,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 피부에 잘맞음",
+      "촉촉해짐"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32681,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "얼굴에 잘 맞음",
+      "배송이 빨라서 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32682,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [
+      "각질제거는 흠"
+    ],
+    "positive_points": [
+      "나쁘지 않고 독도답게 엄청 순해요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32683,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "각질 정리가 잘됨",
+      "피부가 매끈해짐"
+    ],
+    "benefit_tags": [
+      "결"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "바디"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32684,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비가 좋다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [
+      "세안"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32685,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "추천"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32686,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "가벼움",
+      "민감한 피부에 잘 맞음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32687,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "각질제거하기 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32688,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "저렴하게 구입"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32689,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "정품 맞겠죠?",
+      "잘쓸게요"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32690,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "제품 너무 잘 사용하고있습니다.",
+      "재구매의사 있어요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32691,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "너무 촉촉해요",
+      "겨울철 보습에 이만한 로션토너가 없는 것 같아요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32692,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋은 가격에 구매할 수 있어서 좋았습니다",
+      "다들 이거쓰고 피부 좋아지세요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32693,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족도",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32694,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 순함",
+      "대용량이라 막 쓸 수 있음",
+      "편함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32695,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 느낌",
+      "저렴한 가격"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32696,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "기본에 충실한 내실",
+      "피부예민해졌을 때 다시 찾게되는"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32697,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "유명한 제품",
+      "신뢰성",
+      "추천"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32698,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋은 가격",
+      "강력 추천"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32699,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [
+      "용량이 작음"
+    ],
+    "positive_points": [
+      "레이어링 하기 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": []
+  },
+  {
+    "idx": 32700,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빨랐다",
+      "제품이 부드럽고 좋다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32701,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없음",
+      "여러 번 덧바르기 좋음",
+      "토너팩하기 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링",
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32702,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "리필 제품 사용 가능",
+      "따르기 좋은 디자인"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32703,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "산뜻한 제형",
+      "부담스럽지 않음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32704,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "믿고 쓰는 브랜드",
+      "가격이 저렴함",
+      "닦토용으로 최고"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32705,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "믿고 쓰는 브랜드",
+      "가격이 저렴함",
+      "닦토하기에 최고"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32706,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "수분감"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32707,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "트러블 없이 무난하게 사용하기 좋음",
+      "몇년째 사용"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32708,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [
+      "겨울엔 보습력이 살짝 달려요"
+    ],
+    "positive_points": [
+      "여름에 바르기 좋은 제품"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 32709,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "깔끔하고 연해서 괜찮아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32710,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "보습력 좋음",
+      "향이 강하지 않음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32711,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "보습 좋음",
+      "향이 강하지 않음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32712,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32713,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매",
+      "흡수 빠름",
+      "촉촉함",
+      "수분 잘 잡아줌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32714,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 최고",
+      "양이 많음",
+      "추천"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32715,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 순함",
+      "건조함 잘 잡아줌"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32716,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "정착"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32717,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극적이지 않음",
+      "발림성 좋음",
+      "건조함 잡아줌",
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32718,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 쓰기 좋음",
+      "계속 사용하고 싶음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32719,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "아주 잘 맞습니다",
+      "이쁘구요",
+      "어디서든 잘 맞아요",
+      "굳"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32720,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "피부 정리하기에 좋습니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32721,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "봄여름가을에 잘 씀"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32722,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 제품",
+      "무난한 제품"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32723,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "최애 스키로션",
+      "여전히 좋음",
+      "할인할 때 구매"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32724,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 순함",
+      "가격 저렴"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32725,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분 순함",
+      "속건조 잘 잡아줌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32726,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "유분기 잡아줌",
+      "만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32727,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격",
+      "구매 경험"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32728,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "리필 용량이 넉넉하다",
+      "가격이 합리적이다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32729,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32730,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "구매예정",
+      "양이 많음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32731,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "자극 없음",
+      "유명한 제품"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32732,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "좋다",
+      "자극이 없다",
+      "가볍다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32733,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여행에 적합",
+      "피부가 촉촉해짐"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32734,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격",
+      "매일 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32735,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "흡수 잘됨",
+      "편리함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32736,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분 무난",
+      "추천",
+      "쓰기 좋아요"
+    ],
+    "benefit_tags": [
+      "무난"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32737,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분 무난",
+      "사용하기 좋음",
+      "계속 사용 중"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32738,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "매일매일 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32739,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋습니다",
+      "만족합니다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32740,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "세트 구매로 저렴하게 잘 샀어요",
+      "몇 년간 계속 사용 중이에요"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32741,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격이 합리적이다",
+      "자주 애용하는 브랜드",
+      "너무 좋다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32742,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "민감성 피부에 적합",
+      "여름철 사용 추천"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32743,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "꾸준히 사용",
+      "기본템으로 매우 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32744,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 좋음",
+      "입구 디자인 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32745,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "리필해서 사용이 편함",
+      "가격이 저렴함"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32746,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32747,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "부모님이 좋아하셨다",
+      "저렴한 가격에 잘 구매했다",
+      "재구매 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32748,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송 빠름",
+      "포장 꼼꼼함",
+      "양이 많음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32749,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "좋음",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32750,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 쓰기 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32751,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없어서 좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32752,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없어서 좋네요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32753,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "착하고 순한 토너",
+      "추천"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32754,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "묽어서 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 32755,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "타사 제품에 비해 묽어서 사용하기 편리함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32756,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋네요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32757,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매",
+      "좋템템"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32758,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격",
+      "토너 로션 세트의 만족도"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32759,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "필요한 구성",
+      "할인 구매"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32760,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "로션도 좋음",
+      "정착해야겠다는 긍정적인 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32761,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "가격이 저렴함",
+      "궁금함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32762,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여행할 때 유용함",
+      "예쁜 파우치",
+      "잘 받음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32763,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 부드러워짐",
+      "여행 필수템"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32764,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격비교 후 구매 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32765,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 자극이 안 생김"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32766,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한로션",
+      "순한토너",
+      "독도라인"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32767,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 좋아지는 느낌"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32768,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "반응 좋아요",
+      "수분감도 조흠니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32769,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "이미 알려진 제품",
+      "모델링팩 시 토너 사용"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32770,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴함",
+      "좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32771,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "용량이 커서 좋음",
+      "기본 토너로 사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32772,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "잘 쓰고 있음",
+      "감사합니다",
+      "또 구매할 것"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32773,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "시원함",
+      "재구매 의사",
+      "가성비"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32774,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "부드러워짐"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32775,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순해서 좋아요",
+      "사용이 간편함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32776,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 잘 맞음",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32777,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "트러블이 잘 안남"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32778,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "혜자템",
+      "꾸준히 사용",
+      "3년 사용"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32779,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "편하게 사용할 수 있는 제품"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32780,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "트러블이 생기지 않음",
+      "무난하게 사용"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32781,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "기본에 충실함",
+      "수분감 채워줌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32782,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "촉촉함",
+      "무난한 제형",
+      "무향"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32783,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "모든 피부에 잘 받는다",
+      "무향이라 누구나 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32784,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하디 순해서 부담없이 사용 가능",
+      "아침 저녁 매일 사용 가능",
+      "좋습니다"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32785,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족",
+      "깔끔"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32786,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "구매 저렴",
+      "촉촉함",
+      "보습 효과"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32787,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부결 매끈해짐",
+      "순함",
+      "여드름이나 잡티 없음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32788,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "산뜻한 재형",
+      "믿고 구매"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32789,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "기본 스킨케어템",
+      "세투로 나와서 구매"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32790,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "촉촉함",
+      "피부결 정돈"
+    ],
+    "benefit_tags": [
+      "보습",
+      "결"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32791,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극 없음",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32792,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 자극 없이 순함",
+      "흡수가 빨라요",
+      "수분감이 오래 지속됨"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32793,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좁쌀이 잘 안 나서 좋음",
+      "순함",
+      "가격이 착함"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32794,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍게 피부결 정리하기 좋음",
+      "수분감이 적당함"
+    ],
+    "benefit_tags": [
+      "보습",
+      "결"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32795,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "자극 없음",
+      "촉촉함",
+      "보습",
+      "진정 효과"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32796,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 것 같아서 괜찮아"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32797,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난함",
+      "순함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32798,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "온 가족 사용",
+      "자극 없음",
+      "세럼 바르기 전 사용"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32799,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분이 좋음",
+      "트러블 없음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32800,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 맞음",
+      "순함",
+      "세트로 구매하여 사용 중"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32801,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "베이스로 뿌리기 좋음",
+      "가격 대비 양이 많음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32802,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여행할 때 유용함",
+      "귀여운 파우치"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 32803,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격 대비 우수한 제품"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32804,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "보들보들함",
+      "매끈한 느낌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32805,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "기본템"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32806,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "진정이 잘 되어",
+      "무난템으로 굳"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32807,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 사용 가능",
+      "민감성 피부에 적합",
+      "다양한 사용법 가능"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토",
+      "흡토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32808,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 순해짐",
+      "촉촉함",
+      "최고의 스킨"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32809,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "물처럼 순하고 여러번 레이어드 해서 발라도 넘 좋아요"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32810,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "제품이 마음에 듦"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32811,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송 감사합니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32812,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "예민할 때 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32813,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "모든 피부 타입에 적합"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32814,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "안정성",
+      "자극 없음",
+      "냄새 없음",
+      "가성비 좋음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32815,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "트러블 없어요",
+      "순하고 좋다고 합니다"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32816,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "트러블 없어서 좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32817,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 순함",
+      "잘 맞음",
+      "오랫동안 사용",
+      "좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32818,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "잘 맞음",
+      "좋음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32819,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "괜찮다",
+      "세일하면 다시 사고 싶다",
+      "굿이다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32820,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "빠른 배송",
+      "자주 이용"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32821,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격",
+      "가볍고 바르기 좋음",
+      "호불호 없음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32822,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "사용하기 편함",
+      "핸드백에 쏙 들어감",
+      "여러 번 사용할 것 같음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32823,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여행할 때 유용함",
+      "파우치가 귀엽고 실용적임"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32824,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송 빠름",
+      "순하고 무난하게 사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32825,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32826,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여행에 적합",
+      "클렌저가 피부에 잘 맞음",
+      "리프레시 효과"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32827,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "사용하기 간편하고 피부도 촉촉해져서 만족해요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32828,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 촉촉해짐",
+      "파우치가 귀여움"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32829,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "꾸준히 잘 쓰고 있는 제품",
+      "큰 용량으로 구매"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32830,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "트러블 없음",
+      "만족"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32831,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "추천할 만함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32832,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구입 의사",
+      "제품에 대한 신뢰"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32833,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 좋음",
+      "잘 발림",
+      "계속 사용 중",
+      "너무 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32834,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "기본에 딱 집중한 수분 채워주기 좋은 토너"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32835,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [
+      "용량이 작다"
+    ],
+    "positive_points": [
+      "매일 사용하기 좋다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32836,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 예민한 사람에게 적합",
+      "건조할 때 여러 겹 바를 수 있음",
+      "좋은 사용감"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32837,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여드름이 나지 않음",
+      "피부가 트지 않음",
+      "메이크업이 뜨지 않음",
+      "순한 제품",
+      "1년 이상 사용 중"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32838,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "만족"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32839,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극 없이 각질 제거",
+      "세안 후 사용 편리"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32840,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 자극이 적다",
+      "마스크팩 전에 사용하기 좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32841,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "진정이 잘돼서 좋았습니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": []
+  },
+  {
+    "idx": 32842,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "자극 없음",
+      "수분 충전"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32843,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "무난함",
+      "촉촉함",
+      "자극 없음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32844,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재활용이 간편하고 가격도 좋다",
+      "항상 애용하고 있다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32845,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "순함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32846,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "순함",
+      "지성피부에 적합"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32847,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "사용 편리함",
+      "귀여운 디자인"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32848,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "촉촉함",
+      "사계절 사용 가능"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32849,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격이 합리적",
+      "인기 많은 이유를 알겠다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32850,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "맘에 듦"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32851,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난해서 좋아요",
+      "가격도 괜찮고",
+      "성분도 괜찮고"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32852,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "기초바르기 전에 사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32853,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32854,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "항상 사용하는거라 또 구매했어요",
+      "무신사 배송 좋아요",
+      "잘 쓸게요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32855,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "순함",
+      "데일리템으로 좋음",
+      "끈적이지 않음",
+      "여러 번 발라도 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32856,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "자극 없음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32857,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 잘 사용",
+      "재구매",
+      "무신사 배송 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32858,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "유명한 제품에 대한 호기심",
+      "더운 날씨에 적합한 제품"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32859,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난한 제품",
+      "보습감이 적당함",
+      "여름에 사용하기 좋음",
+      "대용량으로 가격 메리트"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32860,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무향",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32861,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [
+      "마무리감이 찐득함"
+    ],
+    "positive_points": [
+      "넘 좋습니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "끈적"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32862,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량",
+      "사은품 클렌저 유용"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32863,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하고 자극이 없어 좋아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32864,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [
+      "속건조로 인한 자주 덧발라야 하는 점"
+    ],
+    "positive_points": [
+      "무향",
+      "순한 제품",
+      "남녀노소 누구나 사용 가능",
+      "7년 이상 사용 중"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32865,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "진짜 좋고",
+      "좋은거 같습니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32866,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "사용감"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32867,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32868,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "제품도 너무 좋고",
+      "가성비 좋게 잘 구매했어요",
+      "너무 만족합니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32869,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족합니다",
+      "재구매 했어요",
+      "무향이라 좋아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32870,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "민감성 피부에 잘 맞음",
+      "토너팩으로 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32871,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "추천",
+      "재구매"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32872,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "사용하기 좋다",
+      "재구매"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32873,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍고 순한 사용감",
+      "자극이 거의 없음",
+      "용량이 커서 부담 없음",
+      "흡수가 빠름",
+      "끈적임 없이 스며듦",
+      "위생적이고 편리한 펌프형 용기"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음",
+      "흡수"
+    ],
+    "usage_tags": [
+      "닦토",
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32874,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "괜찮은 제품"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32875,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "믿고 사용하는 제품",
+      "피부에 잘 맞음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32876,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없음",
+      "데일리 사용에 적합",
+      "무난함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32877,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 쓰기 좋음",
+      "피부가 맨들맨들해지는 기분"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32878,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "니즈 충족",
+      "추천",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32879,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 보드라와짐",
+      "좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32880,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "산뜻함",
+      "촉촉함",
+      "원탑"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32881,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극적이지 않음",
+      "순함",
+      "예민성 피부에 적합"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32882,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부결 정돈",
+      "진정 효과",
+      "부드럽고 끈적거리지 않음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32883,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없다",
+      "냄새가 없다",
+      "예민한 지성 피부에 잘 맞음",
+      "남성분들에게 추천"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32884,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난해서 좋아요",
+      "트러블 안 나고 자극적이지 않아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32885,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 촉촉해서 좋습니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32886,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 잘 맞음",
+      "만족함",
+      "최고"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32887,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격",
+      "무난한 성능",
+      "가성비 좋은 제품"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32888,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족스럽고 상품 퀄리티가 매우 좋습니다",
+      "다음에 또 구매할 의향이 있습니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32889,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "대용량 토너가 편리하다",
+      "유명한 제품"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32890,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 사용하는 템"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32891,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠름",
+      "제품이 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32892,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "주기적으로 재구매",
+      "완전 물처럼 흘러요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32893,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사",
+      "계절에 관계없이 사용 가능"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32894,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 쓰기 좋음",
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32895,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 쓰기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32896,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "용량이 많아서 만족",
+      "계속 이용하겠다는 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32897,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "매일 잘 쓰고 있습니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32898,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍게 쓸 수 있음"
+    ],
+    "benefit_tags": [
+      "무난"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32899,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "히알루론산과 함께 사용 시 효과적"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "묽음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32900,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "촉촉함",
+      "막 쓰기 좋음",
+      "일반 크림과 섞어 쓰기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32901,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "필요한 것만 들어있음",
+      "귀여운 파우치",
+      "여행에 적합"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32902,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "향이 없다",
+      "초딩이 사용하기 좋다",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32903,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족",
+      "선물용으로 적합"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32904,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난한 성능",
+      "저렴한 가격",
+      "남성들에게 추천"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32905,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 좋음",
+      "괜찮음",
+      "잘 샀음",
+      "좋아요"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32906,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "좋아요",
+      "대용량 구매"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32907,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "마스크팩도 같이 와서 좋았어요",
+      "나쁘지 않은 것 같아요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32908,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "꾸준히 사용하고 있습니다",
+      "짱이에용"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32909,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "색상도 이쁘고",
+      "사이즈도 잘 맞습니다",
+      "핏도 좋고"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32910,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없이 순한 편",
+      "좋아요",
+      "대용량 구매 의사"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32911,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "발림이 좋음",
+      "순함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32912,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 물토너",
+      "피부자극 심한날 사용",
+      "미스트로 사용 시 좋음",
+      "무난템"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토",
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32913,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가벼운 느낌",
+      "사용감이 깔끔함"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32914,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "향이 좋음",
+      "피부가 촉촉해짐",
+      "만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32915,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "사용하기 간편함",
+      "모두 잘 맞음",
+      "만족함"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32916,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "유용함",
+      "피부 촉촉함",
+      "여행 필수템"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32917,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍고 사용하기 편함",
+      "여행 시 유용함"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32918,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠르다",
+      "포장이 꼼꼼하다",
+      "제품이 순하다",
+      "쓰기 편하다",
+      "가격이 부담되지 않는다",
+      "추천한다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32919,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠릅니다",
+      "샘플도 몇 개 챙겨주셨네요",
+      "타입상관없이 쓰기 편한것 같습니다",
+      "가격도 합리적이고 추천합니다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32920,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "NEU",
+    "pain_points": [
+      "수분 부족",
+      "각질 정리 효과 미비"
+    ],
+    "positive_points": [
+      "무난함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32921,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [
+      "용량이 작다"
+    ],
+    "positive_points": [
+      "순하다",
+      "좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32922,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "할인",
+      "사용 만족도"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32923,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송이 빠르다",
+      "저렴하게 구매할 수 있다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32924,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 잘 맞음",
+      "순함",
+      "좋은 가격"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32925,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극적이지 않음",
+      "순함",
+      "흡수력이 좋음",
+      "가격이 좋음",
+      "추천"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "흡수"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32926,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극적이지 않음",
+      "순함",
+      "흡수 좋음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32927,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "민감성 수부지 피부에 무난하게 사용 가능",
+      "사계절 내내 잘 사용함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32928,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "NEG",
+    "pain_points": [
+      "수분감 부족"
+    ],
+    "positive_points": [],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "애매"
+    ]
+  },
+  {
+    "idx": 32929,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "흡수 잘됨",
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "흡수"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32930,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격이 착하다",
+      "토너가 순하고 촉촉하다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32931,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "각질 부드럽게 제거"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32932,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "독도 토너의 우수성",
+      "한국인으로서의 자부심"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32933,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "아이랑 같이 쓰기 편함",
+      "독도는 다 좋아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32934,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난히 잘 사용중이에요",
+      "재구매 할거에여",
+      "무신사 조아여"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32935,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 가볍게 쓰기 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32936,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 가벼움",
+      "꾸준히 사용"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32937,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "무난함",
+      "오래 사용"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32938,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 좋음",
+      "잘 산 것 같음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32939,
+    "brand": "독도토너",
+    "rating": 3,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "가성비"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32940,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "양이 많고 좋은 거 같습니다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32941,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "무난함",
+      "잘 맞음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32942,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난",
+      "촉촉"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32943,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족",
+      "사용 편리"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32944,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "부드럽고 촉촉해요",
+      "제품 디자인도 이쁘구요",
+      "특별한 트러블 없이 잘 쓰고 있어요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32945,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "흡수가 빠르고 촉촉함",
+      "어떤 피부타입이든 잘 맞을 것 같음",
+      "가격대비 품질 만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32946,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 정돈 잘 되는것같아요",
+      "무난한 제품"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32947,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "깔끔한 느낌"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32948,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [
+      "옛날 쫀쫀한 느낌이 사라진 것"
+    ],
+    "positive_points": [
+      "순해서 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32949,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 좋음",
+      "품질 좋음",
+      "만족"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32950,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무향",
+      "순함",
+      "배송이 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32951,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 사용하기 좋음",
+      "몇년째 사용 중",
+      "무신사 배송 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32952,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난함",
+      "만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32953,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍고 물토너 느낌",
+      "여러 번 발라도 밀리지 않음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32954,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 거의 없어서 좋다"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "쫀쫀"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32955,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부자극이 거의 없음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32956,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비 최고",
+      "끈적이지 않음",
+      "용량 많음",
+      "지성피부에 적합"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32957,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순함",
+      "만족",
+      "양이 많음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32958,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴한 가격",
+      "뷰티쿠폰 사용 가능"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32959,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "유명해서 처음 사봤다",
+      "좋아요",
+      "특히 유용하다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32960,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "민감한 피부도 안심하고 사용할 수 있음",
+      "피부 진정에 효과적인 성분 포함",
+      "산뜻한 마무리",
+      "촉촉한 케어 제공",
+      "청정 수분 함유"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32961,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순한 제품",
+      "아빠를 위한 선물"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32962,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "끈적임 없고 빠르게 흡수되는 제형",
+      "부담 없이 쓸 수 있음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32963,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 좋아짐",
+      "효과적"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32964,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 좋아짐"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32965,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍게 쓰기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32966,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "성분 순함",
+      "젤 흡수 잘됨",
+      "꾸준한 사용"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32967,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "급 구매하게 된 이유"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 32968,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "끈적임이 없어서 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32969,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "적당히 수분감있고 흡수도 빨라서 휘뚤마뚤쓰기 좋아"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32970,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "효과",
+      "재구매 의사"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32971,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난무난",
+      "순한성분"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32972,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "제형이 맘에 듦",
+      "트러블 없음",
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32973,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "제형이 물같아서 막쓰기 좋음",
+      "촉촉함",
+      "지성 피부에 괜찮음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32974,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매",
+      "좋습니다"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32975,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "보습력",
+      "편리함",
+      "적당한 사용감"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32976,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "예민한 피부에 좋은 듯"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32977,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "양이 많고 저렴함",
+      "좋아요"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32978,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격 저렴",
+      "순함",
+      "좋음",
+      "무난함"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 32979,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "답답하지 않음",
+      "믿고 쓰는 브랜드"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32980,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "무난하다",
+      "좋다",
+      "괜찮다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32981,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "흡수력이 빠르다",
+      "촉촉함",
+      "넉넉한 용량",
+      "자극이 없다",
+      "여름에 사용하기 좋다",
+      "자연스럽게 발린다"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음",
+      "흡수"
+    ],
+    "usage_tags": [
+      "닦토",
+      "스킨팩",
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32982,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가벼운 제형",
+      "물 같이 흘러서 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32983,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "닦토하기 좋다",
+      "토너팩하기 좋다"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토",
+      "스킨팩"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32984,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "저렴하게 사서 너무 좋아요"
+    ],
+    "benefit_tags": [
+      "가성비"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 32985,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격 대비 성능이 뛰어남",
+      "로션 사용 후 피부가 밝아짐",
+      "산뜻한 제형으로 침구에 묻어남 없음",
+      "토너의 수분감과 진정 효과"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토",
+      "스킨팩"
+    ],
+    "value_tags": [
+      "가성비",
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32986,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난무난합니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32987,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "깔끔하게 정리되는 느낌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32988,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32989,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "믿고 쓰는",
+      "여전히 쓰기 너무 좋아요"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32990,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가벼운 토너",
+      "여름에 적합",
+      "만족스러움"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32991,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍게 바르기 좋음",
+      "여름에 쓰기에 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32992,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "유분기 조절에 효과적"
+    ],
+    "benefit_tags": [
+      "피지"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32993,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "만족",
+      "재구매 의사",
+      "매우 만족"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32994,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난무난템",
+      "용량도 넉넉해서 좋아요"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32995,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 좋아짐",
+      "정착템",
+      "친구의 긍정적인 피드백"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32996,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사",
+      "정착템",
+      "효과적"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32997,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난함",
+      "순함",
+      "빠른 배송"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 32998,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사 있음",
+      "잘 사용 중"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 32999,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "배송 빠름",
+      "포장 깔끔함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33000,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "엄청 슌해서 좋어요",
+      "피부에 자극 안 가야될 때 토너팩으로 굿"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "스킨팩"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33001,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "순함",
+      "오랜 사용"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33002,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다",
+      "자극없이 닦여서 좋다",
+      "몇통째 쓰고 있다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33003,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "항상 쟁겨놓고 씁니다",
+      "아무 피부에 다 좋은 것 같아요"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33004,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "깔끔함",
+      "계속 사용 중"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33005,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격 저렴",
+      "순함",
+      "보습력 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 33006,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "여름에 쓰기 좋음",
+      "무난템"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33007,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "보습력이 뛰어남",
+      "여름에 적합함",
+      "편리함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33008,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 촉촉하게 됨",
+      "흡수 잘됨"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33009,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "워터리한 제형"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 33010,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가성비",
+      "무난하게 사용 가능"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "가성비",
+      "무난"
+    ]
+  },
+  {
+    "idx": 33011,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "각질제거",
+      "데일리 사용"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33012,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "화장솜에 사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33013,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "아주 좋은 화장품",
+      "자주 재구매",
+      "좋습니다"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33014,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없음",
+      "순함"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33015,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가격대 좋음",
+      "포장 깔끔함"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 33016,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 좋아지는 느낌"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33017,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극이 없고 피부에 잘 흡수됨"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33018,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "좋은 효과"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 33019,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 좋다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33020,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "자주 사용 가능"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "묽음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33021,
+    "brand": "독도토너",
+    "rating": 4,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 33022,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "사용감",
+      "피부 맑아짐"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33023,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부에 딱좋아요"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33024,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "세트 구성",
+      "사용감",
+      "여행에 적합"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [
+      "산뜻함"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33025,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "발림성이 좋고 자극이 없다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33026,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하고 착착 붙는",
+      "강추"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33027,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "발림성이 좋고 흡수력이 매우 뛰어나다.",
+      "지속력이 뛰어나 건조한 계절에 적합하다.",
+      "편리하게 사용 가능하며 끈적임이 없다.",
+      "민감한 피부에도 트러블 없이 사용 가능하다."
+    ],
+    "benefit_tags": [
+      "보습",
+      "장벽"
+    ],
+    "texture_tags": [
+      "물같음",
+      "흡수"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33028,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극적이지 않음",
+      "사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "피부결"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33029,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가볍게 사용할 수 있음",
+      "화장할 때 추천"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33030,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "재구매 의사"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": []
+  },
+  {
+    "idx": 33031,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부가 부드러워짐",
+      "자극 없음",
+      "향이 좋음"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33032,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난함"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33033,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "순하다"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33034,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "순함",
+      "무난한 사용"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33035,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "무난하게 사용 가능"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33036,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "촉촉함",
+      "가벼움",
+      "흡수 잘됨",
+      "민감 피부에 적합"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33037,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "빠른배송",
+      "샘플도 많이 주는 점",
+      "좋아요"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 33038,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가벼워서 매일 사용하기 좋음"
+    ],
+    "benefit_tags": [
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33039,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "NEU",
+    "pain_points": [],
+    "positive_points": [
+      "가성비"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [],
+    "usage_tags": [],
+    "value_tags": [
+      "가성비"
+    ]
+  },
+  {
+    "idx": 33040,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "자극없고 순함",
+      "데일리용으로 좋음"
+    ],
+    "benefit_tags": [
+      "진정"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "레이어링"
+    ],
+    "value_tags": [
+      "인생템"
+    ]
+  },
+  {
+    "idx": 33041,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "피부 자극 없음",
+      "잘 닦임",
+      "잘 스며듦"
+    ],
+    "benefit_tags": [
+      "진정",
+      "보습"
+    ],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [
+      "닦토"
+    ],
+    "value_tags": [
+      "무난"
+    ]
+  },
+  {
+    "idx": 33042,
+    "brand": "독도토너",
+    "rating": 5,
+    "sentiment": "POS",
+    "pain_points": [],
+    "positive_points": [
+      "가벼움",
+      "여름에 사용하기 좋음"
+    ],
+    "benefit_tags": [],
+    "texture_tags": [
+      "물같음"
+    ],
+    "usage_tags": [],
+    "value_tags": [
+      "인생템"
+    ]
   }
 ]
