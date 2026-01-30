@@ -356,17 +356,18 @@ def main():
                 pain_counts = Counter(all_pain_cats)
                 pain_df = pd.DataFrame(pain_counts.items(), columns=['카테고리', '건수'])
                 pain_df = pain_df.sort_values('건수', ascending=False).head(10)  # TOP 10
-                pain_df = pain_df.sort_values('건수', ascending=True)  # 차트용 정렬
 
-                fig = px.bar(pain_df, x='건수', y='카테고리', orientation='h',
+                fig = px.bar(pain_df, x='카테고리', y='건수',
                              title='Pain Point 카테고리 분포 (TOP 10)',
                              color='건수',
                              color_continuous_scale='Reds')
                 st.plotly_chart(fig, use_container_width=True)
 
             with col2:
-                # 브랜드별 Pain 카테고리
+                # 브랜드별 Pain Point 레이더 차트
                 brand_pain_data = []
+                top_cats = pain_df['카테고리'].tolist()[:8]  # 상위 8개 카테고리
+
                 for brand in selected_brands:
                     brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
                     brand_pains = []
@@ -377,24 +378,32 @@ def main():
                     if brand_pains:
                         pain_counts = Counter(brand_pains)
                         total = len(brand_df)
-                        for cat, cnt in pain_counts.items():
-                            brand_pain_data.append({
-                                '브랜드': brand,
-                                '카테고리': cat,
-                                '비율': cnt / total * 100
-                            })
+                        row = {'브랜드': brand}
+                        for cat in top_cats:
+                            row[cat] = pain_counts.get(cat, 0) / total * 100
+                        brand_pain_data.append(row)
 
                 if brand_pain_data:
                     bp_df = pd.DataFrame(brand_pain_data)
-                    # TOP 10 카테고리만 선택
-                    top_cats = bp_df.groupby('카테고리')['비율'].sum().nlargest(10).index.tolist()
-                    bp_df = bp_df[bp_df['카테고리'].isin(top_cats)]
-                    pivot = bp_df.pivot(index='브랜드', columns='카테고리', values='비율').fillna(0)
 
-                    fig = px.imshow(pivot,
-                                    title='브랜드별 Pain Point 히트맵 (TOP 10, %)',
-                                    color_continuous_scale='Reds',
-                                    aspect='auto')
+                    fig = go.Figure()
+                    for _, row in bp_df.iterrows():
+                        values = [row[cat] for cat in top_cats]
+                        values.append(values[0])
+
+                        fig.add_trace(go.Scatterpolar(
+                            r=values,
+                            theta=top_cats + [top_cats[0]],
+                            fill='toself',
+                            name=row['브랜드'],
+                            opacity=0.6
+                        ))
+
+                    fig.update_layout(
+                        polar=dict(radialaxis=dict(visible=True)),
+                        title='브랜드별 Pain Point 레이더 차트',
+                        showlegend=True
+                    )
                     st.plotly_chart(fig, use_container_width=True)
 
             # TOP Pain Points 리스트 (클릭하면 원문 리뷰 표시)
