@@ -355,10 +355,11 @@ def main():
             with col1:
                 pain_counts = Counter(all_pain_cats)
                 pain_df = pd.DataFrame(pain_counts.items(), columns=['카테고리', '건수'])
-                pain_df = pain_df.sort_values('건수', ascending=True)
+                pain_df = pain_df.sort_values('건수', ascending=False).head(10)  # TOP 10
+                pain_df = pain_df.sort_values('건수', ascending=True)  # 차트용 정렬
 
                 fig = px.bar(pain_df, x='건수', y='카테고리', orientation='h',
-                             title='Pain Point 카테고리 분포',
+                             title='Pain Point 카테고리 분포 (TOP 10)',
                              color='건수',
                              color_continuous_scale='Reds')
                 st.plotly_chart(fig, use_container_width=True)
@@ -385,10 +386,13 @@ def main():
 
                 if brand_pain_data:
                     bp_df = pd.DataFrame(brand_pain_data)
+                    # TOP 10 카테고리만 선택
+                    top_cats = bp_df.groupby('카테고리')['비율'].sum().nlargest(10).index.tolist()
+                    bp_df = bp_df[bp_df['카테고리'].isin(top_cats)]
                     pivot = bp_df.pivot(index='브랜드', columns='카테고리', values='비율').fillna(0)
 
                     fig = px.imshow(pivot,
-                                    title='브랜드별 Pain Point 히트맵 (%)',
+                                    title='브랜드별 Pain Point 히트맵 (TOP 10, %)',
                                     color_continuous_scale='Reds',
                                     aspect='auto')
                     st.plotly_chart(fig, use_container_width=True)
@@ -443,10 +447,10 @@ def main():
             with col1:
                 pos_counts = Counter(all_pos_cats)
                 pos_df = pd.DataFrame(pos_counts.items(), columns=['카테고리', '건수'])
-                pos_df = pos_df.sort_values('건수', ascending=False).head(15)
+                pos_df = pos_df.sort_values('건수', ascending=False).head(10)  # TOP 10
 
                 fig = px.bar(pos_df, x='카테고리', y='건수',
-                             title='Positive Point 카테고리 분포 (TOP 15)',
+                             title='Positive Point 카테고리 분포 (TOP 10)',
                              color='건수',
                              color_continuous_scale='Greens')
                 st.plotly_chart(fig, use_container_width=True)
