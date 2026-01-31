@@ -669,6 +669,61 @@ def main():
                          color_discrete_sequence=['#10b981', '#6b7280', '#f59e0b', '#ef4444'])
             st.plotly_chart(fig, use_container_width=True)
 
+    # ===== 사용법 분석 =====
+    st.markdown('<p class="section-header">🧴 사용법 분석</p>', unsafe_allow_html=True)
+
+    if 'usage_tags' in df_filtered.columns:
+        col1, col2 = st.columns(2)
+
+        with col1:
+            # 전체 사용법 분포
+            all_usage = []
+            for tags in df_filtered['usage_tags'].dropna():
+                if isinstance(tags, list):
+                    all_usage.extend(tags)
+
+            if all_usage:
+                usage_counts = Counter(all_usage)
+                usage_df = pd.DataFrame(usage_counts.items(), columns=['사용법', '건수'])
+                usage_df = usage_df.sort_values('건수', ascending=False).head(6)
+
+                fig = px.bar(usage_df, x='사용법', y='건수',
+                             title='사용법 분포 (TOP 6)',
+                             color='건수',
+                             color_continuous_scale='Blues')
+                st.plotly_chart(fig, use_container_width=True)
+
+        with col2:
+            # 브랜드별 사용법 비교
+            usage_cats = ['닦토', '레이어링', '스킨팩/토너팩', '흡토(패팅)']
+            brand_usage_data = []
+
+            for brand in selected_brands:
+                brand_df = df_filtered[df_filtered['BRAND_NAME'] == brand]
+                brand_usage = []
+                for tags in brand_df['usage_tags'].dropna():
+                    if isinstance(tags, list):
+                        brand_usage.extend(tags)
+
+                if brand_usage:
+                    usage_counts = Counter(brand_usage)
+                    total = len(brand_df)
+                    for cat in usage_cats:
+                        brand_usage_data.append({
+                            '브랜드': brand,
+                            '사용법': cat,
+                            '비율': usage_counts.get(cat, 0) / total * 100
+                        })
+
+            if brand_usage_data:
+                u_df = pd.DataFrame(brand_usage_data)
+
+                fig = px.bar(u_df, x='브랜드', y='비율', color='사용법',
+                             title='브랜드별 사용법 비율 (%)',
+                             barmode='group',
+                             color_discrete_sequence=['#3b82f6', '#8b5cf6', '#ec4899', '#f97316'])
+                st.plotly_chart(fig, use_container_width=True)
+
     # ===== 브랜드별 분석 =====
     st.markdown('<p class="section-header">🏷️ 브랜드별 분석</p>', unsafe_allow_html=True)
 
