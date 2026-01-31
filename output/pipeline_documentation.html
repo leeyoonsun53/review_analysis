@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토너 리뷰 분석 파이프라인 문서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1a365d;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #4a90d9;
+            padding-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2c5282;
+            font-size: 1.8rem;
+            margin: 50px 0 20px 0;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+            border-left: 5px solid #4a90d9;
+            border-radius: 0 8px 8px 0;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Pipeline Flow Diagram */
+        .pipeline-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pipeline-step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .pipeline-step .step-num {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .pipeline-step .step-title {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .pipeline-step .step-file {
+            font-size: 0.85rem;
+            color: #718096;
+            font-family: monospace;
+        }
+
+        .pipeline-arrow {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .code-block .comment {
+            color: #6a9955;
+        }
+
+        .code-block .keyword {
+            color: #569cd6;
+        }
+
+        .code-block .string {
+            color: #ce9178;
+        }
+
+        .code-block .function {
+            color: #dcdcaa;
+        }
+
+        .code-block .number {
+            color: #b5cea8;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .error-box {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #4a90d9;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f7fafc;
+        }
+
+        /* Data Flow */
+        .data-flow {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+
+        .data-node {
+            background: white;
+            border: 2px solid #4a90d9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .data-arrow {
+            color: #4a90d9;
+            font-size: 1.5rem;
+        }
+
+        /* Function Doc */
+        .function-doc {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .function-header {
+            background: #2d3748;
+            color: white;
+            padding: 12px 20px;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .function-body {
+            padding: 20px;
+        }
+
+        .param-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .param-list li {
+            margin: 8px 0;
+        }
+
+        .param-name {
+            font-family: monospace;
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #2d3748;
+        }
+
+        /* TOC */
+        .toc {
+            background: #f7fafc;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #2c5282;
+        }
+
+        .toc ol {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #4a90d9;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Metrics */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-blue {
+            background: #ebf8ff;
+            color: #2b6cb0;
+        }
+
+        .badge-green {
+            background: #f0fff4;
+            color: #276749;
+        }
+
+        .badge-orange {
+            background: #fffaf0;
+            color: #c05621;
+        }
+
+        .badge-red {
+            background: #fff5f5;
+            color: #c53030;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .pipeline-flow {
+                flex-direction: column;
+            }
+
+            .pipeline-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧴 토너 리뷰 분석 파이프라인</h1>
+        <p class="subtitle">CSV 데이터 수집부터 대시보드 시각화까지의 전체 프로세스 문서</p>
+
+        <!-- Metrics -->
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-value">33,908</div>
+                <div class="metric-label">총 리뷰 수</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">7</div>
+                <div class="metric-label">분석 브랜드</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">2</div>
+                <div class="metric-label">플랫폼 (올리브영/무신사)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">GPT-4o-mini</div>
+                <div class="metric-label">분석 모델</div>
+            </div>
+        </div>
+
+        <!-- Pipeline Overview -->
+        <div class="pipeline-flow">
+            <div class="pipeline-step">
+                <div class="step-num">1</div>
+                <div class="step-title">데이터 병합</div>
+                <div class="step-file">merge_platforms.py</div>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+                <div class="step-num">2</div>
+                <div class="step-title">전처리</div>
+                <div class="step-file">preprocess_reviewer_info.py</div>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+                <div class="step-num">3</div>
+                <div class="step-title">GPT 분석</div>
+                <div class="step-file">gpt_analyzer_full.py</div>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+                <div class="step-num">4</div>
+                <div class="step-title">카테고리화</div>
+                <div class="step-file">recategorize_*.py</div>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">
+                <div class="step-num">5</div>
+                <div class="step-title">대시보드</div>
+                <div class="step-file">streamlit_app.py</div>
+            </div>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc">
+            <h3>📋 목차</h3>
+            <ol>
+                <li><a href="#step1">Step 1: 데이터 병합 (merge_platforms.py)</a></li>
+                <li><a href="#step2">Step 2: 리뷰어 정보 전처리 (preprocess_reviewer_info.py)</a></li>
+                <li><a href="#step3">Step 3: GPT API 감성분석 (gpt_analyzer_full.py)</a></li>
+                <li><a href="#step4">Step 4: 카테고리 재분류 (recategorize_*.py)</a></li>
+                <li><a href="#step5">Step 5: 대시보드 시각화 (streamlit_app.py)</a></li>
+                <li><a href="#execution">실행 순서 및 명령어</a></li>
+                <li><a href="#dataflow">데이터 흐름도</a></li>
+            </ol>
+        </div>
+
+        <!-- Step 1 -->
+        <h2 id="step1">Step 1: 데이터 병합</h2>
+        <p><span class="badge badge-blue">merge_platforms.py</span></p>
+
+        <h3>1.1 개요</h3>
+        <p>
+            올리브영과 무신사, 두 플랫폼에서 수집한 리뷰 데이터를 하나의 통합 데이터셋으로 병합합니다.
+            각 플랫폼의 컬럼명을 표준화하고, 브랜드명을 정규화하여 일관된 분석이 가능하도록 합니다.
+        </p>
+
+        <h3>1.2 입력/출력 파일</h3>
+        <div class="data-flow">
+            <div class="data-node">data/올영리뷰데이터_utf8.json</div>
+            <div class="data-arrow">+</div>
+            <div class="data-node">data/무신사리뷰.csv</div>
+            <div class="data-arrow">→</div>
+            <div class="data-node">data/merged_reviews.csv</div>
+        </div>
+
+        <h3>1.3 핵심 함수</h3>
+
+        <div class="function-doc">
+            <div class="function-header">def load_oliveyoung() → pd.DataFrame</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 올리브영 JSON 데이터를 로드하고 DataFrame으로 변환</p>
+                <p><strong>처리 로직:</strong></p>
+                <ul class="param-list">
+                    <li>JSON 파일에서 첫 번째 키의 데이터를 추출</li>
+                    <li><span class="param-name">PLATFORM</span> 컬럼에 '올리브영' 값 할당</li>
+                    <li><span class="param-name">REVIEW_DATE</span>를 datetime으로 변환 후 날짜만 추출</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="function-doc">
+            <div class="function-header">def load_musinsa() → pd.DataFrame</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 무신사 CSV 데이터를 로드</p>
+                <p><strong>처리 로직:</strong></p>
+                <ul class="param-list">
+                    <li>CSV 파일을 UTF-8로 읽기</li>
+                    <li>모든 컬럼명을 대문자로 변환 (표준화)</li>
+                    <li><span class="param-name">PLATFORM</span> 컬럼에 '무신사' 값 할당</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="function-doc">
+            <div class="function-header">def clean_brand_name(name: str) → str</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 브랜드명 정규화</p>
+                <p><strong>매핑 규칙:</strong></p>
+<div class="code-block">
+<span class="comment"># 브랜드명 통일 매핑</span>
+brand_mapping = {
+    <span class="string">'에스네이처 '</span>: <span class="string">'에스네이처'</span>,  <span class="comment"># 공백 제거</span>
+    <span class="string">'에스네이쳐'</span>: <span class="string">'에스네이처'</span>,     <span class="comment"># 오타 수정</span>
+}
+</div>
+            </div>
+        </div>
+
+        <div class="function-doc">
+            <div class="function-header">def merge_data(df_oy, df_ms) → pd.DataFrame</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 두 플랫폼 데이터를 병합</p>
+                <p><strong>공통 컬럼:</strong></p>
+<div class="code-block">
+common_cols = [
+    <span class="string">'PLATFORM'</span>,           <span class="comment"># 플랫폼 구분</span>
+    <span class="string">'BRAND_NAME'</span>,          <span class="comment"># 브랜드명</span>
+    <span class="string">'REVIEW_CONTENT'</span>,      <span class="comment"># 리뷰 내용</span>
+    <span class="string">'REVIEW_RATING'</span>,       <span class="comment"># 별점 (1-5)</span>
+    <span class="string">'REVIEW_DATE'</span>,         <span class="comment"># 리뷰 작성일</span>
+    <span class="string">'REVIEWER_INFO'</span>,       <span class="comment"># 리뷰어 정보 (피부타입 등)</span>
+    <span class="string">'REVIEW_ADDITIONAL_INFO'</span>  <span class="comment"># 추가 정보 (자극도 등)</span>
+]
+</div>
+                <p><strong>병합 방식:</strong> <code>pd.concat([df_oy, df_ms], ignore_index=True)</code></p>
+            </div>
+        </div>
+
+        <h3>1.4 출력 데이터 통계</h3>
+        <table>
+            <tr><th>플랫폼</th><th>리뷰 수</th><th>브랜드</th></tr>
+            <tr><td>올리브영</td><td>27,745건</td><td>토리든, 브링그린, 독도토너, 에스네이처, 아누아, 토니모리, 아비브</td></tr>
+            <tr><td>무신사</td><td>6,163건</td><td>토리든, 에스네이처, 토니모리, 아비브</td></tr>
+            <tr><td><strong>합계</strong></td><td><strong>33,908건</strong></td><td>7개 브랜드</td></tr>
+        </table>
+
+        <!-- Step 2 -->
+        <h2 id="step2">Step 2: 리뷰어 정보 전처리</h2>
+        <p><span class="badge badge-green">preprocess_reviewer_info.py</span></p>
+
+        <h3>2.1 개요</h3>
+        <p>
+            각 플랫폼별로 다른 형식의 리뷰어 정보를 파싱하여 표준화된 컬럼으로 변환합니다.
+            피부타입, 피부톤, 피부고민, 제품 평가 점수 등을 추출합니다.
+        </p>
+
+        <h3>2.2 입력/출력 파일</h3>
+        <div class="data-flow">
+            <div class="data-node">data/merged_reviews.csv</div>
+            <div class="data-arrow">→</div>
+            <div class="data-node">data/merged_reviews_processed.csv</div>
+        </div>
+
+        <h3>2.3 플랫폼별 파싱 로직</h3>
+
+        <h4>무신사 REVIEWER_INFO 형식</h4>
+<div class="code-block">
+<span class="comment"># 원본 형식: "oily / spring_warm / acne,soothing"</span>
+<span class="comment"># 파싱 결과:</span>
+SKIN_TYPE: <span class="string">'지성'</span>      <span class="comment"># oily → 지성</span>
+SKIN_TONE: <span class="string">'봄웜톤'</span>    <span class="comment"># spring_warm → 봄웜톤</span>
+SKIN_CONCERNS: <span class="string">'트러블,진정'</span>  <span class="comment"># acne,soothing → 트러블,진정</span>
+</div>
+
+        <div class="function-doc">
+            <div class="function-header">def parse_musinsa_reviewer_info(info: str) → Tuple[str, str, str]</div>
+            <div class="function-body">
+                <p><strong>매핑 테이블:</strong></p>
+<div class="code-block">
+SKIN_TYPE_MAP = {
+    <span class="string">'oily'</span>: <span class="string">'지성'</span>,
+    <span class="string">'dry'</span>: <span class="string">'건성'</span>,
+    <span class="string">'combination'</span>: <span class="string">'복합성'</span>,
+    <span class="string">'sensitive'</span>: <span class="string">'민감성'</span>,
+    <span class="string">'normal'</span>: <span class="string">'중성'</span>,
+}
+
+SKIN_TONE_MAP = {
+    <span class="string">'spring_warm'</span>: <span class="string">'봄웜톤'</span>,
+    <span class="string">'summer_cool'</span>: <span class="string">'여름쿨톤'</span>,
+    <span class="string">'fall_warm'</span>: <span class="string">'가을웜톤'</span>,
+    <span class="string">'winter_cool'</span>: <span class="string">'겨울쿨톤'</span>,
+}
+</div>
+            </div>
+        </div>
+
+        <h4>올리브영 REVIEWER_INFO 형식</h4>
+<div class="code-block">
+<span class="comment"># 원본 형식: "지성, 가을웜톤, 각질, 다크서클"</span>
+<span class="comment"># 파싱 결과:</span>
+SKIN_TYPE: <span class="string">'지성'</span>
+SKIN_TONE: <span class="string">'가을웜톤'</span>
+SKIN_CONCERNS: <span class="string">'각질,다크서클'</span>
+</div>
+
+        <div class="function-doc">
+            <div class="function-header">def parse_oliveyoung_reviewer_info(info: str) → Tuple[str, str, str]</div>
+            <div class="function-body">
+                <p><strong>파싱 로직:</strong></p>
+<div class="code-block">
+skin_types = [<span class="string">'지성'</span>, <span class="string">'건성'</span>, <span class="string">'복합성'</span>, <span class="string">'민감성'</span>, <span class="string">'중성'</span>]
+skin_tones = [<span class="string">'봄웜톤'</span>, <span class="string">'여름쿨톤'</span>, <span class="string">'가을웜톤'</span>, <span class="string">'겨울쿨톤'</span>]
+
+<span class="keyword">for</span> part <span class="keyword">in</span> parts:
+    <span class="keyword">if</span> part <span class="keyword">in</span> skin_types:
+        skin_type = part
+    <span class="keyword">elif</span> part <span class="keyword">in</span> skin_tones:
+        skin_tone = part
+    <span class="keyword">else</span>:
+        concerns.append(part)  <span class="comment"># 나머지는 피부고민</span>
+</div>
+            </div>
+        </div>
+
+        <h3>2.4 추가 생성 컬럼</h3>
+        <table>
+            <tr><th>컬럼명</th><th>설명</th><th>데이터 소스</th></tr>
+            <tr><td>SKIN_TYPE</td><td>피부타입 (지성/건성/복합성/민감성/중성)</td><td>양 플랫폼</td></tr>
+            <tr><td>SKIN_TONE</td><td>피부톤 (봄웜톤/여름쿨톤/가을웜톤/겨울쿨톤)</td><td>양 플랫폼</td></tr>
+            <tr><td>SKIN_CONCERNS</td><td>피부고민 (트러블, 모공, 미백 등)</td><td>양 플랫폼</td></tr>
+            <tr><td>EVAL_MOISTURE</td><td>보습력 평가 (1-5)</td><td>무신사만</td></tr>
+            <tr><td>EVAL_ABSORPTION</td><td>흡수력 평가 (1-5)</td><td>무신사만</td></tr>
+            <tr><td>EVAL_IRRITATION</td><td>자극도 평가 (1-5, 높을수록 순함)</td><td>양 플랫폼</td></tr>
+        </table>
+
+        <!-- Step 3 -->
+        <h2 id="step3">Step 3: GPT API 감성분석</h2>
+        <p><span class="badge badge-orange">gpt_analyzer_full.py</span></p>
+
+        <h3>3.1 개요</h3>
+        <p>
+            OpenAI GPT-4o-mini 모델을 사용하여 각 리뷰를 분석합니다.
+            감성(긍정/중립/부정), Pain Points, Positive Points, 그리고 다양한 태그를 추출합니다.
+        </p>
+
+        <div class="warning-box">
+            <strong>⚠️ 비용 주의:</strong> 33,908건 분석 시 약 $5-10 비용 발생 (토큰 사용량에 따라 변동)
+        </div>
+
+        <h3>3.2 입력/출력 파일</h3>
+        <div class="data-flow">
+            <div class="data-node">data/merged_reviews_processed.csv</div>
+            <div class="data-arrow">→</div>
+            <div class="data-node">output/gpt_analysis_full.json</div>
+        </div>
+
+        <h3>3.3 프롬프트 설계</h3>
+<div class="code-block">
+ANALYSIS_PROMPT = <span class="string">"""화장품 리뷰 분석. JSON으로 응답.
+
+리뷰: "{review}"
+별점: {rating}점
+
+{
+    "sentiment": "POS/NEU/NEG",
+    "pain_points": ["불만점"],
+    "positive_points": ["장점"],
+    "benefit_tags": ["진정/보습/장벽/결/피지 중 해당"],
+    "texture_tags": ["물같음/쫀쫀/끈적/흡수 중 해당"],
+    "usage_tags": ["닦토/스킨팩/레이어링/바디 중 해당"],
+    "value_tags": ["가성비/무난/애매/인생템 중 해당"]
+}
+
+sentiment: 내용 기반. 별점 높아도 불만이면 NEG.
+없는 항목은 빈 배열."""</span>
+</div>
+
+        <h3>3.4 핵심 함수</h3>
+
+        <div class="function-doc">
+            <div class="function-header">def analyze_review(review_text, rating, max_retries=3) → Tuple[dict, int, str]</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 단일 리뷰를 GPT API로 분석</p>
+                <p><strong>파라미터:</strong></p>
+                <ul class="param-list">
+                    <li><span class="param-name">review_text</span>: 리뷰 내용 (최대 500자로 자름)</li>
+                    <li><span class="param-name">rating</span>: 별점 (1-5)</li>
+                    <li><span class="param-name">max_retries</span>: 실패 시 재시도 횟수</li>
+                </ul>
+                <p><strong>API 설정:</strong></p>
+<div class="code-block">
+response = client.chat.completions.create(
+    model=<span class="string">"gpt-4o-mini"</span>,
+    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: prompt}],
+    temperature=<span class="number">0.1</span>,   <span class="comment"># 낮은 온도로 일관된 결과</span>
+    max_tokens=<span class="number">300</span>      <span class="comment"># 응답 토큰 제한</span>
+)
+</div>
+                <p><strong>반환값:</strong> (분석결과 dict, 사용 토큰 수, 에러 메시지)</p>
+            </div>
+        </div>
+
+        <h3>3.5 진행상황 저장 (Resume 지원)</h3>
+<div class="code-block">
+<span class="comment"># 100건마다 중간 저장</span>
+<span class="keyword">if</span> (idx + <span class="number">1</span>) % save_interval == <span class="number">0</span>:
+    <span class="comment"># 결과 저장</span>
+    <span class="keyword">with</span> open(output_path, <span class="string">'w'</span>) <span class="keyword">as</span> f:
+        json.dump(results, f)
+
+    <span class="comment"># 진행상황 저장 (재시작 시 이어서 처리)</span>
+    <span class="keyword">with</span> open(progress_path, <span class="string">'w'</span>) <span class="keyword">as</span> f:
+        json.dump({
+            <span class="string">'last_idx'</span>: idx,
+            <span class="string">'total_tokens'</span>: total_tokens,
+            <span class="string">'errors'</span>: errors
+        }, f)
+</div>
+
+        <div class="info-box">
+            <strong>💡 Tip:</strong> 프로세스가 중단되어도 <code>output/gpt_progress.json</code> 파일을 통해 마지막 처리 위치부터 재개됩니다.
+        </div>
+
+        <h3>3.6 출력 JSON 구조</h3>
+<div class="code-block">
+[
+    {
+        <span class="string">"idx"</span>: <span class="number">0</span>,
+        <span class="string">"brand"</span>: <span class="string">"토리든"</span>,
+        <span class="string">"rating"</span>: <span class="number">5</span>,
+        <span class="string">"sentiment"</span>: <span class="string">"POS"</span>,
+        <span class="string">"pain_points"</span>: [],
+        <span class="string">"positive_points"</span>: [<span class="string">"촉촉함"</span>, <span class="string">"순함"</span>],
+        <span class="string">"benefit_tags"</span>: [<span class="string">"보습"</span>],
+        <span class="string">"texture_tags"</span>: [<span class="string">"물같음"</span>],
+        <span class="string">"usage_tags"</span>: [<span class="string">"레이어링"</span>],
+        <span class="string">"value_tags"</span>: [<span class="string">"가성비"</span>]
+    },
+    ...
+]
+</div>
+
+        <!-- Step 4 -->
+        <h2 id="step4">Step 4: 카테고리 재분류</h2>
+        <p>
+            <span class="badge badge-red">recategorize_pain_points.py</span>
+            <span class="badge badge-red">recategorize_positive_points.py</span>
+            <span class="badge badge-red">recategorize_usage.py</span>
+        </p>
+
+        <h3>4.1 개요</h3>
+        <p>
+            GPT가 추출한 Pain Points와 Positive Points는 다양한 표현으로 분산되어 있습니다.
+            예: "건조함", "속건조", "수분 부족", "보습 부족" → 모두 <strong>"건조/보습부족"</strong>으로 통합
+        </p>
+
+        <h3>4.2 입력/출력 파일</h3>
+        <div class="data-flow">
+            <div class="data-node">output/gpt_analysis_full.json</div>
+            <div class="data-arrow">→</div>
+            <div class="data-node">output/gpt_analysis_categorized.json</div>
+        </div>
+
+        <h3>4.3 Pain Points 매핑 (일부)</h3>
+<div class="code-block">
+PAIN_MAPPING = {
+    <span class="comment"># === 건조/보습 부족 ===</span>
+    <span class="string">'건조함'</span>: <span class="string">'건조/보습부족'</span>,
+    <span class="string">'속건조'</span>: <span class="string">'건조/보습부족'</span>,
+    <span class="string">'수분감 부족'</span>: <span class="string">'건조/보습부족'</span>,
+    <span class="string">'보습 부족'</span>: <span class="string">'건조/보습부족'</span>,
+    <span class="string">'촉촉함 부족'</span>: <span class="string">'건조/보습부족'</span>,
+
+    <span class="comment"># === 자극/따가움 ===</span>
+    <span class="string">'자극'</span>: <span class="string">'자극/따가움'</span>,
+    <span class="string">'따가움'</span>: <span class="string">'자극/따가움'</span>,
+    <span class="string">'피부 자극'</span>: <span class="string">'자극/따가움'</span>,
+
+    <span class="comment"># === 트러블/피부 문제 ===</span>
+    <span class="string">'트러블 발생'</span>: <span class="string">'트러블/뾰루지'</span>,
+    <span class="string">'여드름 발생'</span>: <span class="string">'트러블/뾰루지'</span>,
+    <span class="string">'뾰루지'</span>: <span class="string">'트러블/뾰루지'</span>,
+
+    <span class="comment"># ... 총 100+ 매핑 규칙</span>
+}
+</div>
+
+        <h3>4.4 Positive Points 매핑 (일부)</h3>
+<div class="code-block">
+POSITIVE_MAPPING = {
+    <span class="comment"># === 순함/자극없음 ===</span>
+    <span class="string">'순함'</span>: <span class="string">'순함/저자극'</span>,
+    <span class="string">'순하다'</span>: <span class="string">'순함/저자극'</span>,
+    <span class="string">'자극 없음'</span>: <span class="string">'순함/저자극'</span>,
+    <span class="string">'저자극'</span>: <span class="string">'순함/저자극'</span>,
+
+    <span class="comment"># === 촉촉함/보습 ===</span>
+    <span class="string">'촉촉함'</span>: <span class="string">'촉촉함/보습'</span>,
+    <span class="string">'수분감'</span>: <span class="string">'촉촉함/보습'</span>,
+    <span class="string">'보습력'</span>: <span class="string">'촉촉함/보습'</span>,
+
+    <span class="comment"># === 가성비 ===</span>
+    <span class="string">'가성비'</span>: <span class="string">'가성비/저렴'</span>,
+    <span class="string">'가성비 좋음'</span>: <span class="string">'가성비/저렴'</span>,
+    <span class="string">'저렴함'</span>: <span class="string">'가성비/저렴'</span>,
+
+    <span class="comment"># ... 총 100+ 매핑 규칙</span>
+}
+</div>
+
+        <h3>4.5 Usage Tags 매핑</h3>
+<div class="code-block">
+USAGE_MAPPING = {
+    <span class="comment"># === 닦토 ===</span>
+    <span class="string">'닦토'</span>: <span class="string">'닦토'</span>,
+    <span class="string">'닦아내는 토너'</span>: <span class="string">'닦토'</span>,
+
+    <span class="comment"># === 흡토/패팅 ===</span>
+    <span class="string">'흡토'</span>: <span class="string">'흡토(패팅)'</span>,
+    <span class="string">'패팅'</span>: <span class="string">'흡토(패팅)'</span>,
+    <span class="string">'손토너'</span>: <span class="string">'흡토(패팅)'</span>,
+
+    <span class="comment"># === 레이어링 ===</span>
+    <span class="string">'레이어링'</span>: <span class="string">'레이어링'</span>,
+    <span class="string">'겹바름'</span>: <span class="string">'레이어링'</span>,
+    <span class="string">'7스킨'</span>: <span class="string">'레이어링'</span>,
+
+    <span class="comment"># === 스킨팩 ===</span>
+    <span class="string">'스킨팩'</span>: <span class="string">'스킨팩/토너팩'</span>,
+    <span class="string">'토너팩'</span>: <span class="string">'스킨팩/토너팩'</span>,
+}
+</div>
+
+        <h3>4.6 재분류 효과</h3>
+        <table>
+            <tr><th>항목</th><th>재분류 전</th><th>재분류 후</th><th>감소율</th></tr>
+            <tr><td>Pain Points</td><td>2,455개</td><td>~50개</td><td>98%</td></tr>
+            <tr><td>Positive Points</td><td>27,224개</td><td>~80개</td><td>99.7%</td></tr>
+            <tr><td>Usage Tags</td><td>26개</td><td>6개</td><td>77%</td></tr>
+        </table>
+
+        <!-- Step 5 -->
+        <h2 id="step5">Step 5: 대시보드 시각화</h2>
+        <p><span class="badge badge-blue">streamlit_app.py</span></p>
+
+        <h3>5.1 개요</h3>
+        <p>
+            Streamlit 프레임워크를 사용하여 인터랙티브 대시보드를 구현합니다.
+            필터링, 차트, 테이블, 원문 리뷰 조회 기능을 제공합니다.
+        </p>
+
+        <h3>5.2 실행 방법</h3>
+<div class="code-block">
+streamlit run streamlit_app.py
+</div>
+
+        <h3>5.3 주요 기능</h3>
+
+        <h4>필터 기능</h4>
+        <table>
+            <tr><th>필터</th><th>설명</th></tr>
+            <tr><td>플랫폼 선택</td><td>올리브영 / 무신사 멀티 선택</td></tr>
+            <tr><td>날짜 범위</td><td>월별 또는 일별 선택</td></tr>
+            <tr><td>브랜드 선택</td><td>7개 브랜드 멀티 선택</td></tr>
+            <tr><td>감성 필터</td><td>POS / NEU / NEG 선택</td></tr>
+        </table>
+
+        <h4>시각화 차트</h4>
+        <ul>
+            <li><strong>감성 분포 파이차트:</strong> 긍정/중립/부정 비율</li>
+            <li><strong>브랜드별 감성 막대차트:</strong> 브랜드별 감성 비율 비교</li>
+            <li><strong>Pain Points 레이더차트:</strong> 브랜드별 불만 포인트 비교</li>
+            <li><strong>Positive Points 레이더차트:</strong> 브랜드별 강점 비교</li>
+            <li><strong>사용법 분포:</strong> 닦토/레이어링/스킨팩 비율</li>
+            <li><strong>월별 트렌드:</strong> 리뷰 수 및 부정률 추이</li>
+            <li><strong>피부타입별 분석:</strong> 피부타입별 부정률</li>
+        </ul>
+
+        <h3>5.4 데이터 로드 함수</h3>
+
+        <div class="function-doc">
+            <div class="function-header">@st.cache_data<br>def load_data() → Tuple[pd.DataFrame, pd.DataFrame]</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> 캐싱된 데이터 로드 (성능 최적화)</p>
+<div class="code-block">
+<span class="comment"># 기본 리뷰 데이터</span>
+df = pd.read_csv(<span class="string">'data/merged_reviews_processed.csv'</span>)
+
+<span class="comment"># GPT 분석 결과</span>
+<span class="keyword">with</span> open(<span class="string">'output/gpt_analysis_categorized.json'</span>) <span class="keyword">as</span> f:
+    gpt_data = json.load(f)
+
+gpt_df = pd.DataFrame(gpt_data)
+</div>
+            </div>
+        </div>
+
+        <div class="function-doc">
+            <div class="function-header">def merge_gpt_data(df, gpt_df) → pd.DataFrame</div>
+            <div class="function-body">
+                <p><strong>기능:</strong> GPT 분석 결과를 원본 데이터와 병합</p>
+<div class="code-block">
+<span class="comment"># idx 기준으로 병합</span>
+gpt_cols = [<span class="string">'idx'</span>, <span class="string">'sentiment'</span>, <span class="string">'pain_points'</span>, <span class="string">'positive_points'</span>,
+            <span class="string">'benefit_tags'</span>, <span class="string">'texture_tags'</span>, <span class="string">'usage_tags'</span>, <span class="string">'value_tags'</span>]
+
+merged = df.merge(gpt_subset, on=<span class="string">'idx'</span>, how=<span class="string">'left'</span>)
+</div>
+            </div>
+        </div>
+
+        <!-- Execution Order -->
+        <h2 id="execution">실행 순서 및 명령어</h2>
+
+        <h3>전체 파이프라인 실행</h3>
+<div class="code-block">
+<span class="comment"># Step 1: 데이터 병합</span>
+python merge_platforms.py
+
+<span class="comment"># Step 2: 리뷰어 정보 전처리</span>
+python preprocess_reviewer_info.py
+
+<span class="comment"># Step 3: GPT 분석 (시간 소요: 약 3-4시간)</span>
+python gpt_analyzer_full.py
+
+<span class="comment"># Step 4: 카테고리 재분류 (순서대로 실행)</span>
+python recategorize_pain_points.py
+python recategorize_positive_points.py
+python recategorize_usage.py
+python categorize_points.py
+
+<span class="comment"># Step 5: 대시보드 실행</span>
+streamlit run streamlit_app.py
+</div>
+
+        <div class="info-box">
+            <strong>💡 Tip:</strong> GPT 분석(Step 3)은 비용이 발생하므로, 먼저 소량 샘플로 테스트하는 것을 권장합니다.
+            <code>gpt_analyzer_sample.py</code>를 사용하면 100건만 샘플 분석할 수 있습니다.
+        </div>
+
+        <!-- Data Flow -->
+        <h2 id="dataflow">데이터 흐름도</h2>
+
+        <div style="overflow-x: auto;">
+            <table>
+                <tr>
+                    <th>단계</th>
+                    <th>입력 파일</th>
+                    <th>처리</th>
+                    <th>출력 파일</th>
+                </tr>
+                <tr>
+                    <td>1. 병합</td>
+                    <td>
+                        올영리뷰데이터_utf8.json<br>
+                        무신사리뷰.csv
+                    </td>
+                    <td>컬럼 표준화, 브랜드명 정규화</td>
+                    <td>merged_reviews.csv</td>
+                </tr>
+                <tr>
+                    <td>2. 전처리</td>
+                    <td>merged_reviews.csv</td>
+                    <td>리뷰어 정보 파싱, 피부타입 추출</td>
+                    <td>merged_reviews_processed.csv</td>
+                </tr>
+                <tr>
+                    <td>3. GPT 분석</td>
+                    <td>merged_reviews_processed.csv</td>
+                    <td>감성분석, Pain/Positive 추출</td>
+                    <td>gpt_analysis_full.json</td>
+                </tr>
+                <tr>
+                    <td>4. 재분류</td>
+                    <td>gpt_analysis_full.json</td>
+                    <td>유사 표현 통합, 카테고리화</td>
+                    <td>gpt_analysis_categorized.json</td>
+                </tr>
+                <tr>
+                    <td>5. 대시보드</td>
+                    <td>
+                        merged_reviews_processed.csv<br>
+                        gpt_analysis_categorized.json
+                    </td>
+                    <td>병합, 필터링, 시각화</td>
+                    <td>Streamlit 웹 대시보드</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>파일 의존성 다이어그램</h3>
+<div class="code-block" style="text-align: center; font-family: monospace;">
+┌─────────────────────┐     ┌─────────────────────┐
+│ 올영리뷰데이터.json │     │   무신사리뷰.csv    │
+└─────────┬───────────┘     └──────────┬──────────┘
+          │                            │
+          └──────────┬─────────────────┘
+                     ▼
+          ┌─────────────────────┐
+          │ merge_platforms.py  │
+          └──────────┬──────────┘
+                     ▼
+          ┌─────────────────────┐
+          │ merged_reviews.csv  │
+          └──────────┬──────────┘
+                     ▼
+     ┌───────────────────────────────┐
+     │ preprocess_reviewer_info.py  │
+     └───────────────┬───────────────┘
+                     ▼
+     ┌───────────────────────────────┐
+     │ merged_reviews_processed.csv │
+     └───────────────┬───────────────┘
+                     ▼
+        ┌────────────────────────┐
+        │ gpt_analyzer_full.py   │
+        └───────────┬────────────┘
+                    ▼
+        ┌────────────────────────┐
+        │ gpt_analysis_full.json │
+        └───────────┬────────────┘
+                    ▼
+     ┌──────────────────────────────┐
+     │   recategorize_*.py (3개)   │
+     │   categorize_points.py      │
+     └─────────────┬────────────────┘
+                   ▼
+     ┌──────────────────────────────┐
+     │gpt_analysis_categorized.json│
+     └─────────────┬────────────────┘
+                   ▼
+          ┌─────────────────────┐
+          │  streamlit_app.py   │
+          └─────────────────────┘
+</div>
+
+        <!-- Footer -->
+        <div style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #e2e8f0; text-align: center; color: #718096;">
+            <p>📅 문서 생성일: 2026-01-31</p>
+            <p>🧴 토너 리뷰 분석 프로젝트 | 라운드랩 이커머스팀</p>
+        </div>
+    </div>
+</body>
+</html>

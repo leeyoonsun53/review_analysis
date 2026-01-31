@@ -842,15 +842,22 @@ def main():
                 st.plotly_chart(fig, use_container_width=True)
 
             with col2:
-                skin_neg = skin_data.groupby('SKIN_TYPE').apply(
-                    lambda x: (x['sentiment'] == 'NEG').mean() * 100
-                ).reset_index(name='NEG비율')
-                skin_neg.columns = ['피부타입', 'NEG비율']
+                # 피부타입별 NEG 비율 계산
+                skin_neg_data = []
+                for skin_type in skin_data['SKIN_TYPE'].unique():
+                    st_df = skin_data[skin_data['SKIN_TYPE'] == skin_type]
+                    neg_rate = (st_df['sentiment'] == 'NEG').mean() * 100
+                    skin_neg_data.append({'피부타입': skin_type, 'NEG비율': neg_rate})
+
+                skin_neg = pd.DataFrame(skin_neg_data)
+                skin_neg = skin_neg.sort_values('NEG비율', ascending=False)
 
                 fig = px.bar(skin_neg, x='피부타입', y='NEG비율',
                              title='피부타입별 부정 비율 (%)',
                              color='NEG비율',
-                             color_continuous_scale='RdYlGn_r')
+                             color_continuous_scale='RdYlGn_r',
+                             text=skin_neg['NEG비율'].apply(lambda x: f'{x:.2f}%'))
+                fig.update_traces(textposition='outside')
                 st.plotly_chart(fig, use_container_width=True)
 
     # ===== 무신사 평가 데이터 =====
