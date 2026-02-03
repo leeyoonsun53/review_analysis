@@ -274,51 +274,19 @@ def main():
         sentiment_code = selected_sentiment.split(' ')[0]
         df_filtered = df_filtered[df_filtered['sentiment'] == sentiment_code]
 
-    # 사용 경험 필터 (재구매/한달사용 등)
+    # 사용 경험 필터 (PURCHASE_TAG 기반 - 올리브영만)
     st.sidebar.markdown("---")
-    st.sidebar.markdown("**🔄 사용 경험 필터**")
+    st.sidebar.markdown("**🔄 구매 태그 필터** (올영)")
 
-    experience_options = ['전체', '재구매 언급', '꾸준히/오래 사용', '인생템 언급']
-    selected_experience = st.sidebar.selectbox("사용 경험", experience_options)
+    if 'PURCHASE_TAG' in df_filtered.columns:
+        experience_options = ['전체', '재구매', '한달이상사용', '한달이상리뷰']
+        selected_experience = st.sidebar.selectbox("구매 태그", experience_options)
 
-    if selected_experience != '전체':
-        # 재구매 관련 키워드
-        rebuy_keywords = ['재구매', '다시 구매', '또 살', '또 구매', '계속 살', '재구입']
-        # 꾸준히 사용 관련 키워드
-        longuse_keywords = ['꾸준히', '한달', '몇달', '몇통', '오래', '계속 쓰', '계속 사용', '매일', '몇년']
-        # 인생템 관련
-        lifetiem_keywords = ['인생템', '인생', '최애', '최고']
-
-        def check_experience(row, keywords):
-            # positive_points 체크
-            pos_points = row.get('gpt_positive_points', [])
-            if isinstance(pos_points, list):
-                for p in pos_points:
-                    for kw in keywords:
-                        if kw in str(p):
-                            return True
-            # value_tags 체크
-            val_tags = row.get('value_tags', [])
-            if isinstance(val_tags, list):
-                for v in val_tags:
-                    for kw in keywords:
-                        if kw in str(v):
-                            return True
-            # 리뷰 원문 체크
-            content = str(row.get('REVIEW_CONTENT', ''))
-            for kw in keywords:
-                if kw in content:
-                    return True
-            return False
-
-        if selected_experience == '재구매 언급':
-            mask = df_filtered.apply(lambda r: check_experience(r, rebuy_keywords), axis=1)
-            df_filtered = df_filtered[mask]
-        elif selected_experience == '꾸준히/오래 사용':
-            mask = df_filtered.apply(lambda r: check_experience(r, longuse_keywords), axis=1)
-            df_filtered = df_filtered[mask]
-        elif selected_experience == '인생템 언급':
-            mask = df_filtered.apply(lambda r: check_experience(r, lifetiem_keywords), axis=1)
+        if selected_experience != '전체':
+            # PURCHASE_TAG에 선택한 값이 포함된 리뷰 필터링
+            mask = df_filtered['PURCHASE_TAG'].apply(
+                lambda x: selected_experience in str(x) if pd.notna(x) else False
+            )
             df_filtered = df_filtered[mask]
 
     # 필터 결과 표시
