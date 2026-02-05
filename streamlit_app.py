@@ -453,7 +453,7 @@ def main():
                 with col1:
                     for i, (pain, cnt) in enumerate(top_pains[:10], 1):
                         pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
-                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.1f}%)"):
+                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.2f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_pain_points'].apply(
                                 lambda x: pain in x if isinstance(x, list) else False
@@ -464,7 +464,7 @@ def main():
                 with col2:
                     for i, (pain, cnt) in enumerate(top_pains[10:20], 11):
                         pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
-                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.1f}%)"):
+                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.2f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_pain_points'].apply(
                                 lambda x: pain in x if isinstance(x, list) else False
@@ -557,7 +557,7 @@ def main():
                 with col1:
                     for i, (p, cnt) in enumerate(top_pos[:10], 1):
                         pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
-                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.1f}%)"):
+                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.2f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_positive_points'].apply(
                                 lambda x: p in x if isinstance(x, list) else False
@@ -568,7 +568,7 @@ def main():
                 with col2:
                     for i, (p, cnt) in enumerate(top_pos[10:20], 11):
                         pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
-                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.1f}%)"):
+                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.2f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_positive_points'].apply(
                                 lambda x: p in x if isinstance(x, list) else False
