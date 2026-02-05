@@ -867,11 +867,15 @@ def main():
                 skin_neg = pd.DataFrame(skin_neg_data)
                 skin_neg = skin_neg.sort_values('NEG비율', ascending=False)
 
+                # 정렬된 순서대로 카테고리 순서 지정
+                sorted_skin_types = skin_neg['피부타입'].tolist()
+
                 fig = px.bar(skin_neg, x='피부타입', y='NEG비율',
                              title='피부타입별 부정 비율 (%)',
                              color='NEG비율',
                              color_continuous_scale='RdYlGn_r',
-                             text=skin_neg['NEG비율'].apply(lambda x: f'{x:.2f}%'))
+                             text=skin_neg['NEG비율'].apply(lambda x: f'{x:.2f}%'),
+                             category_orders={'피부타입': sorted_skin_types})
                 fig.update_traces(textposition='outside')
                 st.plotly_chart(fig, use_container_width=True)
 
