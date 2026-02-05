@@ -447,11 +447,13 @@ def main():
             if all_pains:
                 pain_counter = Counter(all_pains)
                 top_pains = pain_counter.most_common(20)
+                total_filtered = len(df_filtered)
 
                 col1, col2 = st.columns(2)
                 with col1:
                     for i, (pain, cnt) in enumerate(top_pains[:10], 1):
-                        with st.expander(f"**{i}.** {pain} ({cnt}건)"):
+                        pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
+                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.1f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_pain_points'].apply(
                                 lambda x: pain in x if isinstance(x, list) else False
@@ -461,7 +463,8 @@ def main():
                                 display_review_card(row)
                 with col2:
                     for i, (pain, cnt) in enumerate(top_pains[10:20], 11):
-                        with st.expander(f"**{i}.** {pain} ({cnt}건)"):
+                        pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
+                        with st.expander(f"**{i}.** {pain} ({cnt}건, {pct:.1f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_pain_points'].apply(
                                 lambda x: pain in x if isinstance(x, list) else False
@@ -548,11 +551,13 @@ def main():
             if all_pos:
                 pos_counter = Counter(all_pos)
                 top_pos = pos_counter.most_common(20)
+                total_filtered = len(df_filtered)
 
                 col1, col2 = st.columns(2)
                 with col1:
                     for i, (p, cnt) in enumerate(top_pos[:10], 1):
-                        with st.expander(f"**{i}.** {p} ({cnt}건)"):
+                        pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
+                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.1f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_positive_points'].apply(
                                 lambda x: p in x if isinstance(x, list) else False
@@ -562,7 +567,8 @@ def main():
                                 display_review_card(row)
                 with col2:
                     for i, (p, cnt) in enumerate(top_pos[10:20], 11):
-                        with st.expander(f"**{i}.** {p} ({cnt}건)"):
+                        pct = cnt / total_filtered * 100 if total_filtered > 0 else 0
+                        with st.expander(f"**{i}.** {p} ({cnt}건, {pct:.1f}%)"):
                             # 해당 키워드가 포함된 리뷰 찾기
                             mask = df_filtered['gpt_positive_points'].apply(
                                 lambda x: p in x if isinstance(x, list) else False
