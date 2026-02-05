@@ -49,7 +49,7 @@ st.markdown("""
 
 # ===== 리뷰 표시 헬퍼 함수 =====
 def display_review_card(row):
-    """리뷰 카드 표시 (감성, 리뷰어 정보 포함)"""
+    """리뷰 카드 표시 (감성, 피부타입, 리뷰어 정보 포함)"""
     platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
     date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
 
@@ -57,10 +57,22 @@ def display_review_card(row):
     sentiment = row.get('sentiment', 'NEU')
     sentiment_badge = {'POS': '🟢긍정', 'NEU': '⚪중립', 'NEG': '🔴부정'}.get(sentiment, '⚪중립')
 
-    # 리뷰어 정보 구성
+    # 피부타입 뱃지
+    skin_type = row.get('SKIN_TYPE', '')
+    skin_badge = ""
+    if pd.notna(skin_type) and skin_type:
+        skin_colors = {
+            '민감성': '🔴',
+            '건성': '🟠',
+            '지성': '🟡',
+            '복합성': '🟢',
+            '중성': '⚪'
+        }
+        skin_emoji = skin_colors.get(skin_type, '⚪')
+        skin_badge = f" | {skin_emoji}{skin_type}"
+
+    # 리뷰어 정보 구성 (피부타입 제외 - 이미 헤더에 표시)
     reviewer_info_parts = []
-    if pd.notna(row.get('SKIN_TYPE')) and row['SKIN_TYPE']:
-        reviewer_info_parts.append(f"피부타입: {row['SKIN_TYPE']}")
     if pd.notna(row.get('SKIN_TONE')) and row['SKIN_TONE']:
         reviewer_info_parts.append(f"피부톤: {row['SKIN_TONE']}")
     if pd.notna(row.get('SKIN_CONCERNS')) and row['SKIN_CONCERNS']:
@@ -73,8 +85,8 @@ def display_review_card(row):
 
     reviewer_info_str = " | ".join(reviewer_info_parts) if reviewer_info_parts else ""
 
-    # 헤더 라인
-    st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str} | {sentiment_badge}")
+    # 헤더 라인 (피부타입 포함)
+    st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str} | {sentiment_badge}{skin_badge}")
 
     # 리뷰어 정보
     if reviewer_info_str:
