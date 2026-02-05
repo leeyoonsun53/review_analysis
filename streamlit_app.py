@@ -6,6 +6,7 @@ GPT 분석 기반 통합 버전
 import streamlit as st
 import pandas as pd
 import json
+import re
 import plotly.express as px
 import plotly.graph_objects as go
 from collections import Counter
@@ -76,10 +77,12 @@ def display_review_card(row):
     if pd.notna(row.get('SKIN_TONE')) and row['SKIN_TONE']:
         reviewer_info_parts.append(f"피부톤: {row['SKIN_TONE']}")
     if pd.notna(row.get('SKIN_CONCERNS')) and row['SKIN_CONCERNS']:
-        concerns = row['SKIN_CONCERNS']
-        if isinstance(concerns, str) and len(concerns) > 30:
-            concerns = concerns[:30] + "..."
-        reviewer_info_parts.append(f"고민: {concerns}")
+        concerns = str(row['SKIN_CONCERNS'])
+        # 코드값(A03,B01 등)이 포함된 경우 표시하지 않음
+        if not re.search(r'[A-Z]\d+', concerns):
+            if len(concerns) > 30:
+                concerns = concerns[:30] + "..."
+            reviewer_info_parts.append(f"고민: {concerns}")
     if pd.notna(row.get('REVIEWER_INFO')) and row['REVIEWER_INFO']:
         reviewer_info_parts.append(f"{row['REVIEWER_INFO']}")
 
