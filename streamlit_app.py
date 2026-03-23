@@ -208,7 +208,7 @@ def main():
 
     # 플랫폼 필터
     if 'PLATFORM_CODE' in df.columns:
-        platform_map = {'OLIVEYOUNG': '올리브영', 'COUPANG': '쿠팡'}
+        platform_map = {'OLIVEYOUNG': '올리브영', 'COUPANG': '쿠팡', 'oliveyoung_url': '올리브영'}
         df['PLATFORM'] = df['PLATFORM_CODE'].map(platform_map).fillna(df['PLATFORM_CODE'])
         platforms = sorted(df['PLATFORM'].unique())
         selected_platforms = st.sidebar.multiselect("플랫폼 선택", options=platforms, default=platforms)
@@ -272,7 +272,7 @@ def main():
             st.session_state.selected_brands = all_brands
 
     selected_brands = st.sidebar.multiselect(
-        "브랜드 선택",
+        "제품 선택",
         options=all_brands,
         default=st.session_state.selected_brands,
         key="brand_multiselect"
