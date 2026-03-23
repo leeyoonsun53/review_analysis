@@ -4,6 +4,7 @@ DB GPT 분석 결과 → JSON 파일 내보내기
 Streamlit 대시보드용 데이터 갱신
 """
 import json
+import re
 import sys
 import os
 from collections import Counter, defaultdict
@@ -12,6 +13,75 @@ from sqlalchemy import text
 from tqdm import tqdm
 
 sys.stdout.reconfigure(encoding='utf-8')
+
+
+# ===== 제품명 정규화 =====
+PRODUCT_NAME_MAP = {
+    '토리든 다이브인 저분자 히알루론산 토너': '토리든 다이브인 토너',
+    '라운드랩 독도 토너': '라운드랩 독도 토너',
+    '라운드랩 독도토너': '라운드랩 독도 토너',
+    '브링그린 티트리시카수딩토너': '브링그린 티트리시카 토너',
+    '브링그린 티트리 시카 수딩 토너': '브링그린 티트리시카 토너',
+    '브링그린 티트리시카 수딩 토너': '브링그린 티트리시카 토너',
+    '에스네이처 아쿠아 오아시스 토너': '에스네이처 아쿠아 토너',
+    '아누아 어성초 수딩 토너': '아누아 어성초 토너',
+    '아누아 어성초 77 수딩 토너': '아누아 어성초 토너',
+    '아비브 어성초 카밍 토너 스킨부스터': '아비브 어성초 토너',
+    '토니모리 원더 세라마이드 모찌 토너': '토니모리 모찌 토너',
+    '토니모리 원더 비건 라벨 세라마이드 모찌 토너': '토니모리 모찌 토너',
+    '토니모리 원더 세라마이드 모찌 토너 마리 에디션': '토니모리 모찌 토너',
+    '토니모리 원더 세라마이드 모찌 에멀전': '토니모리 모찌 에멀전',
+    '토니모리 원더 세라마이드 모찌 수분 크림': '토니모리 모찌 수분크림',
+    '토니모리 원더 세라마이드 모찌 마스크 시트': '토니모리 모찌 마스크시트',
+    '토니모리 원더 세라마이드 모찌 팩투폼': '토니모리 모찌 팩투폼',
+    '토니모리 원더 세라마이드 모찌 팩투폼 마리 에디션': '토니모리 모찌 팩투폼',
+    '토니모리 원더 세라마이드 모찌 팩투 클렌징폼 마리 에디션': '토니모리 모찌 팩투폼',
+}
+
+
+def normalize_product_name(name):
+    """제품명 정규화"""
+    if not name:
+        return name
+
+    s = str(name)
+
+    # 1) [...] 대괄호 태그 제거
+    s = re.sub(r'\[.*?\]', '', s)
+
+    # 2) (...) 괄호 정보 제거
+    s = re.sub(r'\(.*?\)', '', s)
+
+    # 3) 용량 제거: 500ml, 250mL, 20g 등
+    s = re.sub(r'\d+\s*[mM][lL]', '', s)
+    s = re.sub(r'\d+\s*g\b', '', s)
+
+    # 4) 쿠팡 수량 제거: , 1개 / , 7개
+    s = re.sub(r',\s*\d+개', '', s)
+
+    # 5) 기획/단품 제거
+    s = re.sub(r'기획.*', '', s)
+    s = re.sub(r'단품.*', '', s)
+
+    # 6) 숫자 잔여물 (1025, 77, 1+1 등)
+    s = re.sub(r'\b1025\b', '', s)
+    s = re.sub(r'\b77\b', '', s)
+    s = re.sub(r'\d\+\d', '', s)
+
+    # 7) 어워즈, 한정, 더블 등 부가 텍스트
+    s = re.sub(r'어워즈.*', '', s)
+    s = re.sub(r'더블.*', '', s)
+
+    # 8) 공백 정리
+    s = re.sub(r'\s+', ' ', s).strip()
+    s = s.rstrip(',').strip()
+
+    # 9) 매핑 테이블에서 매칭
+    for key, val in PRODUCT_NAME_MAP.items():
+        if key in s:
+            return val
+
+    return s if s else str(name)
 
 # ===== DB 연결 =====
 load_dotenv('config/.env')
@@ -146,7 +216,7 @@ def export_analysis():
     for item in results:
         export_data.append({
             'idx': item['idx'],
-            'brand': item['product_name'],
+            'brand': normalize_product_name(item['product_name']),
             'rating': item['rating'],
             'sentiment': item['sentiment'],
             'pain_points': item['pain_points'],
@@ -170,7 +240,7 @@ def export_analysis():
     review_records = []
     for item in results:
         review_records.append({
-            'BRAND_NAME': item['product_name'],
+            'BRAND_NAME': normalize_product_name(item['product_name']),
             'REVIEW_CONTENT': item['review_content'],
             'REVIEW_RATING': item['rating'],
             'REVIEW_DATE': item['review_date'],
@@ -201,7 +271,7 @@ def export_analysis():
         print(f"  {s}: {cnt:,}건 ({pct:.1f}%)")
 
     # 브랜드 분포
-    brand_counts = Counter(item['product_name'] for item in results)
+    brand_counts = Counter(normalize_product_name(item['product_name']) for item in results)
     print(f"\n[브랜드별 리뷰 수]")
     for brand, cnt in brand_counts.most_common():
         print(f"  {brand}: {cnt:,}건")
