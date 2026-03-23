@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 GPT-4o-mini 기반 리뷰 분석 → Oracle DB 직접 적재
+TB_CRAWLING_REVIEW_MANUAL 테이블용
+(REVIEW_ID가 VARCHAR이므로 FK 없이 숫자 변환하여 적재)
 """
 import json
 import os
 import sys
 import time
+import hashlib
 from openai import OpenAI
 from dotenv import load_dotenv
 from sqlalchemy import text
@@ -49,6 +52,12 @@ sentiment: 내용 기반. 별점 높아도 불만이면 NEG.
 없는 항목은 빈 배열."""
 
 
+def review_id_to_number(review_id_str):
+    """VARCHAR REVIEW_ID → 음수 NUMBER 변환 (기존 NUMBER ID와 충돌 방지)"""
+    h = int(hashlib.md5(str(review_id_str).encode()).hexdigest()[:15], 16)
+    return -h  # 음수로 저장하여 기존 양수 ID와 구분
+
+
 def analyze_review(review_text, rating, max_retries=3):
     """단일 리뷰 GPT 분석"""
     for attempt in range(max_retries):
@@ -64,7 +73,6 @@ def analyze_review(review_text, rating, max_retries=3):
 
             content = response.choices[0].message.content.strip()
 
-            # JSON 파싱
             if content.startswith('```'):
                 content = content.split('```')[1]
                 if content.startswith('json'):
@@ -90,14 +98,13 @@ def analyze_review(review_text, rating, max_retries=3):
     return None, 0, 0, "max_retries"
 
 
-def insert_to_db(conn, review_id, rating, sentiment, tokens_in, tokens_out, result):
+def insert_to_db(conn, review_id_num, rating, sentiment, tokens_in, tokens_out, result):
     """분석 결과 1건을 DB에 적재"""
-    # 1) 메인 테이블
     conn.execute(text("""
         INSERT INTO TB_REVIEW_GPT_ANALYSIS (ANALYSIS_ID, REVIEW_ID, REVIEW_RATING, SENTIMENT, TOKENS_INPUT, TOKENS_OUTPUT)
         VALUES (SEQ_GPT_ANALYSIS.NEXTVAL, :review_id, :rating, :sentiment, :tokens_in, :tokens_out)
     """), {
-        'review_id': review_id,
+        'review_id': review_id_num,
         'rating': rating,
         'sentiment': sentiment,
         'tokens_in': tokens_in,
@@ -106,21 +113,18 @@ def insert_to_db(conn, review_id, rating, sentiment, tokens_in, tokens_out, resu
 
     aid = conn.execute(text("SELECT SEQ_GPT_ANALYSIS.CURRVAL FROM DUAL")).scalar()
 
-    # 2) Pain Points
     for pt in result.get('pain_points', []):
         conn.execute(text("""
             INSERT INTO TB_REVIEW_PAIN_POINTS (ID, ANALYSIS_ID, POINT_TEXT)
             VALUES (SEQ_PAIN_POINTS.NEXTVAL, :aid, :pt)
         """), {'aid': aid, 'pt': pt[:200]})
 
-    # 3) Positive Points
     for pt in result.get('positive_points', []):
         conn.execute(text("""
             INSERT INTO TB_REVIEW_POSITIVE_POINTS (ID, ANALYSIS_ID, POINT_TEXT)
             VALUES (SEQ_POSITIVE_POINTS.NEXTVAL, :aid, :pt)
         """), {'aid': aid, 'pt': pt[:200]})
 
-    # 4) Tags
     tag_map = {
         'BENEFIT': result.get('benefit_tags', []),
         'TEXTURE': result.get('texture_tags', []),
@@ -137,32 +141,45 @@ def insert_to_db(conn, review_id, rating, sentiment, tokens_in, tokens_out, resu
     return aid
 
 
-def get_analyzed_review_ids(conn):
-    """이미 분석 완료된 REVIEW_ID 목록 조회"""
-    rows = conn.execute(text("SELECT REVIEW_ID FROM TB_REVIEW_GPT_ANALYSIS")).fetchall()
-    return {r[0] for r in rows}
-
-
 def main():
     print("=" * 70)
-    print("GPT-4o-mini 리뷰 분석 → Oracle DB 직접 적재")
+    print("GPT-4o-mini 리뷰 분석 → Oracle DB (MANUAL 테이블)")
     print("=" * 70)
 
-    # 분석 대상 리뷰 조회 (DB에서 직접)
+    # FK 제약 비활성화 (REVIEW_ID가 VARCHAR이므로)
+    print("\nFK 제약 비활성화...")
+    with engine.begin() as conn:
+        try:
+            conn.execute(text("ALTER TABLE TB_REVIEW_GPT_ANALYSIS DISABLE CONSTRAINT FK_REVIEW"))
+            print("  FK_REVIEW 비활성화 완료")
+        except Exception as e:
+            print(f"  FK 이미 비활성화 또는 없음: {e}")
+
+    # 분석 대상 리뷰 조회
     print("\n분석 대상 리뷰 조회...")
     with engine.connect() as conn:
         rows = conn.execute(text("""
-            SELECT cr.REVIEW_ID, cr.REVIEW_CONTENT, cr.REVIEW_RATING
-            FROM TB_CRAWLING_REVIEW cr
-            WHERE cr.REVIEW_DATE >= TO_DATE('20250101', 'YYYYMMDD')
-              AND cr.PLATFORM_CODE = 'COUPANG_M'
-              AND cr.PRODUCT_NAME LIKE '%모찌%토너%'
-              AND NOT EXISTS (SELECT 'x' FROM TB_REVIEW_GPT_ANALYSIS a WHERE a.REVIEW_ID = cr.REVIEW_ID)
-            ORDER BY cr.REVIEW_ID
+            SELECT m.REVIEW_ID, m.REVIEW_CONTENT, m.REVIEW_RATING
+            FROM TB_CRAWLING_REVIEW_MANUAL m
+            ORDER BY m.REVIEW_ID
         """)).fetchall()
 
-    pending = [{'review_id': r[0], 'content': r[1], 'rating': r[2]} for r in rows]
-    print(f"  미분석 리뷰: {len(pending):,}건")
+    print(f"  전체 리뷰: {len(rows):,}건")
+
+    # 이미 분석된 REVIEW_ID 확인 (음수 해시 기준)
+    id_map = {}
+    for r in rows:
+        id_map[r[0]] = review_id_to_number(r[0])
+
+    with engine.connect() as conn:
+        existing = conn.execute(text(
+            "SELECT REVIEW_ID FROM TB_REVIEW_GPT_ANALYSIS WHERE REVIEW_ID < 0"
+        )).fetchall()
+        existing_ids = {r[0] for r in existing}
+
+    pending = [r for r in rows if id_map[r[0]] not in existing_ids]
+    print(f"  이미 분석: {len(rows) - len(pending):,}건")
+    print(f"  미분석: {len(pending):,}건")
 
     if not pending:
         print("\n모든 리뷰가 이미 분석되었습니다.")
@@ -170,18 +187,18 @@ def main():
 
     # 분석 실행
     print(f"\n{len(pending):,}건 분석 시작...")
-    print(f"예상 시간: {len(pending) / 3 / 60:.0f}분")
 
     total_tokens = 0
     inserted = 0
     errors = 0
-    commit_interval = 50
 
     try:
         with engine.begin() as conn:
             for i, rev in enumerate(tqdm(pending, desc="GPT 분석 + DB 적재")):
-                review_text = str(rev['content']) if rev['content'] else ''
-                rating = int(rev['rating']) if rev['rating'] else 3
+                review_id_str = rev[0]
+                review_text = str(rev[1]) if rev[1] else ''
+                rating = int(rev[2]) if rev[2] else 3
+                review_id_num = id_map[review_id_str]
 
                 result, tokens_in, tokens_out, error = analyze_review(review_text, rating)
                 total_tokens += tokens_in + tokens_out
@@ -197,19 +214,17 @@ def main():
                         'usage_tags': [], 'value_tags': []
                     }
 
-                insert_to_db(conn, rev['review_id'], rating, sentiment, tokens_in, tokens_out, result)
+                insert_to_db(conn, review_id_num, rating, sentiment, tokens_in, tokens_out, result)
                 inserted += 1
 
-                # 진행 로그
-                if (i + 1) % commit_interval == 0:
+                if (i + 1) % 50 == 0:
                     cost = total_tokens * 0.15 / 1_000_000 + total_tokens * 0.6 / 1_000_000
                     tqdm.write(f"  {inserted}/{len(pending)} | 토큰: {total_tokens:,} | 비용: ${cost:.2f} | 에러: {errors}")
 
-                # Rate limit 방지
                 time.sleep(0.3)
 
     except KeyboardInterrupt:
-        print("\n\n중단됨. 트랜잭션 커밋 완료된 건까지 저장됩니다.")
+        print("\n\n중단됨.")
 
     # 결과 요약
     print("\n" + "=" * 70)
@@ -225,32 +240,11 @@ def main():
     # 검증
     print("\n[검증]")
     with engine.connect() as conn:
+        row = conn.execute(text("SELECT COUNT(*) FROM TB_REVIEW_GPT_ANALYSIS WHERE REVIEW_ID < 0")).scalar()
+        print(f"  MANUAL 분석 건수: {row:,}건")
+
         row = conn.execute(text("SELECT COUNT(*) FROM TB_REVIEW_GPT_ANALYSIS")).scalar()
-        print(f"  TB_REVIEW_GPT_ANALYSIS: {row:,}건")
-
-        print("\n[감성 분포]")
-        rows = conn.execute(text("""
-            SELECT SENTIMENT, COUNT(*) CNT,
-                   ROUND(COUNT(*) * 100 / SUM(COUNT(*)) OVER (), 1) PCT
-            FROM TB_REVIEW_GPT_ANALYSIS
-            GROUP BY SENTIMENT ORDER BY SENTIMENT
-        """)).fetchall()
-        for r in rows:
-            print(f"  {r[0]}: {r[1]:,}건 ({r[2]}%)")
-
-        print("\n[토큰 사용량]")
-        row = conn.execute(text("""
-            SELECT SUM(TOKENS_INPUT), SUM(TOKENS_OUTPUT),
-                   ROUND(AVG(TOKENS_INPUT)), ROUND(AVG(TOKENS_OUTPUT))
-            FROM TB_REVIEW_GPT_ANALYSIS
-            WHERE TOKENS_INPUT IS NOT NULL
-        """)).fetchone()
-        if row[0]:
-            cost_in = row[0] * 0.15 / 1_000_000
-            cost_out = row[1] * 0.60 / 1_000_000
-            print(f"  Input:  {row[0]:,} (건당 {row[2]:,}) → ${cost_in:.2f}")
-            print(f"  Output: {row[1]:,} (건당 {row[3]:,}) → ${cost_out:.2f}")
-            print(f"  합계 비용: ${cost_in + cost_out:.2f}")
+        print(f"  전체 분석 건수: {row:,}건")
 
 
 if __name__ == "__main__":
