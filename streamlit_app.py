@@ -261,9 +261,10 @@ def main():
     # 브랜드 필터 (session_state로 선택 유지)
     all_brands = sorted(df_filtered['BRAND_NAME'].unique())
 
-    # 첫 로드시에만 전체 브랜드 선택, 이후에는 유효한 브랜드만 유지
+    # 첫 로드시 토니모리 모찌 토너 기본 선택
     if 'selected_brands' not in st.session_state:
-        st.session_state.selected_brands = all_brands
+        default_brand = [b for b in all_brands if b == '토니모리 모찌 토너']
+        st.session_state.selected_brands = default_brand if default_brand else all_brands
     else:
         # 현재 유효한 브랜드 중에서 이전 선택 유지
         st.session_state.selected_brands = [b for b in st.session_state.selected_brands if b in all_brands]
