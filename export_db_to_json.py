@@ -61,7 +61,7 @@ def export_analysis():
             'reviewer_info': r[7],
             'additional_info': r[8],
             'purchase_tag': r[9],
-            'platform_code': r[10],
+            'platform_code': 'OLIVEYOUNG' if r[10] in ('OLIVEYOUNG', 'oliveyoung_url') else r[10],
             'pain_points': [],
             'positive_points': [],
             'benefit_tags': [],
