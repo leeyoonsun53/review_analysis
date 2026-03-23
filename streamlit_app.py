@@ -51,7 +51,6 @@ st.markdown("""
 # ===== 리뷰 표시 헬퍼 함수 =====
 def display_review_card(row):
     """리뷰 카드 표시 (감성, 피부타입, 리뷰어 정보 포함)"""
-    platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
     date_str = row['review_date'].strftime('%Y-%m-%d') if pd.notna(row['review_date']) else ''
 
     # 감성 뱃지
@@ -89,7 +88,7 @@ def display_review_card(row):
     reviewer_info_str = " | ".join(reviewer_info_parts) if reviewer_info_parts else ""
 
     # 헤더 라인 (피부타입 포함)
-    st.markdown(f"{platform_badge} **[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str} | {sentiment_badge}{skin_badge}")
+    st.markdown(f"**[{row['BRAND_NAME']}]** ⭐{row['REVIEW_RATING']} | {date_str} | {sentiment_badge}{skin_badge}")
 
     # 리뷰어 정보
     if reviewer_info_str:
@@ -105,13 +104,21 @@ def display_review_card(row):
 @st.cache_data
 def load_data():
     """통합 데이터 및 GPT 분석 결과 로드"""
-    # 기본 리뷰 데이터 로드
-    data_path = Path("data/merged_reviews_processed.csv")
+    # 올리브영 리뷰 데이터 로드
+    data_path = Path("data/oliveyoung_reviews_processed.csv")
     if not data_path.exists():
-        st.error("데이터 파일을 찾을 수 없습니다: data/merged_reviews_processed.csv")
-        return None, None
-
-    df = pd.read_csv(data_path, encoding='utf-8-sig')
+        # 원본 JSON에서 직접 로드
+        json_path = Path("data/올영리뷰데이터_utf8.json")
+        if not json_path.exists():
+            st.error("데이터 파일을 찾을 수 없습니다.")
+            return None, None
+        import json as json_mod
+        with open(json_path, 'r', encoding='utf-8') as f:
+            raw = json_mod.load(f)
+        first_key = list(raw.keys())[0]
+        df = pd.DataFrame(raw[first_key])
+    else:
+        df = pd.read_csv(data_path, encoding='utf-8-sig')
 
     # GPT 분석 결과 로드
     gpt_path = Path("output/gpt_analysis_categorized.json")
@@ -192,24 +199,20 @@ def main():
     else:
         analysis_type = "키워드 기반"
 
-    # 플랫폼 정보
-    platforms = df['PLATFORM'].unique().tolist()
+    # 기본 정보
     total_reviews = len(df)
-    platform_info = " | ".join([f"{p}: {len(df[df['PLATFORM']==p]):,}건" for p in platforms])
-    st.markdown(f'<p style="text-align: center; color: gray;">v3.0 ({analysis_type} 분석) | {platform_info} | 총 {total_reviews:,}건</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="text-align: center; color: gray;">v3.0 ({analysis_type} 분석) | 총 {total_reviews:,}건</p>', unsafe_allow_html=True)
 
     # ===== 사이드바 필터 =====
     st.sidebar.header("🔍 필터")
 
     # 플랫폼 필터
-    selected_platforms = st.sidebar.multiselect(
-        "플랫폼 선택",
-        options=platforms,
-        default=platforms
-    )
-
-    if selected_platforms:
-        df_filtered = df[df['PLATFORM'].isin(selected_platforms)]
+    if 'PLATFORM_CODE' in df.columns:
+        platform_map = {'OLIVEYOUNG': '올리브영', 'COUPANG': '쿠팡'}
+        df['PLATFORM'] = df['PLATFORM_CODE'].map(platform_map).fillna(df['PLATFORM_CODE'])
+        platforms = sorted(df['PLATFORM'].unique())
+        selected_platforms = st.sidebar.multiselect("플랫폼 선택", options=platforms, default=platforms)
+        df_filtered = df[df['PLATFORM'].isin(selected_platforms)] if selected_platforms else df
     else:
         df_filtered = df
 
@@ -289,9 +292,9 @@ def main():
         sentiment_code = selected_sentiment.split(' ')[0]
         df_filtered = df_filtered[df_filtered['sentiment'] == sentiment_code]
 
-    # 사용 경험 필터 (PURCHASE_TAG 기반 - 올리브영만)
+    # 사용 경험 필터 (PURCHASE_TAG 기반)
     st.sidebar.markdown("---")
-    st.sidebar.markdown("**🔄 구매 태그 필터** (올영)")
+    st.sidebar.markdown("**🔄 구매 태그 필터**")
 
     if 'PURCHASE_TAG' in df_filtered.columns:
         experience_options = ['전체', '재구매', '한달이상사용', '한달이상리뷰']
@@ -767,11 +770,11 @@ def main():
 
     with col1:
         # 브랜드별 리뷰 수
-        brand_counts = df_filtered.groupby(['BRAND_NAME', 'PLATFORM']).size().reset_index(name='리뷰수')
+        brand_counts = df_filtered.groupby('BRAND_NAME').size().reset_index(name='리뷰수')
 
-        fig = px.bar(brand_counts, x='BRAND_NAME', y='리뷰수', color='PLATFORM',
+        fig = px.bar(brand_counts, x='BRAND_NAME', y='리뷰수',
                      title='브랜드별 리뷰 분포',
-                     color_discrete_sequence=['#00a862', '#000000'])
+                     color_discrete_sequence=['#00a862'])
         fig.update_layout(xaxis_title='브랜드', yaxis_title='리뷰 수')
         st.plotly_chart(fig, use_container_width=True)
 
@@ -792,7 +795,7 @@ def main():
         st.plotly_chart(fig, use_container_width=True)
 
     # 브랜드별 상세 테이블
-    brand_stats = df_filtered.groupby(['BRAND_NAME', 'PLATFORM']).agg({
+    brand_stats = df_filtered.groupby('BRAND_NAME').agg({
         'REVIEW_RATING': ['count', 'mean'],
         'sentiment': lambda x: (x == 'NEG').mean() * 100
     }).round(2)
@@ -801,63 +804,29 @@ def main():
 
     st.dataframe(brand_stats, use_container_width=True)
 
-    # ===== 플랫폼 비교 =====
-    if len(selected_platforms) >= 2:
-        st.markdown('<p class="section-header">🏪 플랫폼 비교</p>', unsafe_allow_html=True)
-
-        col1, col2 = st.columns(2)
-
-        with col1:
-            platform_sentiment = df_filtered.groupby('PLATFORM')['sentiment'].value_counts(normalize=True).unstack() * 100
-            platform_sentiment = platform_sentiment.fillna(0)
-            # 누락된 감성 컬럼 추가
-            for col in ['POS', 'NEU', 'NEG']:
-                if col not in platform_sentiment.columns:
-                    platform_sentiment[col] = 0
-            # 컬럼명 한글화
-            platform_sentiment = platform_sentiment.rename(columns={'POS': '긍정', 'NEU': '중립', 'NEG': '부정'})
-
-            fig = px.bar(platform_sentiment.reset_index(),
-                         x='PLATFORM', y=['긍정', '중립', '부정'],
-                         title='플랫폼별 감성 분포 (%)',
-                         barmode='group',
-                         color_discrete_map={'긍정': '#10b981', '중립': '#6b7280', '부정': '#ef4444'})
-            st.plotly_chart(fig, use_container_width=True)
-
-        with col2:
-            platform_rating = df_filtered.groupby('PLATFORM')['REVIEW_RATING'].mean().reset_index()
-            platform_rating.columns = ['플랫폼', '평균평점']
-
-            fig = px.bar(platform_rating, x='플랫폼', y='평균평점',
-                         title='플랫폼별 평균 평점',
-                         color='평균평점',
-                         color_continuous_scale='Greens')
-            fig.update_layout(yaxis_range=[3.5, 5])
-            st.plotly_chart(fig, use_container_width=True)
-
     # ===== 월별 트렌드 =====
     st.markdown('<p class="section-header">📈 월별 트렌드</p>', unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        monthly = df_filtered.groupby(['year_month', 'PLATFORM']).size().reset_index(name='리뷰수')
+        monthly = df_filtered.groupby('year_month').size().reset_index(name='리뷰수')
 
-        fig = px.line(monthly, x='year_month', y='리뷰수', color='PLATFORM',
+        fig = px.line(monthly, x='year_month', y='리뷰수',
                       title='월별 리뷰 수 추이',
                       markers=True,
-                      color_discrete_sequence=['#00a862', '#000000'])
+                      color_discrete_sequence=['#00a862'])
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        monthly_neg = df_filtered.groupby(['year_month', 'PLATFORM']).apply(
+        monthly_neg = df_filtered.groupby('year_month').apply(
             lambda x: (x['sentiment'] == 'NEG').mean() * 100
         ).reset_index(name='NEG비율')
 
-        fig = px.line(monthly_neg, x='year_month', y='NEG비율', color='PLATFORM',
+        fig = px.line(monthly_neg, x='year_month', y='NEG비율',
                       title='월별 부정 비율 추이 (%)',
                       markers=True,
-                      color_discrete_sequence=['#00a862', '#000000'])
+                      color_discrete_sequence=['#00a862'])
         st.plotly_chart(fig, use_container_width=True)
 
     # ===== 피부타입별 분석 =====
@@ -900,49 +869,6 @@ def main():
                 fig.update_traces(textposition='outside')
                 st.plotly_chart(fig, use_container_width=True)
 
-    # ===== 무신사 평가 데이터 =====
-    if '무신사' in selected_platforms and 'EVAL_MOISTURE' in df_filtered.columns:
-        ms_data = df_filtered[df_filtered['PLATFORM'] == '무신사']
-        ms_with_eval = ms_data[ms_data['EVAL_MOISTURE'].notna()]
-
-        if len(ms_with_eval) > 0:
-            st.markdown('<p class="section-header">⚫ 무신사 평가 데이터</p>', unsafe_allow_html=True)
-            st.caption(f"평가 데이터가 있는 리뷰: {len(ms_with_eval):,}건")
-
-            col1, col2 = st.columns(2)
-
-            with col1:
-                brand_eval = ms_with_eval.groupby('BRAND_NAME').agg({
-                    'EVAL_MOISTURE': 'mean',
-                    'EVAL_ABSORPTION': 'mean',
-                    'EVAL_IRRITATION': 'mean'
-                }).round(2)
-                brand_eval.columns = ['보습력', '흡수력', '자극도(높을수록 순함)']
-
-                fig = go.Figure()
-                for brand in brand_eval.index:
-                    row = brand_eval.loc[brand]
-                    values = [row['보습력'], row['흡수력'], row['자극도(높을수록 순함)']]
-                    values.append(values[0])
-
-                    fig.add_trace(go.Scatterpolar(
-                        r=values,
-                        theta=['보습력', '흡수력', '자극도'] + ['보습력'],
-                        fill='toself',
-                        name=brand,
-                        opacity=0.6
-                    ))
-
-                fig.update_layout(
-                    polar=dict(radialaxis=dict(visible=True, range=[1, 5])),
-                    title='브랜드별 평가 비교',
-                    showlegend=True
-                )
-                st.plotly_chart(fig, use_container_width=True)
-
-            with col2:
-                st.dataframe(brand_eval, use_container_width=True)
-
     # ===== 샘플 리뷰 =====
     st.markdown('<p class="section-header">📝 샘플 리뷰</p>', unsafe_allow_html=True)
 
@@ -953,8 +879,7 @@ def main():
     sample_df = df_filtered[df_filtered['sentiment'] == selected_sent].head(10)
 
     for _, row in sample_df.iterrows():
-        platform_badge = "🟢" if row['PLATFORM'] == '올리브영' else "⚫"
-        with st.expander(f"{platform_badge} [{row['PLATFORM']}] {row['BRAND_NAME']} ⭐{row['REVIEW_RATING']} - {row['sentiment']}"):
+        with st.expander(f"{row['BRAND_NAME']} ⭐{row['REVIEW_RATING']} - {row['sentiment']}"):
             st.write(row['REVIEW_CONTENT'])
 
             # GPT 분석 결과 표시

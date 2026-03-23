@@ -9,6 +9,7 @@ from pptx.enum.text import PP_ALIGN
 from pptx.enum.shapes import MSO_SHAPE
 import pandas as pd
 import json
+import os
 import sys
 from collections import Counter
 
@@ -225,7 +226,14 @@ def main():
     print("=" * 60)
 
     # 데이터 로드
-    df = pd.read_csv('data/merged_reviews_processed.csv', encoding='utf-8-sig', low_memory=False)
+    data_path = 'data/oliveyoung_reviews_processed.csv'
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path, encoding='utf-8-sig', low_memory=False)
+    else:
+        with open('data/올영리뷰데이터_utf8.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        first_key = list(data.keys())[0]
+        df = pd.DataFrame(data[first_key])
     cat = json.load(open('output/gpt_analysis_categorized.json', encoding='utf-8'))
 
     cat_map = {r['idx']: r for r in cat}

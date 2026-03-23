@@ -12,6 +12,7 @@ from pptx.chart.data import CategoryChartData
 from pptx.enum.chart import XL_CHART_TYPE
 import pandas as pd
 import json
+import os
 import sys
 from datetime import datetime
 from collections import Counter
@@ -562,12 +563,18 @@ def main():
 
     # 데이터 로드
     print("\n[데이터 로드 중...]")
-    df = pd.read_csv('data/merged_reviews_processed.csv', encoding='utf-8-sig')
+    # 올리브영 데이터 로드
+    data_path = 'data/oliveyoung_reviews_processed.csv'
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path, encoding='utf-8-sig')
+    else:
+        with open('data/올영리뷰데이터_utf8.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        first_key = list(data.keys())[0]
+        df = pd.DataFrame(data[first_key])
     cat = json.load(open('output/gpt_analysis_categorized.json', encoding='utf-8'))
 
     total = len(df)
-    oly_count = len(df[df['PLATFORM'] == '올리브영'])
-    musinsa_count = len(df[df['PLATFORM'] == '무신사'])
 
     brands = ['독도토너', '토리든', '브링그린', '에스네이처', '아누아', '토니모리', '아비브']
 
@@ -647,14 +654,14 @@ def main():
     # ========================================
     add_title_slide(prs,
         "독도토너, 다시 사게 만들려면?",
-        f"올리브영 + 무신사 리뷰 {total:,}건 분석 | 2025년 데이터")
+        f"올리브영 리뷰 {total:,}건 분석 | 2025년 데이터")
 
     # ========================================
     # 슬라이드 2: 분석 개요
     # ========================================
     add_content_slide(prs, "이 분석은 이렇게 했어요", [
         "데이터 수집",
-        f"• 올리브영 리뷰 {oly_count:,}건 + 무신사 리뷰 {musinsa_count:,}건",
+        f"• 올리브영 리뷰 {total:,}건",
         f"• 수집 기간: 2025년 1월 ~ 2026년 1월",
         f"• 대상 브랜드: 독도토너 외 6개 경쟁 브랜드",
         "",
@@ -870,34 +877,18 @@ def main():
     add_section_slide(prs, "4", "이렇게 해보면 어떨까요?", "💡")
 
     # 채널별 전략
-    add_two_column(prs, "채널별 메시지 제안",
-        "올리브영",
-        [
-            "강조 키워드:",
-            "• '순함', '진정', '결 개선'",
-            "",
-            "기획 제안:",
-            "• 클렌저 + 토너 번들 세트",
-            "• '민감성 피부 추천템' 큐레이션",
-            "",
-            "프로모션:",
-            "• 재구매 고객 전용 할인",
-            "• '한달이상사용' 리뷰어 리워드"
-        ],
-        "무신사",
-        [
-            "강조 키워드:",
-            "• '가성비', '입문용', '대용량'",
-            "",
-            "기획 제안:",
-            "• 그루밍 입문 세트",
-            "• '남자도 스킨케어' 기획전",
-            "",
-            "프로모션:",
-            "• 첫 구매 할인",
-            "• 리뷰 작성 시 추가 적립"
-        ],
-        left_color=GREEN, right_color=PURPLE)
+    add_content_slide(prs, "올리브영 채널 전략", [
+        "강조 키워드:",
+        "• '순함', '진정', '결 개선'",
+        "",
+        "기획 제안:",
+        "• 클렌저 + 토너 번들 세트",
+        "• '민감성 피부 추천템' 큐레이션",
+        "",
+        "프로모션:",
+        "• 재구매 고객 전용 할인",
+        "• '한달이상사용' 리뷰어 리워드",
+    ])
 
     # 리마인드 전략
     add_content_slide(prs, "재구매 유도 전략", [

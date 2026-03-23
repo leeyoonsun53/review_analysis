@@ -12,6 +12,7 @@ from pptx.chart.data import CategoryChartData
 from pptx.enum.chart import XL_CHART_TYPE
 import pandas as pd
 import json
+import os
 import sys
 from datetime import datetime
 from collections import Counter
@@ -388,7 +389,14 @@ def main():
     # 데이터 로드
     # ========================================
     print("\n[데이터 로드 중...]")
-    df = pd.read_csv('data/merged_reviews_processed.csv', encoding='utf-8-sig')
+    data_path = 'data/oliveyoung_reviews_processed.csv'
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path, encoding='utf-8-sig')
+    else:
+        with open('data/올영리뷰데이터_utf8.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        first_key = list(data.keys())[0]
+        df = pd.DataFrame(data[first_key])
     cat = json.load(open('output/gpt_analysis_categorized.json', encoding='utf-8'))
 
     # 기본 통계 계산
@@ -483,7 +491,7 @@ def main():
         "",
         "데이터 소스:",
         "• 정량: 캐글 쇼핑몰 데이터 (자사몰 행동 로그)",
-        "• 정성: 올리브영 27,745건 + 무신사 6,163건 = 33,908건 리뷰",
+        "• 정성: 올리브영 27,745건 리뷰",
         "• 분석: GPT-4o-mini 기반 감성분석 (Pain/Positive/Usage 추출)",
     ], highlight_indices=[0, 1, 2, 3, 4])
 
@@ -573,7 +581,7 @@ def main():
             brand_features.get(brand, '')
         ])
 
-    add_table_slide(prs, "올리브영 + 무신사 토너 리뷰 분석",
+    add_table_slide(prs, "올리브영 토너 리뷰 분석",
         ["브랜드", "리뷰수", "비중", "긍정률", "부정률", "특징"],
         brand_table_rows,
         subtitle=f"분석 대상: 7개 브랜드 총 {total_reviews:,}건 (2025.02~2026.01) | GPT-4o-mini 기반 감성분석")
@@ -1051,15 +1059,11 @@ def main():
         "",
         "▶ 신규 타겟 추가",
         "",
-        "   1. 그루밍 입문자 (무신사 채널)",
-        "      - 남성 스킨케어 입문",
-        "      - '일단 순한 거부터'",
-        "",
-        "   2. 미니멀리스트",
+        "   1. 미니멀리스트",
         "      - 올인원 루틴 선호",
         "      - '복잡한 거 싫어'",
         "",
-        "   3. 고기능 유저의 베이스템",
+        "   2. 고기능 유저의 베이스템",
         "      - 레티놀/비타민C 사용자",
         "      - '자극 완충용으로 필요'",
     ], highlight_indices=[6, 10, 14])
@@ -1173,16 +1177,11 @@ def main():
         "   - 기획 세트: 클렌저 + 토너 번들",
         "   - 프로모션: '민감성 피부 추천템'",
         "",
-        "▶ 무신사",
-        "   - 리뷰 키워드: '가성비', '입문용', '대용량'",
-        "   - 기획 세트: 그루밍 입문 세트",
-        "   - 프로모션: '남자도 스킨케어'",
-        "",
         "▶ 자사몰",
         "   - 장점: 빠른 배송, 독점 혜택",
         "   - 기획: 대용량 구독 서비스",
         "   - 프로모션: '리마인드 쿠폰' (소진 예상 시점)",
-    ], highlight_indices=[0, 5, 10])
+    ], highlight_indices=[0, 5])
 
     # 슬라이드 46: 상세페이지 개선
     add_content_slide(prs, "상세페이지 개선 방향", [

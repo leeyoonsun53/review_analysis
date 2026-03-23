@@ -9,6 +9,7 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 import pandas as pd
 import json
+import os
 import sys
 from datetime import datetime
 
@@ -194,7 +195,14 @@ def main():
     print("슬라이드 리포트 생성 중...")
 
     # 데이터 로드
-    df = pd.read_csv('data/merged_reviews_processed.csv', encoding='utf-8-sig')
+    data_path = 'data/oliveyoung_reviews_processed.csv'
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path, encoding='utf-8-sig')
+    else:
+        with open('data/올영리뷰데이터_utf8.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        first_key = list(data.keys())[0]
+        df = pd.DataFrame(data[first_key])
     cat = json.load(open('output/gpt_analysis_categorized.json', encoding='utf-8'))
 
     # sentiment 매핑
@@ -222,7 +230,7 @@ def main():
     add_content_slide(prs, "분석 개요", [
         f"▶ 분석 대상: 7개 토너 브랜드, 총 {total_reviews:,}건 리뷰",
         f"▶ 분석 기간: 2025.02 ~ 2026.01 (12개월)",
-        f"▶ 플랫폼: 올리브영 27,745건 (82%) / 무신사 6,163건 (18%)",
+        f"▶ 플랫폼: 올리브영 {total_reviews:,}건",
         "",
         f"▶ 전체 긍정률: {pos_rate:.1f}% (부정률 {neg_rate:.1f}%)",
         f"▶ 긍정률 1위: 토니모리 (93.5%)",
@@ -313,26 +321,7 @@ def main():
             f"   3. {data['pain'][2]}",
         ], highlight_indices=[1, 6])
 
-    # ========== 5. 플랫폼 비교 ==========
-    add_section_slide(prs, "플랫폼 비교 분석")
-
-    add_content_slide(prs, "올리브영 vs 무신사", [
-        "                        올리브영              무신사",
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        "리뷰 수                  27,745건             6,163건",
-        "전체 비중                 81.8%               18.2%",
-        "",
-        "긍정률                    89.7%               95.5%",
-        "부정률                     2.3%                0.6%",
-        "",
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        "",
-        "▶ 무신사 리뷰가 올리브영 대비 긍정률 5.8%p 높음",
-        "▶ 무신사 부정률은 올리브영의 1/4 수준",
-        "▶ 무신사 주요 브랜드: 토리든, 에스네이처, 아비브, 토니모리",
-    ], highlight_indices=[5, 6, 10, 11])
-
-    # ========== 6. 월별 추이 ==========
+    # ========== 5. 월별 추이 ==========
     add_section_slide(prs, "월별 감성 추이")
 
     monthly_data = [

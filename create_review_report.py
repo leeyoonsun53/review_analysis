@@ -12,6 +12,7 @@ from pptx.chart.data import CategoryChartData
 from pptx.enum.chart import XL_CHART_TYPE
 import pandas as pd
 import json
+import os
 import sys
 from datetime import datetime
 from collections import Counter
@@ -373,13 +374,19 @@ def main():
     # 데이터 로드
     # ========================================
     print("\n[데이터 로드 중...]")
-    df = pd.read_csv('data/merged_reviews_processed.csv', encoding='utf-8-sig')
+    data_path = 'data/oliveyoung_reviews_processed.csv'
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path, encoding='utf-8-sig')
+    else:
+        with open('data/올영리뷰데이터_utf8.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        first_key = list(data.keys())[0]
+        df = pd.DataFrame(data[first_key])
     cat = json.load(open('output/gpt_analysis_categorized.json', encoding='utf-8'))
     points = json.load(open('output/points_categorized.json', encoding='utf-8'))
 
     # 기본 통계 계산
     total_reviews = len(df)
-    platforms = df['PLATFORM'].unique()
     brands = ['토리든', '브링그린', '독도토너', '에스네이처', '아누아', '토니모리', '아비브']
 
     pos_count = sum(1 for r in cat if r.get('sentiment') == 'POS')
@@ -390,7 +397,7 @@ def main():
     neu_rate = neu_count / total_reviews * 100
 
     print(f"   총 리뷰: {total_reviews:,}건")
-    print(f"   플랫폼: {', '.join(platforms)}")
+    print(f"   플랫폼: 올리브영")
     print(f"   긍정: {pos_count:,}건 ({pos_rate:.1f}%)")
     print(f"   부정: {neg_count:,}건 ({neg_rate:.1f}%)")
 
@@ -474,20 +481,14 @@ def main():
     # ========================================
     # 슬라이드 2: 분석 개요
     # ========================================
-    platform_counts = df['PLATFORM'].value_counts()
     overview_lines = [
         "분석 개요",
         "",
         f"  총 리뷰 수: {total_reviews:,}건",
         f"  분석 기간: 2025.02 ~ 2026.01",
         f"  분석 방법: GPT-4o-mini 기반 감성분석 + 키워드 추출",
-        "",
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        "",
-        "플랫폼별 리뷰 수",
+        f"  플랫폼: 올리브영",
     ]
-    for platform, count in platform_counts.items():
-        overview_lines.append(f"  • {platform}: {count:,}건 ({count/total_reviews*100:.1f}%)")
 
     overview_lines.extend(["", "분석 브랜드 (7개)"])
     for brand in brands:
