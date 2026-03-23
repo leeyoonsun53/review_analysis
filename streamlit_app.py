@@ -101,7 +101,7 @@ def display_review_card(row):
 
 
 # ===== 데이터 로드 =====
-@st.cache_data
+@st.cache_data(ttl=600)
 def load_data():
     """통합 데이터 및 GPT 분석 결과 로드"""
     # 올리브영 리뷰 데이터 로드
@@ -139,7 +139,7 @@ def load_data():
     return df, gpt_df
 
 
-@st.cache_data
+@st.cache_data(ttl=600)
 def load_category_stats():
     """카테고리 통계 로드"""
     stats_path = Path("output/points_categorized.json")
