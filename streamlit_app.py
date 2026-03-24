@@ -238,28 +238,6 @@ def tab_mochi_insight(df):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-    # 인사이트 요약
-    st.markdown("---")
-    st.markdown("### 💡 애칭 제안: 밀키코어 & 에어리밀크")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-**밀키코어 (Milky Core)** — F/W, 건성~복합성
-
-> "결국 다시 돌아오게 될 보습의 정석, 밀키코어"
-
-- 보습 82.6% + 인생템 56.2%
-- 쫀쫀한 밀크 제형의 핵심(Core)
-        """)
-    with col2:
-        st.markdown("""
-**에어리밀크 (Airy Milk)** — S/S, 지성~복합성
-
-> "끈적임 제로, 쫀쫀함 풀충전. 에어리밀크"
-
-- 물같음 64% + 산뜻함
-- 가볍지만 영양감 있는 밀크 텍스처
-        """)
 
 
 # ===== 탭 2: 전체 대시보드 (기존) =====
