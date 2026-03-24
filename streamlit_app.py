@@ -461,6 +461,7 @@ def main():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"**필터링된 리뷰: {len(df_filtered):,}건**")
+    st.sidebar.caption("※ 필터는 [전체 리뷰 분석] 탭에만 적용됩니다.")
 
     # ===== 탭 =====
     tab1, tab2 = st.tabs(["🥛 모찌토너 인사이트", "📊 전체 리뷰 분석"])
