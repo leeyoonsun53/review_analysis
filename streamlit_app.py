@@ -113,6 +113,11 @@ def tab_mochi_insight(df):
         st.warning("토니모리 모찌 토너 데이터가 없습니다.")
         return
 
+    # 핵심 인사이트
+    st.markdown("""
+> **"보습·가성비·대용량 삼박자로 긍정률 92.5%를 기록한 고충성 제품. 치명적 불만 없이 부정률 2.3%로, 향 호불호와 지성 피부 끈적임만 보완하면 완성도가 더 높아질 수 있음."**
+""")
+
     # 주요 지표
     col1, col2, col3, col4 = st.columns(4)
     with col1:
