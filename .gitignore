@@ -21,10 +21,8 @@ venv/
 *.env
 config/.env
 
-# Output files (optional - uncomment if you don't want to track)
-# output/
-# docs/*.pptx
-# docs/*.html
+# Output files
+output/*.md
 
 # OS
 .DS_Store
