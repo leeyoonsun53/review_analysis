@@ -408,8 +408,6 @@ def main():
         df['sentiment'] = df['gpt_sentiment'].fillna('NEU')
 
     total_reviews = len(df)
-    st.markdown(f'<p style="text-align: center; color: gray;">v4.0 (GPT-4o-mini 분석) | 총 {total_reviews:,}건</p>', unsafe_allow_html=True)
-
     # ===== 사이드바 필터 =====
     st.sidebar.header("🔍 필터")
 
