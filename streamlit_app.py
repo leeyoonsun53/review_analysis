@@ -245,6 +245,160 @@ def tab_mochi_insight(df):
 
 
 
+# ===== 탭 3: 카테고리 시계열 =====
+def _explode_categories(df_filtered, col):
+    """리뷰별 카테고리 리스트를 (year_month, category) 행으로 펼친다."""
+    if col not in df_filtered.columns:
+        return pd.DataFrame(columns=['year_month', 'category', 'BRAND_NAME', 'idx'])
+    sub = df_filtered[['year_month', 'BRAND_NAME', col]].copy()
+    sub = sub[sub[col].apply(lambda x: isinstance(x, list) and len(x) > 0)]
+    sub = sub.explode(col).rename(columns={col: 'category'})
+    sub = sub[sub['category'].notna() & (sub['category'].astype(str).str.strip() != '')]
+    return sub
+
+
+def tab_category_timeseries(df_filtered):
+    st.markdown('<p class="section-header">📈 카테고리 시계열 분석</p>', unsafe_allow_html=True)
+    st.caption("월별로 어떤 카테고리의 불만/만족 포인트가 많이 나타나는지 시계열로 확인합니다. (사이드바 필터 적용)")
+
+    if len(df_filtered) == 0 or 'gpt_pain_categories' not in df_filtered.columns:
+        st.info("데이터가 없거나 카테고리 정보가 없습니다.")
+        return
+
+    # 컨트롤
+    c1, c2, c3, c4 = st.columns([1.2, 1, 1, 1.2])
+    with c1:
+        point_type = st.radio("포인트 유형", ["😣 Pain", "😊 Positive"], horizontal=True, key="cts_type")
+    with c2:
+        top_n = st.slider("상위 카테고리 N", 3, 15, 8, key="cts_topn")
+    with c3:
+        metric_mode = st.radio("지표", ["건수", "월별 비중(%)"], horizontal=True, key="cts_metric")
+    with c4:
+        smooth = st.checkbox("3개월 이동평균", value=False, key="cts_smooth",
+                             help="시계열 변동을 부드럽게 보고 싶을 때 사용")
+
+    is_pain = point_type.startswith("😣")
+    cat_col = 'gpt_pain_categories' if is_pain else 'gpt_positive_categories'
+    color_scale = 'Reds' if is_pain else 'Greens'
+    color_seq = px.colors.sequential.Reds_r if is_pain else px.colors.sequential.Greens_r
+
+    exploded = _explode_categories(df_filtered, cat_col)
+    if len(exploded) == 0:
+        st.info("선택된 필터 범위에 카테고리 데이터가 없습니다.")
+        return
+
+    # 상위 N 카테고리
+    top_cats = exploded['category'].value_counts().head(top_n).index.tolist()
+    exp_top = exploded[exploded['category'].isin(top_cats)]
+
+    # 월별 × 카테고리 집계
+    monthly_total_reviews = df_filtered.groupby('year_month').size().rename('total_reviews')
+    pivot_cnt = (exp_top.groupby(['year_month', 'category']).size()
+                 .unstack(fill_value=0)
+                 .sort_index())
+    if len(pivot_cnt) == 0:
+        st.info("월별 집계 결과가 비어 있습니다.")
+        return
+
+    # 월별 비중(%): 해당 월의 전체 리뷰 수 대비 카테고리 언급 비율
+    pivot_pct = pivot_cnt.div(monthly_total_reviews.reindex(pivot_cnt.index), axis=0) * 100
+    pivot_pct = pivot_pct.fillna(0)
+
+    pivot_view = pivot_pct if metric_mode.startswith("월별") else pivot_cnt
+    value_label = '월별 비중(%)' if metric_mode.startswith("월별") else '건수'
+
+    if smooth:
+        pivot_view = pivot_view.rolling(window=3, min_periods=1).mean()
+
+    # 카테고리는 전체 합계 큰 순으로 정렬
+    cat_order = pivot_cnt.sum(axis=0).sort_values(ascending=False).index.tolist()
+    pivot_view = pivot_view[cat_order]
+
+    # ----- 1) 라인 차트 (월별 추세) -----
+    st.markdown("### 1️⃣ 월별 카테고리 추세")
+    line_df = pivot_view.reset_index().melt(id_vars='year_month', var_name='카테고리', value_name=value_label)
+    fig_line = px.line(
+        line_df, x='year_month', y=value_label, color='카테고리',
+        markers=True, color_discrete_sequence=color_seq,
+        category_orders={'카테고리': cat_order}
+    )
+    fig_line.update_layout(
+        height=420, xaxis_title='월', yaxis_title=value_label,
+        legend=dict(orientation='v', yanchor='top', y=1, xanchor='left', x=1.02)
+    )
+    st.plotly_chart(fig_line, use_container_width=True)
+
+    # ----- 2) 히트맵 (카테고리 × 월) -----
+    st.markdown("### 2️⃣ 카테고리 × 월 히트맵")
+    heat_z = pivot_view[cat_order].T  # 행: 카테고리, 열: 월
+    fig_heat = go.Figure(data=go.Heatmap(
+        z=heat_z.values,
+        x=heat_z.columns.tolist(),
+        y=heat_z.index.tolist(),
+        colorscale=color_scale,
+        colorbar=dict(title=value_label),
+        hovertemplate='월=%{x}<br>카테고리=%{y}<br>' + value_label + '=%{z:.2f}<extra></extra>'
+    ))
+    fig_heat.update_layout(height=max(320, 40 * len(cat_order)),
+                           xaxis_title='월', yaxis_title='카테고리',
+                           yaxis=dict(autorange='reversed'))
+    st.plotly_chart(fig_heat, use_container_width=True)
+
+    # ----- 3) 누적 영역 차트 (구성 변화) -----
+    st.markdown("### 3️⃣ 월별 카테고리 구성 (누적)")
+    stack_mode = st.radio("누적 방식", ["절대 건수", "100% 비중"], horizontal=True, key="cts_stack")
+    if stack_mode == "100% 비중":
+        denom = pivot_cnt.sum(axis=1).replace(0, pd.NA)
+        stack_df = (pivot_cnt.div(denom, axis=0) * 100).fillna(0)
+        stack_label = '구성비(%)'
+    else:
+        stack_df = pivot_cnt
+        stack_label = '건수'
+    stack_long = stack_df[cat_order].reset_index().melt(id_vars='year_month', var_name='카테고리', value_name=stack_label)
+    fig_area = px.area(
+        stack_long, x='year_month', y=stack_label, color='카테고리',
+        color_discrete_sequence=color_seq,
+        category_orders={'카테고리': cat_order}
+    )
+    fig_area.update_layout(height=400, xaxis_title='월', yaxis_title=stack_label)
+    st.plotly_chart(fig_area, use_container_width=True)
+
+    # ----- 4) 카테고리 드릴다운 -----
+    st.markdown("### 4️⃣ 카테고리 드릴다운 (월별 리뷰 확인)")
+    sel_cat = st.selectbox("카테고리 선택", cat_order, key="cts_drill_cat")
+
+    cat_monthly = exploded[exploded['category'] == sel_cat].groupby('year_month').size().rename('건수').reset_index()
+    if len(cat_monthly) > 0:
+        peak_month = cat_monthly.loc[cat_monthly['건수'].idxmax(), 'year_month']
+        peak_cnt = int(cat_monthly['건수'].max())
+        total_cnt = int(cat_monthly['건수'].sum())
+        m1, m2, m3 = st.columns(3)
+        m1.metric("총 언급", f"{total_cnt:,}건")
+        m2.metric("최다 월", f"{peak_month}")
+        m3.metric("최다 월 건수", f"{peak_cnt:,}건")
+
+        bar_color = '#ef4444' if is_pain else '#10b981'
+        fig_bar = px.bar(cat_monthly, x='year_month', y='건수', color_discrete_sequence=[bar_color])
+        fig_bar.update_layout(height=300, xaxis_title='월', yaxis_title='언급 건수',
+                              title=f"'{sel_cat}' 월별 언급 추이")
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+        # 월 선택 → 해당 월의 리뷰 표시
+        months_with_data = cat_monthly['year_month'].tolist()
+        sel_month = st.selectbox("월 선택", ['(전체 기간)'] + months_with_data, key="cts_drill_month")
+
+        mask = df_filtered[cat_col].apply(lambda x: isinstance(x, list) and sel_cat in x)
+        target_df = df_filtered[mask]
+        if sel_month != '(전체 기간)':
+            target_df = target_df[target_df['year_month'] == sel_month]
+
+        st.markdown(f"**대상 리뷰: {len(target_df):,}건** (최신순 최대 15건 표시)")
+        for _, row in target_df.sort_values('review_date', ascending=False).head(15).iterrows():
+            display_review_card(row)
+    else:
+        st.info("선택한 카테고리에 해당하는 데이터가 없습니다.")
+
+
 # ===== 탭 2: 전체 대시보드 (기존) =====
 def tab_dashboard(df, df_filtered, selected_brands):
     # 주요 지표
@@ -459,16 +613,19 @@ def main():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"**필터링된 리뷰: {len(df_filtered):,}건**")
-    st.sidebar.caption("※ 필터는 [전체 리뷰 분석] 탭에만 적용됩니다.")
+    st.sidebar.caption("※ 필터는 [전체 리뷰 분석] / [카테고리 시계열] 탭에 적용됩니다.")
 
     # ===== 탭 =====
-    tab1, tab2 = st.tabs(["🥛 모찌토너 인사이트", "📊 전체 리뷰 분석"])
+    tab1, tab2, tab3 = st.tabs(["🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열"])
 
     with tab1:
         tab_mochi_insight(df)
 
     with tab2:
         tab_dashboard(df, df_filtered, selected_brands)
+
+    with tab3:
+        tab_category_timeseries(df_filtered)
 
     # 푸터
     st.markdown("---")
