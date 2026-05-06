@@ -279,8 +279,8 @@ def tab_category_timeseries(df_filtered):
 
     is_pain = point_type.startswith("😣")
     cat_col = 'gpt_pain_categories' if is_pain else 'gpt_positive_categories'
-    color_scale = 'Reds' if is_pain else 'Greens'
-    color_seq = px.colors.sequential.Reds_r if is_pain else px.colors.sequential.Greens_r
+    color_scale = 'Reds' if is_pain else 'Greens'  # 히트맵용 단색 그라데이션
+    color_seq = px.colors.qualitative.Bold        # 라인/누적 영역용 정성 팔레트
 
     exploded = _explode_categories(df_filtered, cat_col)
     if len(exploded) == 0:
@@ -322,9 +322,13 @@ def tab_category_timeseries(df_filtered):
         markers=True, color_discrete_sequence=color_seq,
         category_orders={'카테고리': cat_order}
     )
+    fig_line.update_traces(line=dict(width=2.5), marker=dict(size=8))
     fig_line.update_layout(
         height=420, xaxis_title='월', yaxis_title=value_label,
-        legend=dict(orientation='v', yanchor='top', y=1, xanchor='left', x=1.02)
+        legend=dict(orientation='v', yanchor='top', y=1, xanchor='left', x=1.02),
+        plot_bgcolor='white',
+        xaxis=dict(showgrid=True, gridcolor='#eee'),
+        yaxis=dict(showgrid=True, gridcolor='#eee'),
     )
     st.plotly_chart(fig_line, use_container_width=True)
 
