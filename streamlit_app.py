@@ -553,6 +553,179 @@ def tab_dashboard(df, df_filtered, selected_brands):
                 st.markdown(f"**Positive Points:** {', '.join(row['gpt_positive_points'])}")
 
 
+# ===== 아마존 분석 =====
+AMAZON_STRENGTHS = [
+    "보습/촉촉", "순함/저자극", "대용량/오래씀", "가성비/가격만족", "흡수력",
+    "광채/윤기", "진정/장벽케어", "제형/텍스처", "향 만족", "산뜻함",
+    "재구매/추천", "용기/디자인", "기타",
+]
+AMAZON_WEAKNESSES = [
+    "트러블/뾰루지", "효과없음", "제형불호", "향 불호", "자극/따가움", "끈적임",
+    "가격부담", "용기불편", "흡수느림", "건조함", "배송/포장", "기타",
+]
+
+
+def _parse_amazon_date_country(date_raw):
+    """'Reviewed in the United Kingdom on 23 May 2026' -> ('United Kingdom', Timestamp)"""
+    if not isinstance(date_raw, str):
+        return None, pd.NaT
+    m = re.search(r"Reviewed in (.+?) on (.+)$", date_raw)
+    if not m:
+        return None, pd.NaT
+    country = m.group(1).strip()
+    date = pd.to_datetime(m.group(2).strip(), format="%d %B %Y", errors="coerce")
+    if pd.isna(date):
+        date = pd.to_datetime(m.group(2).strip(), errors="coerce")
+    return country, date
+
+
+@st.cache_data(ttl=600)
+def load_amazon_data():
+    rev_path = Path("data/amazon_reviews_B07B32PL1C.json")
+    ana_path = Path("output/amazon_analysis.json")
+    if not rev_path.exists() or not ana_path.exists():
+        return None
+    reviews = json.loads(rev_path.read_text(encoding="utf-8"))
+    analysis = {a["review_id"]: a for a in json.loads(ana_path.read_text(encoding="utf-8"))}
+    rows = []
+    for r in reviews:
+        a = analysis.get(r["review_id"], {})
+        country, date = _parse_amazon_date_country(r.get("date_raw"))
+        rows.append({
+            "review_id": r["review_id"],
+            "rating": r.get("rating"),
+            "title": r.get("title", ""),
+            "body": r.get("body", ""),
+            "author": r.get("author", ""),
+            "date_raw": r.get("date_raw", ""),
+            "verified_purchase": r.get("verified_purchase", False),
+            "helpful": r.get("helpful", ""),
+            "sentiment": a.get("sentiment", "NEU"),
+            "strengths": a.get("strengths", []) or [],
+            "weaknesses": a.get("weaknesses", []) or [],
+            "evidence": a.get("evidence", ""),
+            "country": country,
+            "review_date": date,
+        })
+    return pd.DataFrame(rows)
+
+
+def _amazon_point_counts(df_am, col):
+    c = Counter()
+    for lst in df_am[col]:
+        if isinstance(lst, list):
+            c.update(lst)
+    return c
+
+
+def display_amazon_review_card(row):
+    if pd.notna(row.get("review_date")):
+        date_str = row["review_date"].strftime("%Y-%m-%d")
+    else:
+        date_str = row.get("date_raw", "") or ""
+    sentiment = row.get("sentiment", "NEU")
+    badge = {"POS": "🟢긍정", "NEU": "⚪중립", "NEG": "🔴부정"}.get(sentiment, "⚪중립")
+    verified = " | ✅구매인증" if row.get("verified_purchase") else ""
+    country = f" | 🌍{row['country']}" if row.get("country") else ""
+    st.markdown(f"**⭐{row.get('rating', '')} | {badge} | {date_str}{country}{verified}**")
+    if row.get("title"):
+        st.markdown(f"**{row['title']}**")
+    strengths = row.get("strengths") or []
+    weaknesses = row.get("weaknesses") or []
+    tag_parts = [f"`💪 {s}`" for s in strengths] + [f"`⚠️ {w}`" for w in weaknesses]
+    if tag_parts:
+        st.markdown(" ".join(tag_parts))
+    body = str(row.get("body", "") or "")
+    st.markdown(f"> {body[:600]}{'...' if len(body) > 600 else ''}")
+    st.markdown("---")
+
+
+def tab_amazon(df_am):
+    st.markdown('<p class="section-header">🛒 아마존 토너 분석</p>', unsafe_allow_html=True)
+    st.caption("TONYMOLY Wonder Ceramide Mochi Toner (아마존 UK · ASIN B07B32PL1C)")
+    if df_am is None or len(df_am) == 0:
+        st.warning("아마존 분석 데이터가 없습니다. `python analyze_amazon.py` 로 분류를 먼저 실행하세요.")
+        return
+    st.info("ℹ️ 이 탭은 별도 데이터셋이라 좌측 사이드바 필터와 **독립적으로** 동작합니다. 감성·강점·약점은 리뷰 본문 내용 기준으로 분류했습니다.")
+
+    # ===== KPI =====
+    n = len(df_am)
+    c1, c2, c3, c4, c5 = st.columns(5)
+    c1.metric("총 리뷰", f"{n:,}건")
+    c2.metric("평균 별점", f"{df_am['rating'].mean():.2f} ⭐")
+    c3.metric("긍정", f"{(df_am['sentiment'] == 'POS').mean() * 100:.1f}%")
+    c4.metric("중립", f"{(df_am['sentiment'] == 'NEU').mean() * 100:.1f}%")
+    c5.metric("부정", f"{(df_am['sentiment'] == 'NEG').mean() * 100:.1f}%")
+
+    # ===== 별점 분포 =====
+    star_counts = df_am['rating'].value_counts().reindex([5.0, 4.0, 3.0, 2.0, 1.0], fill_value=0)
+    fig_star = px.bar(
+        x=[f"⭐{int(s)}" for s in star_counts.index], y=star_counts.values,
+        labels={"x": "별점", "y": "리뷰 수"}, text=star_counts.values,
+    )
+    fig_star.update_traces(marker_color="#667eea", textposition="outside")
+    fig_star.update_layout(height=280, margin=dict(t=30, b=10), title="별점 분포")
+    st.plotly_chart(fig_star, use_container_width=True)
+
+    # ===== 강점 / 약점 포인트 =====
+    st.markdown('<p class="subsection-header">💪 강점 포인트 vs ⚠️ 약점 포인트</p>', unsafe_allow_html=True)
+    colL, colR = st.columns(2)
+    with colL:
+        sc = _amazon_point_counts(df_am, "strengths")
+        if sc:
+            s_df = pd.DataFrame(sc.most_common(), columns=["카테고리", "건수"]).iloc[::-1]
+            fig_s = px.bar(s_df, x="건수", y="카테고리", orientation="h", text="건수")
+            fig_s.update_traces(marker_color="#2ca02c", textposition="outside")
+            fig_s.update_layout(height=420, margin=dict(t=30, l=10), title="강점 포인트 (언급 수)")
+            st.plotly_chart(fig_s, use_container_width=True)
+    with colR:
+        wc = _amazon_point_counts(df_am, "weaknesses")
+        if wc:
+            w_df = pd.DataFrame(wc.most_common(), columns=["카테고리", "건수"]).iloc[::-1]
+            fig_w = px.bar(w_df, x="건수", y="카테고리", orientation="h", text="건수")
+            fig_w.update_traces(marker_color="#d62728", textposition="outside")
+            fig_w.update_layout(height=420, margin=dict(t=30, l=10), title="약점 포인트 (언급 수)")
+            st.plotly_chart(fig_w, use_container_width=True)
+
+    # ===== 카테고리 드릴다운 =====
+    st.markdown('<p class="subsection-header">🔎 카테고리별 리뷰 보기</p>', unsafe_allow_html=True)
+    dcol1, dcol2 = st.columns([1, 3])
+    with dcol1:
+        ptype = st.radio("포인트 유형", ["💪 강점", "⚠️ 약점"], key="am_drill_type")
+    col = "strengths" if ptype == "💪 강점" else "weaknesses"
+    cats = [c for c, _ in _amazon_point_counts(df_am, col).most_common()]
+    if cats:
+        with dcol2:
+            sel_cat = st.selectbox("카테고리 선택", cats, key="am_drill_cat")
+        sub = df_am[df_am[col].apply(lambda l: isinstance(l, list) and sel_cat in l)]
+        sub = sub.sort_values("review_date", ascending=False, na_position="last")
+        st.markdown(f"**'{sel_cat}' 언급 리뷰 {len(sub)}건**")
+        for _, row in sub.iterrows():
+            display_amazon_review_card(row)
+
+    # ===== 전체 샘플 리뷰 (409건 전부) =====
+    st.markdown('<p class="subsection-header">📝 전체 리뷰 보기</p>', unsafe_allow_html=True)
+    fc1, fc2, fc3 = st.columns([1, 1, 2])
+    with fc1:
+        sent_f = st.selectbox("감성", ["전체", "POS (긍정)", "NEU (중립)", "NEG (부정)"], key="am_sent")
+    with fc2:
+        star_f = st.selectbox("별점", ["전체", 5, 4, 3, 2, 1], key="am_starf")
+    with fc3:
+        kw = st.text_input("키워드 검색 (제목·본문)", key="am_kw", placeholder="예: hydrating, scent, glass...")
+    view = df_am.copy()
+    if sent_f != "전체":
+        view = view[view["sentiment"] == sent_f.split(" ")[0]]
+    if star_f != "전체":
+        view = view[view["rating"] == float(star_f)]
+    if kw:
+        mask = view["body"].str.contains(kw, case=False, na=False) | view["title"].str.contains(kw, case=False, na=False)
+        view = view[mask]
+    view = view.sort_values("review_date", ascending=False, na_position="last")
+    st.markdown(f"**표시 중: {len(view)}건** (전체 {n}건)")
+    for _, row in view.iterrows():
+        display_amazon_review_card(row)
+
+
 # ===== 메인 앱 =====
 def main():
     st.markdown('<p class="main-header">🧴 토너 리뷰 분석 대시보드</p>', unsafe_allow_html=True)
@@ -620,7 +793,9 @@ def main():
     st.sidebar.caption("※ 필터는 [전체 리뷰 분석] / [카테고리 시계열] 탭에 적용됩니다.")
 
     # ===== 탭 =====
-    tab1, tab2, tab3 = st.tabs(["🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열"])
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열", "🛒 아마존 토너 분석"
+    ])
 
     with tab1:
         tab_mochi_insight(df)
@@ -630,6 +805,9 @@ def main():
 
     with tab3:
         tab_category_timeseries(df_filtered)
+
+    with tab4:
+        tab_amazon(load_amazon_data())
 
     # 푸터
     st.markdown("---")

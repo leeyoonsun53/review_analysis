@@ -1,0 +1,4339 @@
+[
+  {
+    "review_id": "R19LZ3X2FR4V7X",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "the size is massive it lasts for a long time"
+  },
+  {
+    "review_id": "RONQ7CFJ5AG5A",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "makes skin feel soft but haven't noticed any real changes after 3 weeks"
+  },
+  {
+    "review_id": "R11YWKE4EN5IFW",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Didn't burn and it's doing good for my skin barrier, would definitely be buying again"
+  },
+  {
+    "review_id": "RCIZENNLFL0QW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "super sensitive skin... this has helped heal my skin"
+  },
+  {
+    "review_id": "R3691TLXZZCPIW",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "진정/장벽케어",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "size is huge, price just right, hydrating and calming, definitely recommend"
+  },
+  {
+    "review_id": "R39AF3ZZZRJK6D",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉",
+      "광채/윤기",
+      "제형/텍스처",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "lives up to its hype, lasts forever, hydration is unreal, glass skin"
+  },
+  {
+    "review_id": "R2E9XRZA28HYSX",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "향 만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "angenehmes frisches Hautgefühl, Zitronengras Duft; merk keinen Unterschied"
+  },
+  {
+    "review_id": "R1VJG2GV1VQJCS",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [
+      "자극/따가움",
+      "향 불호"
+    ],
+    "evidence": "si uso demasiadas capas me empieza a quemar y me deja la piel roja; contiene Limonene"
+  },
+  {
+    "review_id": "RZ1AO7G6TFWDZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "I like its moisturising effect the most"
+  },
+  {
+    "review_id": "R2S8Z2Y2X2858M",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "Not fond of the scent... For the price, it does a great job"
+  },
+  {
+    "review_id": "R8TLSH1M86H19",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Good"
+  },
+  {
+    "review_id": "RIE5QQ2L5TN3S",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Hidratante... huele delicioso"
+  },
+  {
+    "review_id": "R2YWPD8ILBV5TT",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "So soft and nourishing"
+  },
+  {
+    "review_id": "R3U0LPEXQOMXPH",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "향 만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "ligero y deja la piel hidratada... pero no hace una diferencia muy relevante; el olor es súper agradable"
+  },
+  {
+    "review_id": "R26BCLJYW8ZZUF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "순함/저자극",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "milky and thick, makes skin supple, great under makeup, big plus for the price; only not 5 because I prefer others"
+  },
+  {
+    "review_id": "R380NZUPPLG7D",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "best toner for dry skin... would be perfect if there were a no fragrance option"
+  },
+  {
+    "review_id": "RFWQZJTGACI8M",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "large amount for the price, great hydration, will last all year, one of all time favorites"
+  },
+  {
+    "review_id": "R3L74R112IA2Y9",
+    "sentiment": "NEU",
+    "strengths": [
+      "향 만족",
+      "산뜻함"
+    ],
+    "weaknesses": [
+      "자극/따가움"
+    ],
+    "evidence": "tengo piel delicada y seca y este producto me saco rojeces, pero igual me dejaba bonita la piel"
+  },
+  {
+    "review_id": "R1NS5VGGPMOEJ8",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "순함/저자극",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "끈적임",
+      "흡수느림"
+    ],
+    "evidence": "adds moisture, helps skin barrier on dry sensitive skin, but leaves a bit of a tacky feeling like not completely absorbed"
+  },
+  {
+    "review_id": "R3A7LRAYS8MAH1",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "SOOO hydrating, perfect to put on before Hyaluronic acid"
+  },
+  {
+    "review_id": "R132YL2JR5EKAE",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "제형/텍스처",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "smells amazing, amazing texture, leaves skin bouncy and moisturized"
+  },
+  {
+    "review_id": "RS8T4XVM76CMW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "like it for how moisturising it is. I just wish they had a fragrance free version"
+  },
+  {
+    "review_id": "R3CW0H6GDHALPK",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "love the smell (리뷰 내용이 샴푸/컨디셔너 언급 - 오등록 의심)"
+  },
+  {
+    "review_id": "R3J8FH5JRLXYQ9",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Leaves skin feeling hydrated and plump"
+  },
+  {
+    "review_id": "R1LPRU77PI538K",
+    "sentiment": "NEU",
+    "strengths": [
+      "제형/텍스처",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "like its texture and value for money. However, nothing really special hence 4 stars"
+  },
+  {
+    "review_id": "R3U8A8IAT4HWQE",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "wake up refreshed and moisturized... Will definitely buy again"
+  },
+  {
+    "review_id": "R3ERZPSCPK2QTV",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "향 만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "nice moisturizing toner, refreshing, mild scent. However it doesn't do much for my hormonal acne"
+  },
+  {
+    "review_id": "R23YRBFF49TZ7U",
+    "sentiment": "NEU",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "산뜻함"
+    ],
+    "weaknesses": [
+      "트러블/뾰루지"
+    ],
+    "evidence": "broken out in spots a lot... but really nice texture, silky and refreshing"
+  },
+  {
+    "review_id": "R1WDJ0I95GJMXO",
+    "sentiment": "NEU",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "hidrata ligeramente... no lo veo necesario pero es agradable"
+  },
+  {
+    "review_id": "R3BP5W6BUS0PGP",
+    "sentiment": "NEU",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "don't like the scent... But it's good for the price and does the job by hydrating"
+  },
+  {
+    "review_id": "R1DATT08NB5QW3",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "macht Haut sehr weich, aber Geruch (zitrus) viel zu stark... möchte den Toner nicht mehr fürs Gesicht verwenden, Fehlkauf"
+  },
+  {
+    "review_id": "R2Z03WHNZU2RKK",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "Moisturizing but smells to high heaven, couldn't get past the smell"
+  },
+  {
+    "review_id": "RYGG5UR3UPKH",
+    "sentiment": "NEU",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "향 만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "don't notice a big change... keeps skin rash-free and moist, calming pleasant scent"
+  },
+  {
+    "review_id": "RHV9KT3LTU8IW",
+    "sentiment": "NEU",
+    "strengths": [],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "it just didn't work out for me. It was ok"
+  },
+  {
+    "review_id": "R3907J4G9W6JNY",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [
+      "향 불호",
+      "자극/따가움"
+    ],
+    "evidence": "surprisingly hydrating but lemon oil/limonene scent like floor cleaner; skin became rough, irritated, small hives, won't repurchase"
+  },
+  {
+    "review_id": "R3UTUG53JIZ2JF",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "배송/포장"
+    ],
+    "evidence": "I love this product HOWEVER... bottle expires in a couple weeks, return period ended"
+  },
+  {
+    "review_id": "R1X8I6HXFKODEY",
+    "sentiment": "NEU",
+    "strengths": [
+      "보습/촉촉",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "moisturizing, value was good, but I've tried other toners I like better, not sure I'll buy again"
+  },
+  {
+    "review_id": "R2P6QQQQRRL56V",
+    "sentiment": "NEU",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "value for money item though.. it didn't work for me"
+  },
+  {
+    "review_id": "RMCT6VALMCYOI",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "끈적임",
+      "흡수느림"
+    ],
+    "evidence": "Greasy, sticky, DIDNT sink in. My face always felt sticky after use"
+  },
+  {
+    "review_id": "R1P1SOBZRBXBYO",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "향 불호"
+    ],
+    "evidence": "Redness... my skin was sensitive to the fragrant ingredients"
+  },
+  {
+    "review_id": "R2E5SESPOHS5T5",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "Didn't really do much for my skin neither did it make my skin worse"
+  },
+  {
+    "review_id": "R3AD23T86IMPQ4",
+    "sentiment": "NEU",
+    "strengths": [],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "It's feel good on my face, but not visible yet"
+  },
+  {
+    "review_id": "R1A8GX9H9QC73O",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "기타"
+    ],
+    "evidence": "I think this product is fake... original one has more thick texture"
+  },
+  {
+    "review_id": "RQSS9IT9ZNHD5",
+    "sentiment": "NEG",
+    "strengths": [
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "자극/따가움",
+      "트러블/뾰루지"
+    ],
+    "evidence": "immediately flared up my rosacea... used this twice and now I have two big rosacea blemishes"
+  },
+  {
+    "review_id": "R3797T36YA6DUQ",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "트러블/뾰루지"
+    ],
+    "evidence": "This product broke me out very bad"
+  },
+  {
+    "review_id": "RGCE4SMCRDSDQ",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "기타"
+    ],
+    "evidence": "Not the original. Ingredients differ from the toner sold at Ulta"
+  },
+  {
+    "review_id": "RXF2XB3O97XZT",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "제형불호",
+      "향 불호",
+      "트러블/뾰루지"
+    ],
+    "evidence": "more like a gel or lotion, super lemony in smell, clogged my pores"
+  },
+  {
+    "review_id": "R1Y8C3IDUS3QOK",
+    "sentiment": "NEG",
+    "strengths": [
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "향 불호",
+      "건조함",
+      "자극/따가움"
+    ],
+    "evidence": "very good value but very scented citrus, made my skin super dry, irritated my skin, red bumps"
+  },
+  {
+    "review_id": "R1C17QG8KK3SPG",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "향 불호"
+    ],
+    "evidence": "sensitive rosacea skin and this burned my face, guessing due to the citrus"
+  },
+  {
+    "review_id": "RC25MPAAXOL8G",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "배송/포장"
+    ],
+    "evidence": "good product but it arrived broken"
+  },
+  {
+    "review_id": "R2J7JKUR3EQZWQ",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "트러블/뾰루지",
+      "자극/따가움",
+      "건조함",
+      "제형불호"
+    ],
+    "evidence": "face was enflamed, irritated, little pustules everywhere, skin dry, pores enlarged, felt rubbery"
+  },
+  {
+    "review_id": "RPAMM2M8IEPKI",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "향 불호",
+      "트러블/뾰루지"
+    ],
+    "evidence": "lemony scent overpowering on face, made my sensitive acne prone skin break out"
+  },
+  {
+    "review_id": "R10UULOJYIJ01R",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [
+      "끈적임"
+    ],
+    "evidence": "moisturizing and refreshing at first, but as time goes by it feels greasy. I won't buy it again"
+  },
+  {
+    "review_id": "R36IGGZB3RJ07S",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "트러블/뾰루지"
+    ],
+    "evidence": "my skin is really picky, and this broke me out"
+  },
+  {
+    "review_id": "RTXD11V96HGK1",
+    "sentiment": "NEG",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기"
+    ],
+    "weaknesses": [
+      "향 불호",
+      "트러블/뾰루지"
+    ],
+    "evidence": "smoothed and healed my skin... Update: my skin became worse over time, there's fragrance"
+  },
+  {
+    "review_id": "RPI1IN3IIMG59",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "트러블/뾰루지"
+    ],
+    "evidence": "Damaged my skin... it broke my skin off and caused acne"
+  },
+  {
+    "review_id": "RUPDGVOGNKZI9",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "트러블/뾰루지"
+    ],
+    "evidence": "Gave me spots which I didn't expect, requested a refund and I'm still waiting"
+  },
+  {
+    "review_id": "REZ10SMOPN86Y",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "did not like it on my skin, it does nothing comparing to other Korean toners"
+  },
+  {
+    "review_id": "R1T7FU9SYUGFNF",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "건조함"
+    ],
+    "evidence": "it make my face look dry"
+  },
+  {
+    "review_id": "R1OS0XOFHCP80D",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움"
+    ],
+    "evidence": "3 utilisations... irritations rougeurs et ma peau qui me brûle atrocement, échec total"
+  },
+  {
+    "review_id": "R2BVQG2LY17SZD",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "quite hydrating and soothing leaving the face fresh.. i love.. i will definitely repurchase (별점1이나 내용은 긍정)"
+  },
+  {
+    "review_id": "R67D0RQ2B9Z3C",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "Nothing as such hype of this product"
+  },
+  {
+    "review_id": "RTUU5NL1XD5NE",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "배송/포장"
+    ],
+    "evidence": "Not as the picture, thought it's gonna be 500ml but it came only 300ml"
+  },
+  {
+    "review_id": "R2IWISAHZNHU59",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움"
+    ],
+    "evidence": "using it on my face gave me a rash and irritation"
+  },
+  {
+    "review_id": "R17EDA8QSAKO03",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "효과없음"
+    ],
+    "evidence": "it stung my skin and I didn't notice any improvement after using half the bottle"
+  },
+  {
+    "review_id": "RD6LXY9TTQQ28",
+    "sentiment": "NEG",
+    "strengths": [
+      "향 만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [
+      "트러블/뾰루지"
+    ],
+    "evidence": "smells nice, looked like it was hydrating, but it caused my acne prone skin to get cysts"
+  },
+  {
+    "review_id": "R2CQI57DO2Z8AV",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움"
+    ],
+    "evidence": "every time I use this my eyes swell up like cartoon character"
+  },
+  {
+    "review_id": "R1JTT5FOTVGW5X",
+    "sentiment": "NEG",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [
+      "향 불호",
+      "자극/따가움",
+      "기타"
+    ],
+    "evidence": "favorite toner for 4 years but new bottle reformulated, smells like citrus now and it burns my face"
+  },
+  {
+    "review_id": "R2DJCXM7SH9VIE",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "트러블/뾰루지"
+    ],
+    "evidence": "It irritated my skin, small bumps and skin turned red immediately"
+  },
+  {
+    "review_id": "R24ATQ6XKNXNOC",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "자극/따가움",
+      "트러블/뾰루지"
+    ],
+    "evidence": "itch skin, tiny bumps on my face... not going away even after stop using it"
+  },
+  {
+    "review_id": "R2CB1BJHVIF3XP",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "배송/포장"
+    ],
+    "evidence": "huge hole ripped in the package and the bottle was not fully sealed"
+  },
+  {
+    "review_id": "R2W9BB6J0EOZ1G",
+    "sentiment": "NEG",
+    "strengths": [],
+    "weaknesses": [
+      "배송/포장",
+      "향 불호"
+    ],
+    "evidence": "item I received expires in November... smelled like a bug repellent. Please stop selling expired makeups"
+  },
+  {
+    "review_id": "R2MWW0B4QWI7AX",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Very hydrating"
+  },
+  {
+    "review_id": "R8VY4VIHNYT6V",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "Very hydrating and easy absorbing"
+  },
+  {
+    "review_id": "R3OLRLJCUA3CEK",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "lovely thin hydrating toner... skin loves it. Removes any tightness"
+  },
+  {
+    "review_id": "R12MP96MAY79IK",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [
+      "효과없음"
+    ],
+    "evidence": "very hydrating and soothing. Not sure if it has made any difference but feel very nice"
+  },
+  {
+    "review_id": "R3Q1VNJJET3EJI",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very gentle and hydrating and the bottle is massive and will last forever! Highly recommended"
+  },
+  {
+    "review_id": "R253WE80F5IEWY",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "Not only does this hydrate my skin but also gives a glass glow"
+  },
+  {
+    "review_id": "R2XKEE69AO48LL",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "진정/장벽케어",
+      "제형/텍스처",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "skeptical due to lemon peel oil but doesn't irritate, thick, very hydrating, soothing, not greasy; worth full price"
+  },
+  {
+    "review_id": "RVROJ6EW0F6O7",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "super light and comfortable, skin well hydrated, calms my skin after acid peel, large bottle for the price, smells nice"
+  },
+  {
+    "review_id": "R3FSJ21F7KDL3N",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "50+ sensitive skin: incredibly gentle, very hydrating, soothing, glass skin glow, excellent value, generous size"
+  },
+  {
+    "review_id": "R3LX3N78JAE5OJ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "My 3rd repurchase. Goes on so easily, not sticky, absorbs well. So hydrating"
+  },
+  {
+    "review_id": "R2UO5ETXDKHVI2",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "제형/텍스처",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "silky on the skin, soft and hydrated, very reasonably priced, would compare to higher end, bought a second"
+  },
+  {
+    "review_id": "R7O7USWG8QGZQ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "I love this toner it's really doing wonders"
+  },
+  {
+    "review_id": "R39YW5R960KI2E",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처"
+    ],
+    "weaknesses": [],
+    "evidence": "Best hydration & smoothness. Best milky smooth toner I ever had. Best for dry skin"
+  },
+  {
+    "review_id": "R5MTH6MWQ58T9",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "holy grail of toners, hydrating and nourishing, nice greaseless glow"
+  },
+  {
+    "review_id": "R2Z3GAQLX42T3O",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Worth every penny. Very hydrating"
+  },
+  {
+    "review_id": "R22R4W7VCHFPF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "So hydrating and works really well, seen great progress"
+  },
+  {
+    "review_id": "R34J0T2UXZVJLJ",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "보습/촉촉",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "smells amazing and feels so hydrating, price point for volume amazing, on the reorder list"
+  },
+  {
+    "review_id": "R15GZHFCQM8L4Y",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Good product for hydration"
+  },
+  {
+    "review_id": "R2QDWCVXQBUPS0",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "So good Very hydrating"
+  },
+  {
+    "review_id": "R10WVE25ZG0VW2",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "광채/윤기",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "very lightweight and hydrating, oily skin, incredible glass-skin look, price is excellent"
+  },
+  {
+    "review_id": "R3TW4GOYIBLUCG",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight but deeply hydrating, absorbs quickly, soft plump no sticky residue, radiant, large size worth the price"
+  },
+  {
+    "review_id": "RRXHOQ6A22XE2",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Best toner out there for dry skin! Hydrates and leaves the skin supple"
+  },
+  {
+    "review_id": "R1GR1ANPQ855VR",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "its texture and beautiful results... My skin has never been so hydrated and radiant"
+  },
+  {
+    "review_id": "RGDJH0ARK5U7Q",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "진정/장벽케어",
+      "광채/윤기",
+      "제형/텍스처"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight but slightly milky, absorbs quickly, supports skin barrier, ceramides and HA lock in moisture, more glowy"
+  },
+  {
+    "review_id": "R2W6M6SAPZ1KPU",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "milky texture hydrates deeply without feeling sticky, soft and bouncy like mochi, glass skin glow, recommended"
+  },
+  {
+    "review_id": "R1LP70F4M15UGP",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "good if you have sensitive or dry skin, really hydrating and cooling, definitely recommend"
+  },
+  {
+    "review_id": "RLL43BUZJ48XZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "진정/장벽케어",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight but creamy, absorbs quickly, strengthens skin barrier, no irritation, you get a LOT so it lasts forever"
+  },
+  {
+    "review_id": "R3VH2L8O94GQL9",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "deeply hydrated, soft and plump, the glow it gives is unreal"
+  },
+  {
+    "review_id": "R3LFE4DSLZ9XDW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "진정/장벽케어",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "hydrating but lightweight, absorbs fast, soft and calm without stickiness, great for dry or sensitive skin"
+  },
+  {
+    "review_id": "R2LZ5GN249NMLR",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "향 만족",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "deeply hydrated with a glow, scent reminds of vitamin C, lightweight absorbs nicely, size is amazing, highly recommend"
+  },
+  {
+    "review_id": "R3RFJTHNMFB20I",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin so glowy and bouncy, super hydrating and not sticky, multi use"
+  },
+  {
+    "review_id": "R11LT8TJWMKTXU",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "for the amount you get it is the best bang for your buck, super hydrating, left me glowing and not sticky"
+  },
+  {
+    "review_id": "R1A4GC2QIG3U7N",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "흡수력",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "smells so good, simple nice packaging, absorbs so well, super hydrated and very dewy"
+  },
+  {
+    "review_id": "R2SH5J8F5DSMSV",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Super milky and hydrating, bottle is huge, great value, definitely worth buying"
+  },
+  {
+    "review_id": "R3HIEAHNJO1XAZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my skin feeling hydrated and soft"
+  },
+  {
+    "review_id": "RI5V7E5VNP94D",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "sooo hydrating, non-comedogenic so it won't clog my pores, soft and moisturized"
+  },
+  {
+    "review_id": "R3DWQI99NVCDOG",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "진정/장벽케어",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "non-irritating hydrating toner, incredibly hydrated soft and supple, no irritation, calmed skin, recommend"
+  },
+  {
+    "review_id": "R3JLXOWHTHSQSD",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "so moisturizing my skin drinks this up, hydrated and dewy, recommend"
+  },
+  {
+    "review_id": "R3GIUVHOOE8HGT",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "skin much more radiant and hydrated, bottle is large, worth every penny, highly recommend"
+  },
+  {
+    "review_id": "RD9XU7BJ09JJF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "deep hydration and a repaired skin barrier, glass skin look, one of the best skincare purchases"
+  },
+  {
+    "review_id": "R2XGJTNTAVLU7I",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "순함/저자극",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight slightly milky, absorbs easily without sticky, glass skin look, gentle for dry/sensitive, keeps irritation and tightness at bay, lasts long value"
+  },
+  {
+    "review_id": "R2X36EQ12V574W",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Very hydrating, used 2-3 layers, highly recommend for good skin prep"
+  },
+  {
+    "review_id": "R250KUCTC9R73Y",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "skin was glowy and so hydrated, melts nicely into skin and dries pretty fast"
+  },
+  {
+    "review_id": "R1XXYY5RMS6VBO",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "광채/윤기",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "super lightweight, absorbs quickly without greasy/sticky, instant brightening radiant, works under makeup no pill"
+  },
+  {
+    "review_id": "RJXPC3G8J9BPO",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight yet very hydrating, soft and refreshed without sticky, great value for the price, highly recommend"
+  },
+  {
+    "review_id": "R2IEWVPHD5QKS9",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "순함/저자극",
+      "진정/장벽케어",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "milky slightly thicker, absorbs easily, plump glowy without greasy, works for dry/sensitive, calms irritation no tightness, great value for the size"
+  },
+  {
+    "review_id": "R3S1S6E6C53VBY",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "shocked how big the bottle is for the price, instant hydration and glow without irritation, repurchasing"
+  },
+  {
+    "review_id": "R3E4THK9CD3VF1",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "흡수력",
+      "순함/저자극",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "bottle is huge, formula soaks up with ease, feels gentle but very hydrating"
+  },
+  {
+    "review_id": "R2KN4YC7F6P04B",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "very sensitive & acne prone skin, so hydrating, lovely glass skin look, bottle is HUGE"
+  },
+  {
+    "review_id": "R333ZWAKIILIBT",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "hydrated my skin and don't break me out"
+  },
+  {
+    "review_id": "R3EQ9LJI69GDMR",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "광채/윤기",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "milky texture nourishing, soft plump hydrated, mochi skin look, works under makeup, no irritation, glowing"
+  },
+  {
+    "review_id": "R36LNZ5CGEPTYJ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "instant boost of hydration, ceramides strengthen barrier, glass skin without tightness, big size great value"
+  },
+  {
+    "review_id": "R1STTBI7NMGAQM",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "hydrating and lightweight, not stripping, loved how glowy my skin looked, would repurchase"
+  },
+  {
+    "review_id": "R2VRMC2K2821LA",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "순함/저자극",
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight and moisturizing, bouncy glass skin appearance, would repurchase, great on sensitive skin, smells nice refreshing"
+  },
+  {
+    "review_id": "R30OHWZCBZHUTS",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Excellent for Hydration, in love with this"
+  },
+  {
+    "review_id": "R1GEH0PRB7STTW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "very hydrating and lightweight, soft smooth without stickiness, healthier glow, works as prep before makeup"
+  },
+  {
+    "review_id": "RICRUZBI5U02B",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "big bottle, lot of product for the price, milky and hydrating, softer and glowy without greasy, no tight feeling"
+  },
+  {
+    "review_id": "R1L4PMVWO1VV6P",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "keeps skin hydrated soft and glowing, lightweight, long-lasting, glass skin look"
+  },
+  {
+    "review_id": "R1X2M9BWVA8IZ0",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "500ml bottle is huge, great value, super lightweight but deeply hydrating, soft bouncy refreshed, not sticky, glass skin"
+  },
+  {
+    "review_id": "R3N399AK8SEJHV",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "보습/촉촉",
+      "광채/윤기",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "good price big bottle, hydrating glowing skin, soft lightweight, absorbs quickly, keep adding layers"
+  },
+  {
+    "review_id": "REFKPFWRKJE3E",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my skin hydrated, bouncy, and glowing, I literally have glass skin, a must have"
+  },
+  {
+    "review_id": "R29J46RZBBWSY0",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "진정/장벽케어",
+      "순함/저자극",
+      "제형/텍스처"
+    ],
+    "weaknesses": [],
+    "evidence": "milky slightly thicker nourishing, absorbs beautifully, ceramides strengthen barrier, combo dry/sensitive without irritation, great prep"
+  },
+  {
+    "review_id": "R22ODEFHHMGB63",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "most toners dry me out but this feels like a luxurious collagen mask, hydrated and glassy"
+  },
+  {
+    "review_id": "R1EBJEHW2XZ4HX",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "The feeling is soft and hydrating"
+  },
+  {
+    "review_id": "R2NGRXI9XV5FTM",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "super moisturizing, great for face and body, highly recommend"
+  },
+  {
+    "review_id": "R1T61YG62VXV30",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Firming & hydrating, leaving a glass like look, highly recommend"
+  },
+  {
+    "review_id": "R26R28XT9EBGXG",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "super hydrating and left my skin glowing"
+  },
+  {
+    "review_id": "RWF6XCJ6PL12B",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "so good for sensitive skin, soft and smooth, super hydrated, HA and ceramides, great for all skin types"
+  },
+  {
+    "review_id": "R2LH08CIDS6T0N",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "how hydrating and brightening this toner is, gives my skin such a glow, difference in texture"
+  },
+  {
+    "review_id": "R3TKQEN6I5V1S3",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "so cooling and incredibly hydrating, soft bouncy glowy refreshed, radiant glass skin look"
+  },
+  {
+    "review_id": "R3EFH5J9V1G09G",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "highly hydrating, plump and radiant, works well for dry skin, deep moisture and a healthy glow"
+  },
+  {
+    "review_id": "R3IPOK9LMQWIF5",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "super lightweight but very hydrating, absorbs quickly, fresh and glowy without any stickiness"
+  },
+  {
+    "review_id": "R2U9G43376QTL6",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight but very hydrating, soft instead of sticky, layers well, nice healthy glow"
+  },
+  {
+    "review_id": "R1PLUEU62S1JY6",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "holy grail for glass skin, so hydrating, perfect makeup prep, obsessed"
+  },
+  {
+    "review_id": "R3KA1O6X49RVBD",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "hydrates and makes it smooth, milky texture, absorbs well and quickly, dry skin feels moisturized"
+  },
+  {
+    "review_id": "R2K29MCDYC4N6A",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "진정/장벽케어",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "very refreshing consistency, soothes the skin and isn't heavy, excellent hydration and softness"
+  },
+  {
+    "review_id": "R3K872ABMETNBC",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves me with glass skin, so hydrating and moisturizing, a must have"
+  },
+  {
+    "review_id": "R3B6WDCYOEA6J",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Perfect skin, you should have this Toner on your routine"
+  },
+  {
+    "review_id": "R33UQGOCIXHIZ0",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "moisturizes rather than drying, ceramides protect, hydrating Korean-style glow, dewy and bouncy like mochi, will re-purchase"
+  },
+  {
+    "review_id": "R5IOIBVF145LL",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "보습/촉촉",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "light scent, absorbs well, generous amount for the price, goes on sale, repurchased multiple times"
+  },
+  {
+    "review_id": "RG26MQJH38WB7",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "repurchased several times, super hydrating but light, watery flows easily and absorbs well, soft and moisturized, gentle and reliable daily staple"
+  },
+  {
+    "review_id": "R182GA5T090U3B",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "500ml is huge, major bang for your buck, hydrates and nourishes, plump soft refreshed without sticky residue"
+  },
+  {
+    "review_id": "R1GKUZ0GWTNA4W",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight watery but incredibly hydrating, one layer like toner and emulsion, generously sized so I use it on body too"
+  },
+  {
+    "review_id": "R2YPV4Z96O2ZUN",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "진정/장벽케어",
+      "제형/텍스처"
+    ],
+    "weaknesses": [],
+    "evidence": "thick and milky but absorbs quickly without heavy/sticky, great for dry skin, ceramides strengthen barrier, makeup smoother, cooling mist"
+  },
+  {
+    "review_id": "R1ROHGKJZJUKWY",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "대용량/오래씀",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "4 in 1 miracle: hydrating, moisturizing, absorbing perfectly, smoothing texture; jumbo size, toner pack before makeup, inner dryness gone"
+  },
+  {
+    "review_id": "R295FC49RJZ65S",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기",
+      "대용량/오래씀",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "milky and cushiony, absorbs effortlessly, smooth supple luminous, mature parched skin more hydrated, generous size excellent value, barrier support"
+  },
+  {
+    "review_id": "RB0184AAV1WE4",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very hydrating, feels silky, soft, permanent part of my routine, shipping time was excellent"
+  },
+  {
+    "review_id": "RA416A7BU269Q",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my skin hydrated and glossy, repairing my skin barrier, used on super dry legs"
+  },
+  {
+    "review_id": "RJLNFHHV1QUHV",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin feel and look hydrated, soft to the touch, never had a toner give me great results"
+  },
+  {
+    "review_id": "R1Y03J4OCSQHN6",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "흡수력",
+      "보습/촉촉",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "great dry skin barrier support, absorbs well, hydrated and bouncy, price is amazing compared to the amount"
+  },
+  {
+    "review_id": "R3S4UU30W0N7IZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "ceramide helps skin barrier, milky consistency comforting, bottle huge lasts long, price amazing, always come back even from double-price toners"
+  },
+  {
+    "review_id": "RRTVR5E3DL1R1",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "third bottle, lasts forever, good price for the amount, hydrates like crazy, helps skin texture; scent like fruit loops but not overpowering"
+  },
+  {
+    "review_id": "R39SBBEVNH03DZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "feels cold, adds moisture, nice glow, hydrated and nourished, use day and night, will forever repurchase"
+  },
+  {
+    "review_id": "R35SC87LRTZBK8",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "순함/저자극",
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight, absorbs with ease, no artificial smells or colors, lot of product for your money, great replacement for rice toners"
+  },
+  {
+    "review_id": "R2YRGFK8QC9S9I",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "a must after cleansing and showers to keep your skin plump and hydrated"
+  },
+  {
+    "review_id": "R2JV56BM3MMBK2",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "great for face or body, great value, very hydrating and soothing"
+  },
+  {
+    "review_id": "RU6N0CHJBPD9U",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉",
+      "순함/저자극",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "on sale ~$15 for 16.9oz, dry sensitive skin, adds so much hydration without sticky/tacky, dewy and supple in days, good ingredients for sensitive skin, worth it even at full price"
+  },
+  {
+    "review_id": "R71E8YIA0ENQG",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "felt like dewy and hydrated face"
+  },
+  {
+    "review_id": "R2EDI7QF6QR6V6",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Thick consistency, very moisturizing, leaves skin supple and hydrated"
+  },
+  {
+    "review_id": "RK1ULLXJU77C0",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "combination skin, never be without it, use instead of moisturizer in the morning, holy grail level, can layer"
+  },
+  {
+    "review_id": "R3HK9163CCHM0R",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "향 만족",
+      "진정/장벽케어",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "very gentle, smells lovely, even went in my eyes and didn't sting, so soothing, skin soft and plump"
+  },
+  {
+    "review_id": "R17K9ILGFJKWPE",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "I feel my skin is better. Great value for money"
+  },
+  {
+    "review_id": "R2DO0CWIIH0VTT",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "Lovely, gentle milk toner, great for my sensitive eczema-prone skin"
+  },
+  {
+    "review_id": "RG1D826EXY90I",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Very very good"
+  },
+  {
+    "review_id": "R22D24ZWX3RDT6",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Suitable for sensitive skin, no clumpy feeling, sometimes skip cream altogether"
+  },
+  {
+    "review_id": "R2US0GPT0DZ1AC",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Really keeps the skin moisturized and smooth"
+  },
+  {
+    "review_id": "R1JVCYWBU0SU78",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "Best for dry skin under makeup and very refreshing, sensitive and dry skin, really helps in winter"
+  },
+  {
+    "review_id": "R7ZIUYNPT63L1",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "skin feels plump immediately, fast absorbing, non sticky, great value for money, highly recommend"
+  },
+  {
+    "review_id": "R793SNNDNTNSP",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "skin gets smoother and glowy after two weeks"
+  },
+  {
+    "review_id": "R2W5K9PVI21OO6",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "big enough to last a couple of months, works so well on my skin"
+  },
+  {
+    "review_id": "RS1KBER06JRDW",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "after 3 weeks noticed a difference in my skin's appearance, good for me, love it"
+  },
+  {
+    "review_id": "RN7YPTSWNP4X7",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin feel bouncy and glowy"
+  },
+  {
+    "review_id": "RKU8DSVCHRS44",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Love this for my skin"
+  },
+  {
+    "review_id": "RVRRPOHWA2FLG",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "광채/윤기",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "dries off within a twinkle, makes face glow like a baby, suitable for blemish skin type"
+  },
+  {
+    "review_id": "R3D4IA0FB1ACSK",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "helped my acne prone skin a great deal, looking forward to clearer skin"
+  },
+  {
+    "review_id": "RL0XO0AELJFOA",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족",
+      "제형/텍스처",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "흡수느림"
+    ],
+    "evidence": "amazing for dry skin but my skin is oily so it's so thick it sits on my skin, worry about serum absorption; smells nice, lovely texture, massive bottle"
+  },
+  {
+    "review_id": "R2RK5RJ57508AJ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "moisturising, helps protect skin barrier, but smells like turmeric, I wish it smelled good too"
+  },
+  {
+    "review_id": "R2XBJZX88AJBVZ",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "Glowing skin, love this stuff"
+  },
+  {
+    "review_id": "R13295FX2VCFZF",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "진정/장벽케어",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "highly recommend, gives glass skin and beautiful glow, repairs skin barrier, great for sensitive skin"
+  },
+  {
+    "review_id": "R1NQLA4VO4ZV42",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "use it on face & body, using every day, can feel and see my skin has improved"
+  },
+  {
+    "review_id": "R2ZWVPDLPO3Q2E",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin feel smooth and glowy"
+  },
+  {
+    "review_id": "R1IUKWEBSR115D",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very good for dry skin, amazing results, would give 10 stars"
+  },
+  {
+    "review_id": "R25VOBBUXDM3DO",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Good quality for this price, feels good on the skin"
+  },
+  {
+    "review_id": "RYPUU1ISMY8UX",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "tones well without making my skin feel tight, gentle enough that it doesn't irritate my eczema"
+  },
+  {
+    "review_id": "R1RS6FZ05RH2A3",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "fantastic especially if you use actives like tretinoin, azelaic acid and aha; helps and protects the skin barrier"
+  },
+  {
+    "review_id": "R167A8Y8A8NFXC",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "Nice moist toner, skin feels fresh"
+  },
+  {
+    "review_id": "R2MAI52JQEQV31",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "so milky and makes my skin feel glowy and radiant"
+  },
+  {
+    "review_id": "R2XNN33AO16YF6",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "skin is now plumper and more even after using this"
+  },
+  {
+    "review_id": "RG6MFJFM5KPP",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "really brightens my skin and minimizes my pores, would definitely buy again"
+  },
+  {
+    "review_id": "R3SUB8G9PG048Q",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "skin glowing, glass skin effect, money's worth, weeks of generous use and still over 75% left, highly recommend"
+  },
+  {
+    "review_id": "R30JLQAVHIPTG6",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "left my skin glowy and moisturized, would recommend 10/10"
+  },
+  {
+    "review_id": "R27AXOY3ZMWR9P",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "one of the best tonics I've ever tried, Korean products do an extraordinary job"
+  },
+  {
+    "review_id": "R36TWTO8K8K6BZ",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my skin feeling nice and glowy"
+  },
+  {
+    "review_id": "R16DEP9M1D5N78",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "perfect for dry skin, absorbs easily, giving a glass skin finish"
+  },
+  {
+    "review_id": "R1CRMJXE4SKQLL",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "helped me achieve the glass skin I've been looking for as I layer it on"
+  },
+  {
+    "review_id": "R1BF1O49INZ77A",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "gives that instant glass skin"
+  },
+  {
+    "review_id": "R3NYH4U3ABWQ00",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "흡수력",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "super soft and light, dry skin rejuvenated, creamy consistency easy application and absorption, will make it into my routine"
+  },
+  {
+    "review_id": "R34GN59M47J3JO",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "gives a glass skin look, love how glowy my skin looks under makeup"
+  },
+  {
+    "review_id": "R29VOVAV06Z8DH",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very gentle on the skin, liked using it with the mask, highly recommend, my best purchase"
+  },
+  {
+    "review_id": "R1XYYRLAYNHO6V",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "love the feel, great for everyday use and absorbs into skin quickly"
+  },
+  {
+    "review_id": "RRB0G5EQXD690",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "skin was dry and rough but became softer and more radiant, noticeable difference, feels healthier"
+  },
+  {
+    "review_id": "R2MC2SXXD0YWP3",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "My skin drinks this up, very moisturizing, glass skin"
+  },
+  {
+    "review_id": "R23FT7B9M3AZCB",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "흡수력",
+      "보습/촉촉",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight, refreshing, absorbs quickly without sticky feeling, keeps skin soft and balanced, hasn't caused irritation"
+  },
+  {
+    "review_id": "R3RCTV1E5OXAQQ",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "제형/텍스처",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "gave me a glass skin finish, glowing and soft, very thick and perfect to use as a makeup base, highly recommend"
+  },
+  {
+    "review_id": "R2DZ0X93BP0FZM",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "amazing for aging skin, after a month the texture is so much smoother and softer"
+  },
+  {
+    "review_id": "R1HLCYXI0C396P",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Feels so amazing on my skin, already going to buy another bottle"
+  },
+  {
+    "review_id": "R14T5QQNQRA51Q",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin look so good and smooth"
+  },
+  {
+    "review_id": "R1SOLT2W78ZWBA",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Very good toner"
+  },
+  {
+    "review_id": "RIDOURITMWAR7",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Good"
+  },
+  {
+    "review_id": "RN77SQML95HXC",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "using TONYMOLY for over 10 years, good quality, prices are competitive"
+  },
+  {
+    "review_id": "REHDFDLY3XZWM",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Good value for size. A must have!"
+  },
+  {
+    "review_id": "R375X0OJ2F8G0V",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "2nd purchase and so in love, big bottle so it lasts"
+  },
+  {
+    "review_id": "R39TGB5MZL6OFB",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Good"
+  },
+  {
+    "review_id": "R1AQZ3BUDDR3HL",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Significantly reduced redness and rosacea, now on my second bottle, couldn't live without it"
+  },
+  {
+    "review_id": "R21E15S07HXM2X",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Good (Happy)"
+  },
+  {
+    "review_id": "RYUZLW5O32CM4",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Gets the job done"
+  },
+  {
+    "review_id": "RTX9OHP3V6GSE",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Screen base nice product"
+  },
+  {
+    "review_id": "R1F3E6EMLZ00OZ",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Good product"
+  },
+  {
+    "review_id": "R3P6SLECWJ2KLA",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "tops all the kbeauty toners I've used, big bottle for a good price"
+  },
+  {
+    "review_id": "R204PRZBNU5DKS",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "very good product, arrived intact and in good condition, excellent"
+  },
+  {
+    "review_id": "RI2SAIMKIP2UY",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "moisturizes wonderfully, makes the skin glassy, nourished, radiant"
+  },
+  {
+    "review_id": "R1H3EK25UADF29",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Good for skin and pocket"
+  },
+  {
+    "review_id": "R13FV3ZFR45AGG",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "finished one bottle, extremely good, value for money"
+  },
+  {
+    "review_id": "R3CNK45Y9QPUXQ",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Love it"
+  },
+  {
+    "review_id": "R9R1FWERZ5F8J",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "광채/윤기",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "very sensitive and dry skin, within a week skin became soft and clear, pores shrank, big bottle lasts, worth the price"
+  },
+  {
+    "review_id": "R3GYKJB8LSMEEK",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "광채/윤기"
+    ],
+    "weaknesses": [
+      "건조함"
+    ],
+    "evidence": "13yo with acne, very delicate on the skin, glassy/shiny look; recommend a moisturizer afterward since it dries your face a bit"
+  },
+  {
+    "review_id": "RJQ8GGQMET407",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족",
+      "산뜻함",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "all time favorite daily toner, not drying, smells so good, soft and moisturized, refreshing non sticky, affordable"
+  },
+  {
+    "review_id": "R1XKMOQMCDJFB1",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "가성비/가격만족",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "no Witch Hazel astringent, ceramides and quality ingredients, good price-per-ounce, very light pleasant scent"
+  },
+  {
+    "review_id": "R30NNWS6X3XOIO",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "산뜻함",
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "very gentle and refreshing, one of my favorite toners, good value, comes with a lot"
+  },
+  {
+    "review_id": "R3OF2KF5UY6GKW",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Smells good, feels good, great value for the money"
+  },
+  {
+    "review_id": "R2BIDGFQKRAW4G",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "huge bottle could double as a moisturizer, good price, no smell, skin drinks it up, absorbs quickly, stays moisturized"
+  },
+  {
+    "review_id": "RZ19GWWE30DFR",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "very good for sensitive skin and does not irritate at all"
+  },
+  {
+    "review_id": "R1X09FYYW7KFP9",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "most affordable option with good ingredients, seven layers really works, skin good all day"
+  },
+  {
+    "review_id": "R3N3QVJIC1SRQ9",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "loved it instantly, use everyday, smells good, would recommend"
+  },
+  {
+    "review_id": "RE3M494L1HQA1",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "seen improvement, best bang for your buck, slight lemony clean smell but I don't mind, a month and barely left a dent"
+  },
+  {
+    "review_id": "R2FTYLDOR94W6C",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "combination/oily skin, didn't break me out, acne cleared up, balances cleaning and moisturized, two months and still not done, recommend"
+  },
+  {
+    "review_id": "R28B9AWRPWDY1Y",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "kept breaking out from mask, toner is moisturizing and gentle, my go to, will be reordering, good size lasted a while, no added perfume"
+  },
+  {
+    "review_id": "R1GS2A5XZA30RB",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "흡수력",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "no rash, no sensitivity, absorbs with no sticky residue, satisfied with the level of moisture, will be buying again"
+  },
+  {
+    "review_id": "RJXGC9BYST3S5",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "made my pores smaller and it smells good"
+  },
+  {
+    "review_id": "R156NI98NJNU1J",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "delivers ceramide goodness, moisture and protection, use in lieu of lotion, great quantity"
+  },
+  {
+    "review_id": "R2KU20I9DB1DV7",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "I love it"
+  },
+  {
+    "review_id": "R2YB44L6TE5SLW",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Just got this and so far so good"
+  },
+  {
+    "review_id": "R31LXI0JHCQ7C8",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "really hydrating, good for the price, recommend for kbeauty routine"
+  },
+  {
+    "review_id": "RGM1R669KCIZM",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "my skin is happy on the results, use it for my husband too"
+  },
+  {
+    "review_id": "RYC5YGO9FMJ0M",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "face feels softer and less dry, brightens up dull skin"
+  },
+  {
+    "review_id": "R27ROA8F4TWV1M",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처",
+      "흡수력",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "visible results in 2 weeks, dry mature skin softer/moisturized, milky thicker consistency glides and absorbs well, big bottle lasted 4 months, my HG, repurchasing"
+  },
+  {
+    "review_id": "R1TVZVT88SX84S",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Very creamy, does its job for the harsh dry winters in Scandinavia"
+  },
+  {
+    "review_id": "R25R6M1CAKN7RL",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [
+      "용기불편"
+    ],
+    "evidence": "great light moisturizer, sensitive dry skin never irritated, helps spread thicker lotion; recommend buying a pump for this bottle"
+  },
+  {
+    "review_id": "R11CO4MB9WEE1I",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "순함/저자극",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "combination sensitive skin, skin is soft, pores look smaller, not breaking out as often, daily without irritation, highly recommend"
+  },
+  {
+    "review_id": "RSISPC2I03DJ7",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "lasted a year, creamy helps dry skin, milky and smooth, skin cleared up, super gentle, buying again"
+  },
+  {
+    "review_id": "R1H8HZY0TOA8B3",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "light and refreshing but moisturizes well for sensitive/dry, big bottle great deal, no sticky residue, light pleasant scent, highly recommend"
+  },
+  {
+    "review_id": "R3E23P3HWSJ99U",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "not drying or heavy in fragrance, oily skin helps balance, huge bottle for a decent price, great quality, recommending to everyone"
+  },
+  {
+    "review_id": "R2GXCHWCT25F55",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "sensitive skin that gets dry and red, refreshing, recommend it to everyone"
+  },
+  {
+    "review_id": "R3EJ9FG2NQONZY",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "combination acne-prone sensitive skin, soft and doesn't break me out, light citrusy smell no irritation, dry patches completely gone, great value"
+  },
+  {
+    "review_id": "R44WHP5A6AS7I",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "순함/저자극",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "favorite dupe for Laneige Cream Skin Toner, great for sensitive/redness/dry/acne, more ounces for a fraction of the cost, always have on backup"
+  },
+  {
+    "review_id": "R188ZNXHT7FSRF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "saw results the day I tried it, skin felt dry but this fixed everything in a week"
+  },
+  {
+    "review_id": "R2OV63DJO8GA1F",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "끈적임"
+    ],
+    "evidence": "thick and viscous, light lemon scent, great film forming so leaves a slightly sticky film (goes away when dry), dewy bouncy finish, huge bottle"
+  },
+  {
+    "review_id": "R3M7C7WLLNIYVW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "super moisturizing but fragrance too strong for sensitive skin on my face; amazing as a body moisturizer"
+  },
+  {
+    "review_id": "R30AWT83AQ3JF6",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "super dry skin, stay hydrated all day, only half gone since March, worth the money, definitely recommend"
+  },
+  {
+    "review_id": "R3SGUZXNOP8E29",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "watery but thick enough, incredibly moisturizing, dry skin MVP, will last forever, highly recommend"
+  },
+  {
+    "review_id": "R130N7L3NEEB7",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉",
+      "순함/저자극",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "HUGE bottle lasts forever, light pleasant lemony scent that disappears, moisturizing, very sensitive and dry skin, no breakouts or rashes"
+  },
+  {
+    "review_id": "RQQNYXA17ENOW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "순함/저자극",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "moisturizing toner, dry sensitive acne prone, so refreshing my skin drinks it up, smells like fruit loops"
+  },
+  {
+    "review_id": "RCK0HMRI27I8J",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "light but moisturizing, gentle and non irritating, bottle is huge for the price"
+  },
+  {
+    "review_id": "R30JCNTLW11ER",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Not for oily skin but dry. Love it"
+  },
+  {
+    "review_id": "R1ZH92KNN88CMN",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "흡수력",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "sensitive oily acne prone, soothes and moisturizes, thicker but not sticky and absorbs quickly, lots of product so use on body, calms mom's rosacea"
+  },
+  {
+    "review_id": "R2TPUJBMNUCO35",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "진정/장벽케어",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "late 40s dry, light and fresh, very moisturizing and calming, skin feels like mochi soft supple, fragrance light mild, bottle is HUGE, highly recommend"
+  },
+  {
+    "review_id": "RDYWCY91V9UVT",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "in love with this toner, recommended for dry skin, will purchase again"
+  },
+  {
+    "review_id": "R3QUJSYOL4RCLE",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "진정/장벽케어",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "dry and sensitive, alcohol free, leaves skin soft, evened out redness in cheeks, light pleasant smell, would recommend"
+  },
+  {
+    "review_id": "R29KCW6O38BB7I",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "really wonderful and my face instantly glows"
+  },
+  {
+    "review_id": "R3KO1COE30O1H0",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "El glow perfecto, best skincare I've ever used, the mask is fantastic"
+  },
+  {
+    "review_id": "R7PWME55TI91A",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "most affordable korean toner, so moisturising and lightweight, great for everyday use"
+  },
+  {
+    "review_id": "R38BEHX93VFS9Y",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "really like this stuff, gonna be in my routine forever now"
+  },
+  {
+    "review_id": "RSBMO6IR7I176",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "love that the size is so big, lasts for a really long time"
+  },
+  {
+    "review_id": "R1XYWW68SE209",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "tried the toner along with the Mask Melt Set, so impressed with both"
+  },
+  {
+    "review_id": "RU2UZB4W738D7",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "LOVED IT, have been repurchasing, everything from the brand has been amazing"
+  },
+  {
+    "review_id": "R13UI83CB82CKB",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "use for my whole body, plumps the skin nicely, will be repurchasing"
+  },
+  {
+    "review_id": "R2TX4KJP4L6K6X",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "this bottle is huge, found a deal on prime day, worth every bit, bigger than the picture for 16 oz"
+  },
+  {
+    "review_id": "R5PV7NTZ4OHI6",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "calmed my skin and added the bounce it describes, rehydrate the skin, revived my glow"
+  },
+  {
+    "review_id": "RW6BNXNTZMODE",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "soft and refreshed without irritation, lightweight absorbs quickly, preps face, skin brighter and more even, bottle huge lasts forever, great value, clean ingredients"
+  },
+  {
+    "review_id": "RHK3GEEYC9J8L",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "slather it on all over my face and neck twice daily"
+  },
+  {
+    "review_id": "RXH657PNCNDMZ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "feels like water, so moisturizing, leaves a nice glow, super soft smell, this is my 3rd bottle"
+  },
+  {
+    "review_id": "R23HIYHHMDDRVD",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "so soothing, more affordable on Amazon, makes my face very soft, don't even use lotion afterwards"
+  },
+  {
+    "review_id": "RJ7BCH141KQB5",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "spray it after shower, locks moisture in your skin, will order again"
+  },
+  {
+    "review_id": "R1M14MI01WKWDU",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "광채/윤기",
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "ceramides helped my barrier, kept me moisturized and glowy, over 40, fantastic value for such a large bottle, quick difference in harsh winter"
+  },
+  {
+    "review_id": "R1SR91MJL3HBNF",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Amazing product, I love it"
+  },
+  {
+    "review_id": "R3M9JX6SQBCAEN",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "향 만족",
+      "광채/윤기",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "lovely slippery texture, noticeable citrus scent I really like that fades, dries non-sticky, makes oily skin glowy not greasy, mildly soothing"
+  },
+  {
+    "review_id": "R25HKL6OQ8N9EU",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "love how my skin looks and feels after using this toner"
+  },
+  {
+    "review_id": "R6V327G1WZPGO",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Totally love wonder mochi and their face creams"
+  },
+  {
+    "review_id": "R8N507VDEJPAJ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "향 만족",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "scent lovely not too powerful (earl-grey with citrus), ceramides very moisturizing, milky absorbs quickly not sticky, big size bonus, second bottle, worth every penny, skin has a glow"
+  },
+  {
+    "review_id": "R270JMH1WGXMV5",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "향 만족",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "bottle is huge, very light smell, moisturizing perfectly, this is my second one"
+  },
+  {
+    "review_id": "R2DH0J6V37DDLG",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my face hydrated and glowing; contains lemon oil which might be rough on others so be cautious; for the price and results you can't beat it"
+  },
+  {
+    "review_id": "R18IUCL5YJQ3SZ",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Nice toner, I do actually really like it"
+  },
+  {
+    "review_id": "R3ARXEDXNDYUQX",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "to help heal my barrier, yet to have any negative effects"
+  },
+  {
+    "review_id": "R21VQABH6U5PA4",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "Sehr zufrieden, große Menge und hinterlässt einen erfrischten Teint"
+  },
+  {
+    "review_id": "RJFJ0QTGYCAAR",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "순함/저자극",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "se absorbe muy rápido sin dejar sensación grasosa, no irrita (toner calmante)"
+  },
+  {
+    "review_id": "R60S00EYH2JME",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "10/10 definitely recommend this toner, it's amazing"
+  },
+  {
+    "review_id": "R4L9PFSY1Y2HW",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함"
+    ],
+    "weaknesses": [],
+    "evidence": "súper ligero, hidrata al instante y deja la piel fresca y suave sin sensación pegajosa"
+  },
+  {
+    "review_id": "R13STBIZV4R1T",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "향 만족",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Milchige Konsistenz, frischer Duft, strahlende Haut, bereits zwei neue Flaschen nachgekauft"
+  },
+  {
+    "review_id": "R31GDC74VSD4CL",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "herrlich erfrischender und pflegender Toner, trage ihn über dem Make up auf"
+  },
+  {
+    "review_id": "RM8CL6F964C7Z",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "weltbeste Toner, wer trockene Haut hat braucht diesen, sanft einklopfen, eye tip - einfach genial"
+  },
+  {
+    "review_id": "R19FQ6QDWUZ21E",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "가성비/가격만족",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "creamy, milky, so moisturizing and nourishing, fabulous price, really does impart glass skin"
+  },
+  {
+    "review_id": "R18ZCKT13KMJQ9",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "complexion clear glowing healthy, a little goes a long way, price incredible for the amount and quality, skin looks 15 years younger"
+  },
+  {
+    "review_id": "R15B2B3CPX3XXR",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "loved the scent, milky with citrusy undertones, great size for its price, lasts a while, makes skin smooth and soft"
+  },
+  {
+    "review_id": "R1VU0MFTFPTZ00",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "best toner ever, skin is drinking water, not sticky and refreshing, noticed improvement, price is great and lasts a long time"
+  },
+  {
+    "review_id": "R193OG1AMVDIOO",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "산뜻함",
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "feels smooth and cleansing, unlike others that sting, great for refreshing later in the day, will buy again, price reasonable"
+  },
+  {
+    "review_id": "R35V0Y5QZBV49K",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "Huge bottle, you get so much for your money"
+  },
+  {
+    "review_id": "R1G6CY40T1J7D3",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "가성비/가격만족",
+      "보습/촉촉",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "smells great like sweet fresh limes, great price, makes skin smooth and happy, gentle, finally found my toner"
+  },
+  {
+    "review_id": "R2FV18AIXTP4RF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "순함/저자극",
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [
+      "흡수느림"
+    ],
+    "evidence": "ceramides/panthenol/HA/centella, didn't sting rosacea, plump and hydrated, no more tightness, less oil, price for 500mL great steal; can't say it sinks in immediately after one layer but helps others absorb"
+  },
+  {
+    "review_id": "RCRDPW693U6BC",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Great Product to use"
+  },
+  {
+    "review_id": "R2J0ULO07YAA6C",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Great product"
+  },
+  {
+    "review_id": "R1C1LQFFP9XIFQ",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "I like it a lot, smells great and it is a very large bottle"
+  },
+  {
+    "review_id": "R1XFMK5MLO0P1",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "used giant bottle on sunburn, heat went out of the burn after first use, skin soft, great for after sun care"
+  },
+  {
+    "review_id": "R13BYU1GTVN3FC",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "산뜻함",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "DIY sheet mask, acne/blemishes look less crazy and calm down, cooling sensation, super light fragrance no reactions"
+  },
+  {
+    "review_id": "R14561198J0T7S",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "산뜻함",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "skin more clear and smooth, product is not greasy, value for the money large bottle"
+  },
+  {
+    "review_id": "RFP14I2M3WI8",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "A new favorite, will buy again and again"
+  },
+  {
+    "review_id": "R16NQ3RIV6KDCJ",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Not disappointed in any bit"
+  },
+  {
+    "review_id": "R1HVW8TMLFR4IK",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "진정/장벽케어",
+      "보습/촉촉",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "great value for the amount, makes my skin barrier healthy and strong, moisturizing and plumping, works for sensitive skin"
+  },
+  {
+    "review_id": "R12QMJJ2M0E1BU",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very soothing and hydrating, great delivery method for my serums, have another bottle on deck"
+  },
+  {
+    "review_id": "R6VO24463TK07",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "순함/저자극",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "feels amazing, absorbs quickly, great for sensitive skin and smells great"
+  },
+  {
+    "review_id": "R28MAT7TXI3LLK",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "such an easy way to add ceramides into my skincare routine"
+  },
+  {
+    "review_id": "R14UTNB8PI22DF",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin look glowy, will buy it again"
+  },
+  {
+    "review_id": "R19EMTBJMOHKZG",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "large bottle so it will last, very moisturizing base without feeling sticky or heavy, skin looks great"
+  },
+  {
+    "review_id": "R2UGW89L7ULYPA",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "oily very sensitive skin, not only safe but keeps face moisturized, subtle refreshing citrus scent that does not linger or irritate"
+  },
+  {
+    "review_id": "R1JPU0JV4RRFA",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "great value so I use it all over my body, very hydrating and soothing"
+  },
+  {
+    "review_id": "R2C6NKND03WB2F",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "authentic product, keeps skin healthy looking and soft, light fruity scent that does not stay, a little goes a long way, no breakouts or rashes, recommend"
+  },
+  {
+    "review_id": "R1S6KX164482VZ",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Great product"
+  },
+  {
+    "review_id": "R3GRTKN2VRFP8J",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "흡수력",
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "so hydrating but lightweight, easily absorbs, great primer, skin glowy and plump, size is amazing will last a long time"
+  },
+  {
+    "review_id": "R16788Z97FI5ES",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "extremely hydrating, leaves skin supple and glowing, great to layer, like a glass of water for my skin, recommend"
+  },
+  {
+    "review_id": "R1U2262SIWN9C4",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Works great"
+  },
+  {
+    "review_id": "R2UH9GHDT7RN9Q",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "suspected fake (Mochi vs Mocchi) but TonyMoly confirmed Amazon storefront is genuine, recent packaging change"
+  },
+  {
+    "review_id": "R1SGGKZOHC9C8Y",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "great smooth moisturizer tonic, perfect for sensitive skin, will order again"
+  },
+  {
+    "review_id": "RTKBGF9QNHRDP",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Smells like heaven, will def buy again"
+  },
+  {
+    "review_id": "RKIG7DNLE7Y8D",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "leaves my skin very beautiful"
+  },
+  {
+    "review_id": "R3W3PDVP7YW2V9",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "향 만족",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "absolute favorite, like this one for the texture, smell and how my face feels after"
+  },
+  {
+    "review_id": "RXS0Z4RD0SKBK",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "repurchased many times, very moisturizing without stripping, faint smell not overpowering, doesn't irritate, recommend to everyone"
+  },
+  {
+    "review_id": "R1E6SCZIZCJLIU",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "greatly improved appearance, greatly reduced redness and irritation, bouncy mochi-like skin as advertised"
+  },
+  {
+    "review_id": "RE9Z3GA6J9GQ5",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어",
+      "광채/윤기",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "face had been flaking for a month, within two days skin was moisturized, bouncy and glowing, smells like Froot Loops"
+  },
+  {
+    "review_id": "RMJZAZ9M6PJC3",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "보습/촉촉",
+      "흡수력"
+    ],
+    "weaknesses": [],
+    "evidence": "inexpensive yet effective, impressed how moisturized skin feels, thicker than water but absorbs really well, don't notice a smell"
+  },
+  {
+    "review_id": "R37WIDI2B11M7W",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "immediate hydration after applying, skin looking like glass, definitely re-purchasing"
+  },
+  {
+    "review_id": "R1FZYLVEQ4GCFN",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "works wonders applied with hands, one whole bottle will last a long while"
+  },
+  {
+    "review_id": "R2JTRZIL3DSEQW",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "진정/장벽케어",
+      "제형/텍스처",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "lasts like 18 months, incredibly calming, leaves skin silky, super gentle, nice way to prime skin for makeup"
+  },
+  {
+    "review_id": "R3CZRFY5ET4NZX",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "광채/윤기"
+    ],
+    "weaknesses": [
+      "용기불편"
+    ],
+    "evidence": "doesn't irritate my sensitive skin, skin looks bouncy and glowy; wish they would make a trial size, it's bigger than my water bottle"
+  },
+  {
+    "review_id": "R1EI7PDVBHHYWF",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "it works pretty much instantly, first time I've ever had skin this hydrated and bouncy"
+  },
+  {
+    "review_id": "R3XXQS87YE879",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "so moisturizing and smells kinda like fruit loops, I love it"
+  },
+  {
+    "review_id": "R1C6PRBU2M6TC1",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "진정/장벽케어",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "smells like fruit loops, helped even out skin tone and calm my acne down by focusing on moisture"
+  },
+  {
+    "review_id": "R3F1WHQGFF6TUG",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "works wonders, I have eczema and it helps that too when it acts up, also use it for dark circle help"
+  },
+  {
+    "review_id": "R2UGJCGK7E4TLT",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "works as well as Kikumasamune, relieved to find a large and cost-effective ceramide toner, skin feels fantastic"
+  },
+  {
+    "review_id": "R2TZ5OUUG1EYHP",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "가성비/가격만족",
+      "대용량/오래씀",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "sensitive skin loves this toner, so much bang for your buck, a month and only used 3/4, skin so soft and bouncy, works well with serums, will repurchase"
+  },
+  {
+    "review_id": "R29TP1BD7NOBKS",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기",
+      "순함/저자극",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "moisturized, plump, skin looks amazing, sweet scent doesn't sting, very sensitive skin with rosacea and dermatitis, highly recommend"
+  },
+  {
+    "review_id": "R2LI6XLLCAUPHV",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "best for sensitive skin, protects the skin barrier, your skin looks so healthy, 100% recommend"
+  },
+  {
+    "review_id": "R4WJGDSAXAPKZ",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "광채/윤기",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "smells amazing, skin super smooth soft and glowing, late 40s skin looks radiant and clean, absolutely recommend"
+  },
+  {
+    "review_id": "R3C58L2AVOAK48",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "suffered rosacea my entire life, so soothing, my skin has never looked better"
+  },
+  {
+    "review_id": "RL1XW2FTWQCWO",
+    "sentiment": "POS",
+    "strengths": [
+      "향 만족",
+      "보습/촉촉",
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "smells amazing, makes skin feel amazing, second bottle, holy grail, skin moisturized and glows"
+  },
+  {
+    "review_id": "R3HAI36MMB7444",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀",
+      "재구매/추천"
+    ],
+    "weaknesses": [
+      "향 불호"
+    ],
+    "evidence": "year of use, very moisturizing, large bottle lasts; scent is different than my last bottle, I preferred the original scent; will repurchase"
+  },
+  {
+    "review_id": "R2CFPZ2FX17FUL",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "amazing, my skin drinks it right up, no scent, huge bottle"
+  },
+  {
+    "review_id": "R1PSJZCBHMMF7Y",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "skin has improved, over 60, people comment they barely see wrinkles on my face"
+  },
+  {
+    "review_id": "R2M9904IJ5L728",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "helped with my acne so much, face flattened within a week and a half"
+  },
+  {
+    "review_id": "R3LAVTT0J1G5VS",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "use on face and body, cooling, moisturising, firming, inhibits sweat, will definitely buy again"
+  },
+  {
+    "review_id": "R3AXBT275UXC0N",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "보습/촉촉",
+      "향 만족",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "struggled with acne for years, acne/scars/dark marks/redness going away, moisturized, nice scent, lightweight, best toner in the world"
+  },
+  {
+    "review_id": "R15CGUWWHRQS4T",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "extremely lightweight watery moisture, perfectly preps skin after cleansing, all my actives performing better, game changer"
+  },
+  {
+    "review_id": "R1UA7MJVIIQDNC",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "transformed my skin, added so much moisture back, wish I'd started years ago"
+  },
+  {
+    "review_id": "R2TB9E2IMRL1J",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "non scented, moisturizing, feels nice layering after a hot shower"
+  },
+  {
+    "review_id": "R300ODGLKHTJ0H",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "순함/저자극",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "most milky, soft, smooth toner ever, combination acne-prone skin, no breakout issues, so freaking hydrating"
+  },
+  {
+    "review_id": "R23S7GASHLSTE3",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "struggling with painful maskne, applied 2-3 layers, within days maskne no longer painful, a month later irritation gone"
+  },
+  {
+    "review_id": "R1VXHHRDS2QX7A",
+    "sentiment": "POS",
+    "strengths": [
+      "가성비/가격만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "very nice worth of money product, keep on repurchasing"
+  },
+  {
+    "review_id": "R7LOZZDQ45K05",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "대용량/오래씀",
+      "가성비/가격만족"
+    ],
+    "weaknesses": [],
+    "evidence": "feels nice, made my skin so soft, appreciate how much product you get for under $20 on sale, 11/10"
+  },
+  {
+    "review_id": "R64A87M4EB9JN",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "my go to toner/essence, leaves me glowing, use everyday with my serums"
+  },
+  {
+    "review_id": "R2HMWP48NLT4SF",
+    "sentiment": "POS",
+    "strengths": [
+      "대용량/오래씀",
+      "가성비/가격만족",
+      "흡수력",
+      "향 만족"
+    ],
+    "weaknesses": [],
+    "evidence": "a lot of bang for your buck with this huge container, slight scent smells clean not perfumey, nicely absorbs into skin"
+  },
+  {
+    "review_id": "R10KPSKM2S75HT",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Nice addition to my skincare routine"
+  },
+  {
+    "review_id": "R1DWEFG5974B4B",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "makes my skin look so smooth and nice, didn't realize how big this was, literally a half liter"
+  },
+  {
+    "review_id": "R3JOOCICJCC7CL",
+    "sentiment": "POS",
+    "strengths": [
+      "산뜻함",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "finally met my standards, feels so refreshing, leaves skin clean, skin noticeably less textured"
+  },
+  {
+    "review_id": "R3VT8KFRK7GWKQ",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "산뜻함",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "restores my skin with a light finish, mixes well with my ceramide cream, my skin feels incredible"
+  },
+  {
+    "review_id": "R22N02HXRVKAAQ",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "제형/텍스처"
+    ],
+    "weaknesses": [],
+    "evidence": "mochi fitting description, so hydrating, skin feels luscious and soft, no scent, bit of viscosity, 3 layers keeps skin hydrated"
+  },
+  {
+    "review_id": "R36YLHIM4E2VJ9",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "could feel the effects after 1 use, in 1 week skin feels so much smoother and hydrated"
+  },
+  {
+    "review_id": "R1PC9U5UY8HH57",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "absolutely moisturizes your skin, feels lovely and makes your skin glow"
+  },
+  {
+    "review_id": "R1NCN126PIB264",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "Beautiful and giving me the youthful glow"
+  },
+  {
+    "review_id": "RXLO51CB6YI14",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족",
+      "가성비/가격만족",
+      "대용량/오래씀"
+    ],
+    "weaknesses": [],
+    "evidence": "spendet viel Feuchtigkeit, riecht leicht zitrisch, klebt nicht, macht Haut geschmeidig, für den Preis sehr viel Produkt"
+  },
+  {
+    "review_id": "R1J2ODZETSNUYU",
+    "sentiment": "POS",
+    "strengths": [
+      "재구매/추천",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "best toner for every skin type, used since 2024, cannot use any other brand"
+  },
+  {
+    "review_id": "R1O9XA1O4W4DLU",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "One of the best! Works"
+  },
+  {
+    "review_id": "R1UA2RMQZ7E6FP",
+    "sentiment": "POS",
+    "strengths": [
+      "흡수력",
+      "산뜻함",
+      "순함/저자극"
+    ],
+    "weaknesses": [],
+    "evidence": "lightweight and non-sticky, absorb quickly, leaving skin balanced and prepped, effective yet gentle"
+  },
+  {
+    "review_id": "R27A7FC76N2PTO",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "Just buy it! It's even safe during pregnancy"
+  },
+  {
+    "review_id": "R1TSAG90PAS4IE",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "one of the best skincare products I have ever used, the best in every way"
+  },
+  {
+    "review_id": "R2A27UZAA9BS8J",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "Makes my skin soft and glowing"
+  },
+  {
+    "review_id": "R15N2Y6XLSFPP5",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "Repairs skin, amazing toner"
+  },
+  {
+    "review_id": "R2X2UB7SXL0LNL",
+    "sentiment": "POS",
+    "strengths": [],
+    "weaknesses": [],
+    "evidence": "Just amazing"
+  },
+  {
+    "review_id": "R2IGFSRJN4ZGIN",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "순함/저자극",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "with a damaged skin barrier it will literally help overnight, sticking to this forever, works for oily skin"
+  },
+  {
+    "review_id": "R3UGJ15560F5BQ",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "My skin has never looked better, will be a permanent skincare routine step"
+  },
+  {
+    "review_id": "R25CZB3LK9DO3G",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "hydrates my skin, helps strengthen my skin barrier, when I break out my skin heals faster"
+  },
+  {
+    "review_id": "R1TC709I40UJMY",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "I have eczema and it doesn't irritate my skin at all, my skin has cleared"
+  },
+  {
+    "review_id": "R2TRXPQUGGZUC2",
+    "sentiment": "POS",
+    "strengths": [
+      "제형/텍스처",
+      "보습/촉촉",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "thicker than most toners, goes on smooth and very moisturizing, even my picky teenage daughter loves it"
+  },
+  {
+    "review_id": "R2NMCEJP4MAXO3",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "향 만족",
+      "진정/장벽케어"
+    ],
+    "weaknesses": [],
+    "evidence": "major difference in 3 weeks, love the light citrus smell, helped with dehydration and acne so much"
+  },
+  {
+    "review_id": "RW42S8AIM9QAE",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "Makes my skin soft"
+  },
+  {
+    "review_id": "R1WJE59U2SIJ7N",
+    "sentiment": "POS",
+    "strengths": [
+      "보습/촉촉",
+      "산뜻함",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "es como mochi, muy hidratada, limpia y fresca, no falta en mi rutina diaria, recomendado y 100% original"
+  },
+  {
+    "review_id": "RI3OJHPBLJU72",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "보습/촉촉"
+    ],
+    "weaknesses": [],
+    "evidence": "sehr gute Verträglichkeit, pflegt die Haut, vielfältige Anwendungsmöglichkeiten (Maske, Pad, pur)"
+  },
+  {
+    "review_id": "RAP7BD447JE8I",
+    "sentiment": "POS",
+    "strengths": [
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "Magic to my skin"
+  },
+  {
+    "review_id": "RYVGW8I4IPMM3",
+    "sentiment": "POS",
+    "strengths": [
+      "순함/저자극",
+      "진정/장벽케어",
+      "광채/윤기"
+    ],
+    "weaknesses": [],
+    "evidence": "piel grasa con acné, no huele a nada (cómodo), mis brotes se calmaron, ya no produce tanta grasa y me cierra los poros"
+  },
+  {
+    "review_id": "R2E3344C1F9WIT",
+    "sentiment": "POS",
+    "strengths": [
+      "진정/장벽케어",
+      "광채/윤기",
+      "향 만족",
+      "재구매/추천"
+    ],
+    "weaknesses": [],
+    "evidence": "me restauró la barrera, la textura disminuyó, glow natural, olor sutil super rico, lo volvería a comprar 10/10"
+  }
+]
