@@ -694,8 +694,9 @@ def tab_amazon(df_am):
             x=[f"⭐{int(s)}" for s in star_counts.index], y=star_counts.values,
             labels={"x": "별점", "y": "리뷰 수"}, text=star_counts.values,
         )
-        fig_star.update_traces(marker_color="#667eea", textposition="outside")
-        fig_star.update_layout(height=300, margin=dict(t=40, b=10), title="별점 분포")
+        fig_star.update_traces(marker_color="#667eea", textposition="outside", cliponaxis=False)
+        fig_star.update_layout(height=300, margin=dict(t=50, b=10), title="별점 분포")
+        fig_star.update_yaxes(range=[0, float(star_counts.max()) * 1.18])
         st.plotly_chart(fig_star, use_container_width=True)
     with dist_r:
         fig_sent = go.Figure(data=[go.Pie(
