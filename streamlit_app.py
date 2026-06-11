@@ -647,24 +647,57 @@ def tab_amazon(df_am):
         st.warning("아마존 분석 데이터가 없습니다. `python analyze_amazon.py` 로 분류를 먼저 실행하세요.")
         return
 
-    # ===== KPI =====
     n = len(df_am)
+    pos_pct = (df_am['sentiment'] == 'POS').mean() * 100
+    neu_pct = (df_am['sentiment'] == 'NEU').mean() * 100
+    neg_pct = (df_am['sentiment'] == 'NEG').mean() * 100
+    pos_n = int((df_am['sentiment'] == 'POS').sum())
+    neu_n = int((df_am['sentiment'] == 'NEU').sum())
+    neg_n = int((df_am['sentiment'] == 'NEG').sum())
+
+    # ===== 종합 감성 배너 =====
+    if pos_pct >= 85:
+        verdict, banner = "🟢 전반적으로 매우 긍정적", "success"
+    elif pos_pct >= 65:
+        verdict, banner = "🟢 전반적으로 긍정적", "success"
+    elif pos_pct >= 50:
+        verdict, banner = "🙂 대체로 긍정적", "info"
+    elif neg_pct > pos_pct:
+        verdict, banner = "🔴 전반적으로 부정적", "error"
+    else:
+        verdict, banner = "⚪ 긍정·부정 혼재", "warning"
+    msg = f"**{verdict}** &nbsp;|&nbsp; 긍정 {pos_pct:.1f}% ({pos_n}) · 중립 {neu_pct:.1f}% ({neu_n}) · 부정 {neg_pct:.1f}% ({neg_n})"
+    {"success": st.success, "info": st.info, "warning": st.warning, "error": st.error}[banner](msg)
+
+    # ===== KPI =====
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("총 리뷰", f"{n:,}건")
     c2.metric("평균 별점", f"{df_am['rating'].mean():.2f} ⭐")
-    c3.metric("긍정", f"{(df_am['sentiment'] == 'POS').mean() * 100:.1f}%")
-    c4.metric("중립", f"{(df_am['sentiment'] == 'NEU').mean() * 100:.1f}%")
-    c5.metric("부정", f"{(df_am['sentiment'] == 'NEG').mean() * 100:.1f}%")
+    c3.metric("긍정", f"{pos_pct:.1f}%")
+    c4.metric("중립", f"{neu_pct:.1f}%")
+    c5.metric("부정", f"{neg_pct:.1f}%")
 
-    # ===== 별점 분포 =====
-    star_counts = df_am['rating'].value_counts().reindex([5.0, 4.0, 3.0, 2.0, 1.0], fill_value=0)
-    fig_star = px.bar(
-        x=[f"⭐{int(s)}" for s in star_counts.index], y=star_counts.values,
-        labels={"x": "별점", "y": "리뷰 수"}, text=star_counts.values,
-    )
-    fig_star.update_traces(marker_color="#667eea", textposition="outside")
-    fig_star.update_layout(height=280, margin=dict(t=30, b=10), title="별점 분포")
-    st.plotly_chart(fig_star, use_container_width=True)
+    # ===== 별점 분포 + 감성 분포 =====
+    dist_l, dist_r = st.columns(2)
+    with dist_l:
+        star_counts = df_am['rating'].value_counts().reindex([5.0, 4.0, 3.0, 2.0, 1.0], fill_value=0)
+        fig_star = px.bar(
+            x=[f"⭐{int(s)}" for s in star_counts.index], y=star_counts.values,
+            labels={"x": "별점", "y": "리뷰 수"}, text=star_counts.values,
+        )
+        fig_star.update_traces(marker_color="#667eea", textposition="outside")
+        fig_star.update_layout(height=300, margin=dict(t=40, b=10), title="별점 분포")
+        st.plotly_chart(fig_star, use_container_width=True)
+    with dist_r:
+        fig_sent = go.Figure(data=[go.Pie(
+            labels=["긍정", "중립", "부정"], values=[pos_n, neu_n, neg_n], hole=0.55,
+            marker=dict(colors=["#2ca02c", "#bbbbbb", "#d62728"]),
+            sort=False, textinfo="label+percent",
+        )])
+        fig_sent.update_layout(height=300, margin=dict(t=40, b=10), title="감성 분포",
+                               annotations=[dict(text=f"긍정<br>{pos_pct:.0f}%", x=0.5, y=0.5,
+                                                 font_size=18, showarrow=False)])
+        st.plotly_chart(fig_sent, use_container_width=True)
 
     # ===== 강점 / 약점 포인트 =====
     st.markdown('<p class="subsection-header">💪 강점 포인트 vs ⚠️ 약점 포인트</p>', unsafe_allow_html=True)
