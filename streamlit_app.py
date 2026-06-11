@@ -14,7 +14,7 @@ from pathlib import Path
 
 # 페이지 설정
 st.set_page_config(
-    page_title="토너 리뷰 분석",
+    page_title="모찌토너 리뷰 분석",
     page_icon="🧴",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -23,7 +23,10 @@ st.set_page_config(
 # CSS 스타일
 st.markdown("""
 <style>
-    .main-header { font-size: 2.5rem; font-weight: bold; color: #667eea; text-align: center; margin-bottom: 1rem; }
+    .main-header { font-size: 3.4rem; font-weight: bold; color: #667eea; text-align: center; margin-bottom: 1rem; }
+    .stTabs [data-baseweb="tab-list"] { gap: 8px; }
+    .stTabs [data-baseweb="tab"] { height: 56px; padding: 0 24px; }
+    .stTabs [data-baseweb="tab"] p { font-size: 1.35rem; font-weight: 600; }
     .section-header { font-size: 1.5rem; font-weight: bold; color: #333; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem; margin: 1.5rem 0 1rem 0; }
     .subsection-header { font-size: 1.2rem; font-weight: bold; color: #555; margin: 1rem 0 0.5rem 0; }
     .insight-box { background: #f0f4ff; border-left: 4px solid #667eea; padding: 1rem; margin: 0.5rem 0; border-radius: 4px; }
@@ -883,7 +886,7 @@ AMAZON_ONLY = True
 
 # ===== 메인 앱 =====
 def main():
-    st.markdown('<p class="main-header">🧴 토너 리뷰 분석 대시보드</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🧴 모찌토너 리뷰 분석 대시보드</p>', unsafe_allow_html=True)
 
     # 아마존 전용 모드: 사이드바 필터와 기존 3개 탭 숨김
     if AMAZON_ONLY:
