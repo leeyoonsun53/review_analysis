@@ -702,9 +702,11 @@ def tab_amazon(df_am):
                                                  font_size=18, showarrow=False)])
         st.plotly_chart(fig_sent, use_container_width=True)
 
-    # ===== 강점 / 약점 포인트 =====
+    # ===== 강점 / 약점 포인트 (막대 클릭 → 아래에 해당 카테고리 리뷰) =====
     st.markdown('<p class="subsection-header">💪 강점 포인트 vs ⚠️ 약점 포인트</p>', unsafe_allow_html=True)
+    st.caption("👉 막대를 클릭하면 아래에 해당 카테고리의 리뷰가 표시됩니다.")
     colL, colR = st.columns(2)
+    sel_s = sel_w = None
     with colL:
         sc = _amazon_point_counts(df_am, "strengths")
         if sc:
@@ -712,7 +714,8 @@ def tab_amazon(df_am):
             fig_s = px.bar(s_df, x="건수", y="카테고리", orientation="h", text="건수")
             fig_s.update_traces(marker_color="#2ca02c", textposition="outside")
             fig_s.update_layout(height=420, margin=dict(t=30, l=10), title="강점 포인트 (언급 수)")
-            st.plotly_chart(fig_s, use_container_width=True)
+            sel_s = st.plotly_chart(fig_s, use_container_width=True, on_select="rerun",
+                                    selection_mode="points", key="am_chart_s")
     with colR:
         wc = _amazon_point_counts(df_am, "weaknesses")
         if wc:
@@ -720,21 +723,34 @@ def tab_amazon(df_am):
             fig_w = px.bar(w_df, x="건수", y="카테고리", orientation="h", text="건수")
             fig_w.update_traces(marker_color="#d62728", textposition="outside")
             fig_w.update_layout(height=420, margin=dict(t=30, l=10), title="약점 포인트 (언급 수)")
-            st.plotly_chart(fig_w, use_container_width=True)
+            sel_w = st.plotly_chart(fig_w, use_container_width=True, on_select="rerun",
+                                    selection_mode="points", key="am_chart_w")
 
-    # ===== 카테고리 드릴다운 =====
-    st.markdown('<p class="subsection-header">🔎 카테고리별 리뷰 보기</p>', unsafe_allow_html=True)
-    dcol1, dcol2 = st.columns([1, 3])
-    with dcol1:
-        ptype = st.radio("포인트 유형", ["💪 강점", "⚠️ 약점"], key="am_drill_type")
-    col = "strengths" if ptype == "💪 강점" else "weaknesses"
-    cats = [c for c, _ in _amazon_point_counts(df_am, col).most_common()]
-    if cats:
-        with dcol2:
-            sel_cat = st.selectbox("카테고리 선택", cats, key="am_drill_cat")
-        sub = df_am[df_am[col].apply(lambda l: isinstance(l, list) and sel_cat in l)]
+    # 클릭된 막대 추출 (가장 최근에 바뀐 쪽을 선택으로 간주)
+    def _picked_cat(sel):
+        try:
+            pts = sel["selection"]["points"]
+        except (TypeError, KeyError, AttributeError):
+            pts = []
+        return pts[0].get("y") if pts else None
+
+    s_pick, w_pick = _picked_cat(sel_s), _picked_cat(sel_w)
+    if s_pick and s_pick != st.session_state.get("_am_prev_s"):
+        st.session_state["_am_chosen"] = ("strengths", s_pick)
+    elif w_pick and w_pick != st.session_state.get("_am_prev_w"):
+        st.session_state["_am_chosen"] = ("weaknesses", w_pick)
+    st.session_state["_am_prev_s"], st.session_state["_am_prev_w"] = s_pick, w_pick
+
+    st.markdown('<p class="subsection-header">🔎 선택한 포인트의 리뷰</p>', unsafe_allow_html=True)
+    chosen = st.session_state.get("_am_chosen")
+    if not chosen:
+        st.info("위 강점/약점 차트에서 막대를 클릭하면 해당 카테고리의 리뷰가 여기에 표시됩니다.")
+    else:
+        col, cat = chosen
+        emoji = "💪" if col == "strengths" else "⚠️"
+        sub = df_am[df_am[col].apply(lambda l: isinstance(l, list) and cat in l)]
         sub = sub.sort_values("review_date", ascending=False, na_position="last")
-        st.markdown(f"**'{sel_cat}' 언급 리뷰 {len(sub)}건**")
+        st.markdown(f"**{emoji} '{cat}' 언급 리뷰 {len(sub)}건**")
         for _, row in sub.iterrows():
             display_amazon_review_card(row)
 
