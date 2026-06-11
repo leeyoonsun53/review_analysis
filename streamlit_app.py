@@ -608,6 +608,7 @@ def load_amazon_data():
             "strengths": a.get("strengths", []) or [],
             "weaknesses": a.get("weaknesses", []) or [],
             "evidence": a.get("evidence", ""),
+            "translation_ko": a.get("translation_ko", ""),
             "country": country,
             "review_date": date,
         })
@@ -642,10 +643,19 @@ def display_amazon_review_card(row):
     # 본문은 마크다운으로 해석되지 않도록 HTML escape 후 div로 렌더 (원문 전체, 줄바꿈 보존)
     body = html.escape(str(row.get("body", "") or ""))
     st.markdown(
-        f'<div style="border-left:3px solid #d9d9e3; padding:6px 14px; margin:4px 0 12px;'
+        f'<div style="border-left:3px solid #d9d9e3; padding:6px 14px; margin:4px 0 6px;'
         f' color:#3a3a3a; white-space:pre-wrap; line-height:1.55;">{body}</div>',
         unsafe_allow_html=True,
     )
+    # 한글 번역 (있을 때만)
+    trans = str(row.get("translation_ko", "") or "").strip()
+    if trans:
+        st.markdown(
+            f'<div style="border-left:3px solid #c7d2fe; background:#f5f7ff; padding:6px 14px;'
+            f' margin:0 0 12px; color:#3730a3; white-space:pre-wrap; line-height:1.55;">'
+            f'🇰🇷 {html.escape(trans)}</div>',
+            unsafe_allow_html=True,
+        )
     st.markdown("---")
 
 
