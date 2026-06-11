@@ -747,21 +747,19 @@ def tab_amazon(df_am):
         st.session_state["_am_chosen"] = ("weaknesses", w_pick)
     st.session_state["_am_prev_s"], st.session_state["_am_prev_w"] = s_pick, w_pick
 
-    st.markdown('<p class="subsection-header">🔎 선택한 포인트의 리뷰</p>', unsafe_allow_html=True)
-    chosen = st.session_state.get("_am_chosen")
-    if not chosen:
-        st.info("위 강점/약점 차트에서 막대를 클릭하면 해당 카테고리의 리뷰가 여기에 표시됩니다.")
-    else:
-        col, cat = chosen
-        emoji = "💪" if col == "strengths" else "⚠️"
-        sub = df_am[df_am[col].apply(lambda l: isinstance(l, list) and cat in l)]
-        sub = sub.sort_values("review_date", ascending=False, na_position="last")
-        st.markdown(f"**{emoji} '{cat}' 언급 리뷰 {len(sub)}건**")
-        for _, row in sub.iterrows():
-            display_amazon_review_card(row)
+    # ===== 리뷰 보기 (필터 + 목록; 카테고리 막대 클릭 시 해당 카테고리로 좁힘) =====
+    st.markdown('<p class="subsection-header">📝 리뷰 보기</p>', unsafe_allow_html=True)
 
-    # ===== 전체 샘플 리뷰 (409건 전부) =====
-    st.markdown('<p class="subsection-header">📝 전체 리뷰 보기</p>', unsafe_allow_html=True)
+    chosen = st.session_state.get("_am_chosen")
+    if chosen:
+        col_c, cat_c = chosen
+        emoji = "💪" if col_c == "strengths" else "⚠️"
+        cc1, cc2 = st.columns([4, 1])
+        cc1.markdown(f"선택된 카테고리: **{emoji} {cat_c}** &nbsp;(다른 막대를 클릭하면 변경)")
+        if cc2.button("✕ 카테고리 해제"):
+            st.session_state["_am_chosen"] = None
+            chosen = None
+
     fc1, fc2, fc3 = st.columns([1, 1, 2])
     with fc1:
         sent_f = st.selectbox("감성", ["전체", "POS (긍정)", "NEU (중립)", "NEG (부정)"], key="am_sent")
@@ -769,7 +767,11 @@ def tab_amazon(df_am):
         star_f = st.selectbox("별점", ["전체", 5, 4, 3, 2, 1], key="am_starf")
     with fc3:
         kw = st.text_input("키워드 검색 (제목·본문)", key="am_kw", placeholder="예: hydrating, scent, glass...")
+
     view = df_am.copy()
+    if chosen:
+        col_c, cat_c = chosen
+        view = view[view[col_c].apply(lambda l: isinstance(l, list) and cat_c in l)]
     if sent_f != "전체":
         view = view[view["sentiment"] == sent_f.split(" ")[0]]
     if star_f != "전체":
@@ -778,7 +780,9 @@ def tab_amazon(df_am):
         mask = view["body"].str.contains(kw, case=False, na=False) | view["title"].str.contains(kw, case=False, na=False)
         view = view[mask]
     view = view.sort_values("review_date", ascending=False, na_position="last")
-    st.markdown(f"**표시 중: {len(view)}건** (전체 {n}건)")
+
+    scope = (f"{'💪' if chosen[0] == 'strengths' else '⚠️'} {chosen[1]} 카테고리") if chosen else "전체"
+    st.markdown(f"**{scope} · 표시 중 {len(view)}건** (전체 {n}건)")
     for _, row in view.iterrows():
         display_amazon_review_card(row)
 
