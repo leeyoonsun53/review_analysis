@@ -726,9 +726,148 @@ def tab_amazon(df_am):
         display_amazon_review_card(row)
 
 
+def _explode_amazon(df_am, col):
+    """아마존 리뷰별 카테고리 리스트를 (year_month, category) 행으로 펼친다."""
+    sub = df_am[["year_month", col]].copy()
+    sub = sub[sub[col].apply(lambda x: isinstance(x, list) and len(x) > 0)]
+    sub = sub.explode(col).rename(columns={col: "category"})
+    return sub[sub["category"].notna() & (sub["category"].astype(str).str.strip() != "")]
+
+
+def tab_amazon_timeseries(df_am):
+    st.markdown('<p class="section-header">📈 아마존 카테고리 시계열</p>', unsafe_allow_html=True)
+    st.caption("리뷰 작성일(월) 기준으로 강점/약점 카테고리가 어떻게 변해왔는지 봅니다.")
+    if df_am is None or len(df_am) == 0:
+        st.warning("아마존 분석 데이터가 없습니다.")
+        return
+
+    df = df_am.dropna(subset=["review_date"]).copy()
+    df["year_month"] = df["review_date"].dt.to_period("M").astype(str)
+    if len(df) == 0:
+        st.info("작성일이 파싱된 리뷰가 없습니다.")
+        return
+
+    all_months = sorted(df["year_month"].unique())
+    # 기본 시작월: 마지막 달로부터 약 18개월 전 (희박한 오래된 구간 제외)
+    default_start_idx = max(0, len(all_months) - 18)
+
+    c1, c2, c3, c4 = st.columns([1.2, 1.4, 1, 1])
+    with c1:
+        ptype = st.radio("포인트 유형", ["💪 강점", "⚠️ 약점"], horizontal=True, key="amts_type")
+    with c2:
+        start_month = st.selectbox("시작월", all_months, index=default_start_idx, key="amts_start")
+    with c3:
+        top_n = st.slider("상위 카테고리 N", 3, 12, 7, key="amts_topn")
+    with c4:
+        metric_mode = st.radio("지표", ["건수", "월별 비중(%)"], horizontal=True, key="amts_metric")
+
+    is_strength = ptype.startswith("💪")
+    cat_col = "strengths" if is_strength else "weaknesses"
+    color_scale = "Greens" if is_strength else "Reds"
+    color_seq = px.colors.qualitative.Bold
+
+    df = df[df["year_month"] >= start_month]
+    exploded = _explode_amazon(df, cat_col)
+    if len(exploded) == 0:
+        st.info("선택한 기간에 카테고리 데이터가 없습니다.")
+        return
+
+    top_cats = exploded["category"].value_counts().head(top_n).index.tolist()
+    exp_top = exploded[exploded["category"].isin(top_cats)]
+
+    monthly_total = df.groupby("year_month").size().rename("total_reviews")
+    pivot_cnt = (exp_top.groupby(["year_month", "category"]).size()
+                 .unstack(fill_value=0).sort_index())
+    # 데이터 없는 달도 0으로 채워 연속 축 유지
+    full_idx = [m for m in all_months if m >= start_month]
+    pivot_cnt = pivot_cnt.reindex(full_idx, fill_value=0)
+
+    pivot_pct = (pivot_cnt.div(monthly_total.reindex(pivot_cnt.index), axis=0) * 100).fillna(0)
+    pivot_view = pivot_pct if metric_mode.startswith("월별") else pivot_cnt
+    value_label = "월별 비중(%)" if metric_mode.startswith("월별") else "건수"
+
+    cat_order = pivot_cnt.sum(axis=0).sort_values(ascending=False).index.tolist()
+    pivot_view = pivot_view[cat_order]
+
+    # ----- 1) 라인 차트 -----
+    st.markdown("### 1️⃣ 월별 카테고리 추세")
+    line_df = pivot_view.reset_index().rename(columns={"index": "year_month"}).melt(
+        id_vars="year_month", var_name="카테고리", value_name=value_label)
+    fig_line = px.line(line_df, x="year_month", y=value_label, color="카테고리",
+                       markers=True, color_discrete_sequence=color_seq,
+                       category_orders={"카테고리": cat_order})
+    fig_line.update_traces(line=dict(width=2.5), marker=dict(size=7))
+    fig_line.update_layout(height=420, xaxis_title="월", yaxis_title=value_label,
+                           legend=dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.02),
+                           plot_bgcolor="white",
+                           xaxis=dict(showgrid=True, gridcolor="#eee"),
+                           yaxis=dict(showgrid=True, gridcolor="#eee"))
+    st.plotly_chart(fig_line, use_container_width=True)
+
+    # ----- 2) 히트맵 -----
+    st.markdown("### 2️⃣ 카테고리 × 월 히트맵")
+    heat_z = pivot_view[cat_order].T
+    fig_heat = go.Figure(data=go.Heatmap(
+        z=heat_z.values, x=heat_z.columns.tolist(), y=heat_z.index.tolist(),
+        colorscale=color_scale, colorbar=dict(title=value_label),
+        hovertemplate="월=%{x}<br>카테고리=%{y}<br>" + value_label + "=%{z:.2f}<extra></extra>"))
+    fig_heat.update_layout(height=max(320, 40 * len(cat_order)), xaxis_title="월",
+                           yaxis_title="카테고리", yaxis=dict(autorange="reversed"))
+    st.plotly_chart(fig_heat, use_container_width=True)
+
+    # ----- 3) 카테고리 드릴다운 -----
+    st.markdown("### 3️⃣ 카테고리 드릴다운")
+    sel_cat = st.selectbox("카테고리 선택", cat_order, key="amts_drill_cat")
+    cat_monthly = (exploded[exploded["category"] == sel_cat]
+                   .groupby("year_month").size().rename("건수").reset_index())
+    if len(cat_monthly) > 0:
+        m1, m2, m3 = st.columns(3)
+        m1.metric("총 언급", f"{int(cat_monthly['건수'].sum()):,}건")
+        m2.metric("최다 월", f"{cat_monthly.loc[cat_monthly['건수'].idxmax(), 'year_month']}")
+        m3.metric("최다 월 건수", f"{int(cat_monthly['건수'].max()):,}건")
+        bar_color = "#10b981" if is_strength else "#ef4444"
+        fig_bar = px.bar(cat_monthly, x="year_month", y="건수", color_discrete_sequence=[bar_color])
+        fig_bar.update_layout(height=300, xaxis_title="월", yaxis_title="언급 건수",
+                              title=f"'{sel_cat}' 월별 언급 추이")
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+        months_with_data = cat_monthly["year_month"].tolist()
+        sel_month = st.selectbox("월 선택", ["(전체 기간)"] + months_with_data, key="amts_drill_month")
+        mask = df[cat_col].apply(lambda x: isinstance(x, list) and sel_cat in x)
+        target = df[mask]
+        if sel_month != "(전체 기간)":
+            target = target[target["year_month"] == sel_month]
+        st.markdown(f"**대상 리뷰: {len(target):,}건** (최신순)")
+        for _, row in target.sort_values("review_date", ascending=False).iterrows():
+            display_amazon_review_card(row)
+    else:
+        st.info("선택한 카테고리에 해당하는 데이터가 없습니다.")
+
+
+# 아마존 전용 보기: True면 사이드바 필터와 기존 3개 탭을 숨기고 아마존 탭만 표시
+# (원래 대시보드로 되돌리려면 False 로 변경)
+AMAZON_ONLY = True
+
+
 # ===== 메인 앱 =====
 def main():
     st.markdown('<p class="main-header">🧴 토너 리뷰 분석 대시보드</p>', unsafe_allow_html=True)
+
+    # 아마존 전용 모드: 사이드바 필터와 기존 3개 탭 숨김
+    if AMAZON_ONLY:
+        df_am = load_amazon_data()
+        amz_tab1, amz_tab2 = st.tabs(["🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열"])
+        with amz_tab1:
+            tab_amazon(df_am)
+        with amz_tab2:
+            tab_amazon_timeseries(df_am)
+        st.markdown("---")
+        n_am = 0 if df_am is None else len(df_am)
+        st.markdown(
+            f'<p style="text-align: center; color: gray;">아마존 토너 리뷰 분석 | 총 {n_am:,}건</p>',
+            unsafe_allow_html=True,
+        )
+        return
 
     df, gpt_df = load_data()
     if df is None:
