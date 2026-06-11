@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import json
 import re
+import html
 import plotly.express as px
 import plotly.graph_objects as go
 from collections import Counter
@@ -638,8 +639,13 @@ def display_amazon_review_card(row):
     tag_parts = [f"`💪 {s}`" for s in strengths] + [f"`⚠️ {w}`" for w in weaknesses]
     if tag_parts:
         st.markdown(" ".join(tag_parts))
-    body = str(row.get("body", "") or "")
-    st.markdown(f"> {body[:600]}{'...' if len(body) > 600 else ''}")
+    # 본문은 마크다운으로 해석되지 않도록 HTML escape 후 div로 렌더 (원문 전체, 줄바꿈 보존)
+    body = html.escape(str(row.get("body", "") or ""))
+    st.markdown(
+        f'<div style="border-left:3px solid #d9d9e3; padding:6px 14px; margin:4px 0 12px;'
+        f' color:#3a3a3a; white-space:pre-wrap; line-height:1.55;">{body}</div>',
+        unsafe_allow_html=True,
+    )
     st.markdown("---")
 
 
