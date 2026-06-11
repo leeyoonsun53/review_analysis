@@ -646,7 +646,6 @@ def tab_amazon(df_am):
     if df_am is None or len(df_am) == 0:
         st.warning("아마존 분석 데이터가 없습니다. `python analyze_amazon.py` 로 분류를 먼저 실행하세요.")
         return
-    st.info("ℹ️ 이 탭은 별도 데이터셋이라 좌측 사이드바 필터와 **독립적으로** 동작합니다. 감성·강점·약점은 리뷰 본문 내용 기준으로 분류했습니다.")
 
     # ===== KPI =====
     n = len(df_am)
