@@ -887,6 +887,25 @@ def main():
 
     # 아마존 전용 모드: 사이드바 필터와 기존 3개 탭 숨김
     if AMAZON_ONLY:
+        # 맨 위 앵커 + 우하단 고정 '맨 위로' 버튼
+        st.markdown(
+            """
+            <div id="amz-top"></div>
+            <a href="#amz-top" class="scroll-top-btn" title="맨 위로">▲</a>
+            <style>
+            .scroll-top-btn {
+                position: fixed; bottom: 42px; right: 34px; z-index: 9999;
+                width: 48px; height: 48px; border-radius: 50%;
+                background: #667eea; color: #fff !important;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 20px; text-decoration: none;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.28); opacity: 0.85;
+            }
+            .scroll-top-btn:hover { background: #4f5fd0; opacity: 1; }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
         df_am = load_amazon_data()
         amz_tab1, amz_tab2 = st.tabs(["🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열"])
         with amz_tab1:
