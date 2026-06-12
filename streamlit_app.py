@@ -916,6 +916,123 @@ def tab_amazon_timeseries(df_am):
         st.info("선택한 카테고리에 해당하는 데이터가 없습니다.")
 
 
+# ===== 아마존 워드클라우드(고객이 실제로 쓴 단어) =====
+# 영어 기능어 + 리뷰에서 의미 없는 일반어
+_WC_STOP = set("""
+a an the and or but if then so than that this these those there here
+i me my we our you your he she it its they them their his her him
+is am are was were be been being do does did doing have has had having
+will would shall should can could may might must
+of to in on at by for with from into onto about as up down out off over under again
+not no nor too very just only also even still yet more most much many few less least
+i'm i've it's don't didn't doesn't isn't wasn't aren't weren't can't won't couldn't
+im ive its dont didnt doesnt isnt wasnt arent werent cant wont couldnt
+get got getting go going goes went come comes came use used using uses
+one two three really quite bit lot lots way ways thing things stuff
+all any some each every both either neither other another such own same
+what which who whom whose when where why how
+because while during before after above below between through against
+s t re ve ll d m o y amp nbsp br
+review reviewed amazon product item order ordered buy bought purchase purchased
+""".split())
+
+
+def _wc_tokenize(text):
+    return re.findall(r"[a-z][a-z']+", str(text).lower())
+
+
+@st.cache_data
+def _amazon_word_freq(texts):
+    """리뷰 본문 리스트 → (단어 빈도 Counter, 리뷰수 Counter, bigram Counter)"""
+    word_c, doc_c, bi_c = Counter(), Counter(), Counter()
+    for doc in texts:
+        toks = [w for w in _wc_tokenize(doc) if w not in _WC_STOP and len(w) > 2]
+        word_c.update(toks)
+        doc_c.update(set(toks))
+        for a, b in zip(toks, toks[1:]):
+            bi_c[f"{a} {b}"] += 1
+    return word_c, doc_c, bi_c
+
+
+@st.cache_data
+def _amazon_wordcloud_png(freq):
+    """빈도 dict → 워드클라우드 PNG 바이트"""
+    from wordcloud import WordCloud
+    import io
+    wc = WordCloud(
+        width=1600, height=900, background_color="white", max_words=120,
+        colormap="viridis", prefer_horizontal=0.9, collocations=False,
+        relative_scaling=0.5, min_font_size=10,
+    ).generate_from_frequencies(freq)
+    buf = io.BytesIO()
+    wc.to_image().save(buf, format="PNG")
+    return buf.getvalue()
+
+
+def tab_amazon_wordcloud(df_am):
+    st.markdown('<p class="section-header">☁️ 고객이 실제로 쓴 단어</p>', unsafe_allow_html=True)
+    st.caption("아마존 리뷰 원문(영어)에서 추출한 빈출 단어 — 기능어/일반어 제외")
+    if df_am is None or len(df_am) == 0:
+        st.warning("아마존 분석 데이터가 없습니다.")
+        return
+
+    texts = [f"{t} {b}" for t, b in zip(df_am["title"].fillna(""), df_am["body"].fillna(""))]
+    n = len(texts)
+    word_c, doc_c, bi_c = _amazon_word_freq(texts)
+    if not word_c:
+        st.info("추출된 단어가 없습니다.")
+        return
+
+    st.markdown(f"리뷰 **{n:,}건**에서 고유 단어 **{len(word_c):,}개** 추출")
+
+    # ===== 워드클라우드 =====
+    try:
+        st.image(_amazon_wordcloud_png(dict(word_c)), use_container_width=True)
+    except Exception as e:
+        st.warning(f"워드클라우드 렌더 실패: {e}")
+
+    st.markdown("---")
+    left, right = st.columns(2)
+
+    # ===== 단어 빈도 TOP 30 (가로 막대) =====
+    with left:
+        st.markdown("**🔤 빈출 단어 TOP 30**")
+        top = word_c.most_common(30)
+        words = [w for w, _ in top][::-1]
+        counts = [c for _, c in top][::-1]
+        fig = px.bar(
+            x=counts, y=words, orientation="h",
+            labels={"x": "언급 횟수", "y": ""}, text=counts,
+        )
+        fig.update_traces(textposition="outside", marker_color="#667eea", cliponaxis=False)
+        fig.update_layout(height=720, margin=dict(l=10, r=40, t=10, b=10), yaxis=dict(tickfont=dict(size=13)))
+        st.plotly_chart(fig, use_container_width=True)
+
+    # ===== 연어(2-gram) TOP 20 =====
+    with right:
+        st.markdown("**🔗 자주 함께 쓴 표현 (2-gram) TOP 20**")
+        top_bi = bi_c.most_common(20)
+        bg = [b for b, _ in top_bi][::-1]
+        bc = [c for _, c in top_bi][::-1]
+        fig2 = px.bar(
+            x=bc, y=bg, orientation="h",
+            labels={"x": "언급 횟수", "y": ""}, text=bc,
+        )
+        fig2.update_traces(textposition="outside", marker_color="#f59e0b", cliponaxis=False)
+        fig2.update_layout(height=720, margin=dict(l=10, r=40, t=10, b=10), yaxis=dict(tickfont=dict(size=13)))
+        st.plotly_chart(fig2, use_container_width=True)
+
+    # ===== 상세 순위 표 =====
+    st.markdown("---")
+    st.markdown("**📋 단어 빈도 상세 순위 (TOP 50)**")
+    rows = []
+    for i, (w, c) in enumerate(word_c.most_common(50), 1):
+        dc = doc_c[w]
+        rows.append({"순위": i, "단어": w, "언급 횟수": c, "리뷰 수": dc, "리뷰 비율": f"{dc / n * 100:.1f}%"})
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True, height=420)
+    st.caption("※ 리뷰 비율 = 해당 단어가 등장한 리뷰의 비중. 같은 리뷰에서 여러 번 써도 1건으로 집계.")
+
+
 # 아마존 전용 보기: True면 사이드바 필터와 기존 3개 탭을 숨기고 아마존 탭만 표시
 # (원래 대시보드로 되돌리려면 False 로 변경)
 AMAZON_ONLY = True
@@ -947,11 +1064,15 @@ def main():
             unsafe_allow_html=True,
         )
         df_am = load_amazon_data()
-        amz_tab1, amz_tab2 = st.tabs(["🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열"])
+        amz_tab1, amz_tab2, amz_tab3 = st.tabs([
+            "🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열", "☁️ 고객 단어/워드클라우드"
+        ])
         with amz_tab1:
             tab_amazon(df_am)
         with amz_tab2:
             tab_amazon_timeseries(df_am)
+        with amz_tab3:
+            tab_amazon_wordcloud(df_am)
         st.markdown("---")
         n_am = 0 if df_am is None else len(df_am)
         st.markdown(
@@ -1023,8 +1144,9 @@ def main():
     st.sidebar.caption("※ 필터는 [전체 리뷰 분석] / [카테고리 시계열] 탭에 적용됩니다.")
 
     # ===== 탭 =====
-    tab1, tab2, tab3, tab4 = st.tabs([
-        "🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열", "🛒 아마존 토너 분석"
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열",
+        "🛒 아마존 토너 분석", "☁️ 아마존 고객 단어"
     ])
 
     with tab1:
@@ -1038,6 +1160,9 @@ def main():
 
     with tab4:
         tab_amazon(load_amazon_data())
+
+    with tab5:
+        tab_amazon_wordcloud(load_amazon_data())
 
     # 푸터
     st.markdown("---")
