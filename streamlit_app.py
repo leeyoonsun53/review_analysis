@@ -987,7 +987,9 @@ def tab_amazon_wordcloud(df_am):
 
     # ===== 워드클라우드 (wordcloud 패키지 없으면 아래 차트로 대체) =====
     try:
-        st.image(_amazon_wordcloud_png(dict(word_c)), use_container_width=True)
+        wc_col, _ = st.columns(2)
+        with wc_col:
+            st.image(_amazon_wordcloud_png(dict(word_c)), use_container_width=True)
     except ModuleNotFoundError:
         st.info(
             "ℹ️ 워드클라우드 이미지를 그리려면 `wordcloud` 패키지가 필요합니다 "
@@ -1071,7 +1073,7 @@ def main():
         )
         df_am = load_amazon_data()
         amz_tab1, amz_tab2, amz_tab3 = st.tabs([
-            "🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열", "☁️ 고객 단어/워드클라우드"
+            "🛒 아마존 토너 분석", "📈 아마존 카테고리 시계열", "☁️ 아마존 고객단어/워드클라우드"
         ])
         with amz_tab1:
             tab_amazon(df_am)
@@ -1152,7 +1154,7 @@ def main():
     # ===== 탭 =====
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "🥛 모찌토너 인사이트", "📊 전체 리뷰 분석", "📈 카테고리 시계열",
-        "🛒 아마존 토너 분석", "☁️ 아마존 고객 단어"
+        "🛒 아마존 토너 분석", "☁️ 아마존 고객단어/워드클라우드"
     ])
 
     with tab1:
