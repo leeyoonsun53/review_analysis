@@ -985,11 +985,17 @@ def tab_amazon_wordcloud(df_am):
 
     st.markdown(f"리뷰 **{n:,}건**에서 고유 단어 **{len(word_c):,}개** 추출")
 
-    # ===== 워드클라우드 =====
+    # ===== 워드클라우드 (wordcloud 패키지 없으면 아래 차트로 대체) =====
     try:
         st.image(_amazon_wordcloud_png(dict(word_c)), use_container_width=True)
+    except ModuleNotFoundError:
+        st.info(
+            "ℹ️ 워드클라우드 이미지를 그리려면 `wordcloud` 패키지가 필요합니다 "
+            "(`pip install wordcloud`). 패키지가 없어 이미지는 생략하고, "
+            "아래 **빈출 단어 차트와 순위표**로 동일한 내용을 보여드립니다."
+        )
     except Exception as e:
-        st.warning(f"워드클라우드 렌더 실패: {e}")
+        st.warning(f"워드클라우드 렌더 실패: {e} — 아래 차트/표로 대체합니다.")
 
     st.markdown("---")
     left, right = st.columns(2)
